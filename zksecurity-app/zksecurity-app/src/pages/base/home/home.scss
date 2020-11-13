@@ -1,0 +1,266 @@
+page-home {
+ color:#474b4f;
+ .card-content {
+ 	padding: 0px;
+ 	text-align: center;
+ }
+
+ #test{
+    background-color: green;
+    font-size: 10rem;
+ }
+
+ .card  {
+    margin: 0px;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    -webkit-box-shadow:none;
+    background:#fff;
+    box-shadow:none;
+ }
+
+  .slide-item-box1,.slide-item-box2, .slide-item-box3 {
+ 
+    left: 3.2%;
+    right: 3.2%;
+    bottom: 1rem;
+    font-size: 1.6rem;
+    color: #fff;
+ }
+
+
+ .slide-item-box7{
+    position: absolute;
+    color: #fff;
+    font-size: 1.6rem;
+    left: 3.2%;
+    right: 3.2%;
+    top:38%;
+    bottom:44%;
+ }
+
+ .slide-item-box1{
+    position: absolute;
+    color: #fff;
+    top: 40%;
+
+ }
+
+ .slide-item-box1-1{
+   
+    left: 3.2%;
+    right: 3.2%;
+    font-size: 1.6rem;
+    color: #fff;
+
+
+ }
+
+ .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets {
+    bottom:0.5em;
+ }
+.page-home-box {
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    /*position:absolute;
+    overflow: auto;
+    -webkit-overflow-scrolling: auto;*/
+    position: fixed;
+     overflow: auto;
+    /*-webkit-overflow-scrolling: auto;*/
+}
+ .slide-item-box1 {
+    .slide-item-box1-txt1 {
+        padding-right: 10rem;
+        padding-bottom: 0.3rem;
+
+    }
+    .slide-item-box1-txt2 {
+        padding-left: 4rem;
+    }
+
+
+    .slide-item-box1-txt3{
+        font-size: 2rem;
+    }
+
+     .slide-item-box1-txt7{
+        
+        font-size: 1.8rem;
+        
+        
+    }
+
+ }
+
+
+
+
+ .slide-item-box3-txt1,
+ .slide-item-box3-txt2,
+ .slide-item-box3-txt3,
+ .slide-item-box3-txt4,
+ .slide-item-box3-txt5 {
+    position: absolute;
+    font-size: 1rem;
+    color: #fff;
+ }
+
+ .slide-item-box3-txt1 {
+    left: 0;
+    top: 40%;
+    right: 75%;
+    text-align: right;
+ }
+
+ .slide-item-box3-txt2 {
+    left: 0;
+    right: 0;
+    top: 48%;
+    padding-right: 7%;
+    text-align: center;
+ }
+
+ .slide-item-box3-txt3 { 
+    right: 0;
+    top: 65%;
+    left: 54%;
+    text-align: left;
+ }
+
+ .slide-item-box3-txt4 { 
+    right: 0;
+    top: 21%;
+    left: 72%;
+    text-align: left;
+ }
+
+ .slide-item-box3-txt5 { 
+    right: 0;
+    top: 40%;
+    left: 68%;
+    text-align: left;
+ }
+
+
+ .page-home-logo {
+   display: flex;
+   align-self: center;
+ }
+
+ ion-navbar {
+    position: fixed;
+    z-index: 10;
+ }
+
+ zk-nav-bar {
+    position: fixed;
+    /**.custom-toolbar-android {
+        background-color: rgba(0,0,0,0.1);
+        
+        .custom-toolbar-button-end {
+            button {
+                zk-icon {
+                    color: #fff;
+                }
+            }
+        }
+    };
+    .custom-toolbar-iosX {
+        background-color: rgba(0,0,0,0.1);
+        
+        .custom-toolbar-button-end {
+            button {
+                zk-icon {
+                    color: #fff;
+                }
+            }
+        }
+    }**/
+
+    
+    position: fixed;
+    .custom-toolbar {
+        background-color: rgba(0,0,0,0.1);
+        
+        .custom-toolbar-button-end {
+            button {
+                zk-icon {
+                    color: #fff;
+                }
+            }
+        }
+    }
+ 
+ }
+ 
+
+
+ .page-item-box {
+ 	float: left;
+ 	width: 25%;
+    padding: 0rem 0rem 1rem 0rem;
+ 	ion-icon,zk-icon {
+		font-size: 3rem;
+        color: #fff;
+        background-color: #7ac143;
+        margin: 0.3em;
+        line-height: 1;
+        display: inline-block;
+        border: 1px solid #7ac143;
+        border-radius: 0.8em;
+        padding: 0.45em;
+        font-weight: bold;
+ 	}
+ }
+
+ .page-item-box:active {
+    background-color:$zk-active-color;
+ }
+
+ .page-home-slides{
+ 	 width: 100%;
+     position: absolute;
+     top: 0px;
+     z-index: 1;
+    .swiper-pagination-bullet-active {
+        background-color: #fff;
+     }
+ }
+
+ .page-home-module-box {
+    position: absolute;
+    width: 100%;
+ }
+
+ .page-home-header {
+    position: absolute;
+    top: 2px;
+    width: 100%;
+    z-index: inherit;
+    text-align: center;
+    color: #fff;
+    .page-home-header-logo{
+        position: absolute;
+        text-align: center;
+        left: 0px;
+        right: 0px;
+        top: 0.6rem;
+    }
+ }
+ .page-home-module{
+ 	color: #999999;
+    padding: 0.5rem 1.5rem;
+    padding-left:$zk-padding-width;
+ }
+ .page-home-settings{
+    font-size: 2.4rem;
+    color: #fff;
+ }
+ ion-slide{
+ 	background-repeat: no-repeat;
+    background-size: 100% 100%;
+ }
+}

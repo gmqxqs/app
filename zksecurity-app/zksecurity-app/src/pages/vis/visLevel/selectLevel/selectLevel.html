@@ -1,0 +1,36 @@
+<!-- 权限组管理 - 搜索页面 -->
+<ion-header>
+  <zk-nav-bar>
+    <ion-row align-items-baseline>
+      <ion-col class="person-list-search" col-12 class="person-list-search">
+        <ion-item no-lines>
+           <ion-searchbar class="search-event" (keydown)="onInput($event)" placeholder="{{'VIS_ERROR_NAME'|translate}}" [(ngModel)]="levelName">
+          </ion-searchbar>
+            <div item-end>
+              <button ion-button clear
+                  class="btn_search"
+                  (click)="search()">
+                  {{'COMMON_SEARCH'|translate}}
+              </button>
+              <button ion-button clear
+                  class="btn_cancel"
+                  (click)="cancle()">
+                  {{'COMMON_CANCEL'|translate}}
+              </button>
+            </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </zk-nav-bar>
+
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-list no-lines>
+    <ion-item class="item-title">
+      {{'VIS_SELECTCONTENT'|translate}}
+    </ion-item>
+    <ion-item class="item-content" [style.font-weight]="item.criteriaCore == criteriaCore ? 'bold':'normal'" *ngFor="let item of items" tappable (click)="select(item)">
+      {{item.criteriaName|translate}}
+    </ion-item>
+  </ion-list>
+</ion-content>

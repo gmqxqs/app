@@ -1,0 +1,113 @@
+page-parkChannelDetail{
+  ::-webkit-scrollbar { //去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .charge-list-margin {
+    margin-top: $zk-top-width;
+  }
+  .item-right-color {
+    color: #9F9F9F;
+  }
+
+  .list {
+    .item {
+      border-bottom: $zk-border-style;
+      .item-inner {
+        border-bottom-width: 0;
+      }
+    }
+  }
+
+  .vis-top {
+    width: 100%;
+    background-color: #ffffff;
+    color: #2F2F2F;
+  }
+  .vis-img {
+    background-color: #7ac143;
+    color: #ffffff;
+    width: 100px;
+    height: 100px;
+  }
+  .page-item-box {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;
+    zk-icon {
+      line-height: 8.4rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      background-color: #7ac143;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+    }
+  }
+  .car-title {
+    font-size: 18px;
+  }
+  .next {
+    background-color: transparent;
+  }
+  .circle1 {
+    width: 6px;
+    height: 6px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin:4px 6px;
+  }
+  .col {
+    padding: 0px;
+  }
+  .item-two{
+    width:100%;
+    background:#fff;
+  }
+  .item-two .text-input{
+    text-align: right;
+    color:#999;
+  }
+
+  .charge-list-margin2 {
+    margin-top: 18px;
+  }
+  .charge-list-margin2 .text-input{
+    text-align: right;
+    color:#999;
+  }
+  .pers-gender .button-inner,.pers-acclevel .button-inner
+  {
+    font-size:1.7rem;
+    color:#999;
+
+  }
+  .pers-gender .button-ios-light,.pers-acclevel .button-ios-light,
+  .pers-gender .button-ios-light .button-inner,.pers-acclevel .button-ios-light .button-inner{
+    background-color: #fff;
+  }
+  .point{
+    display: inline-block;
+    color: red;
+    margin-bottom: 5px;
+  }
+
+  .charge-list-margin ion-label{
+    text-overflow: clip;
+    white-space: normal;
+  }
+
+  .charge-list-margin .park-channel-inline {
+    white-space: nowrap;
+  }
+
+  .select-hide span{
+    display:none;
+  }
+}

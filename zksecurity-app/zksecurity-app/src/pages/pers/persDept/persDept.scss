@@ -1,0 +1,12 @@
+// Page persDept sass --Ò³ÃæÑùÊ½
+page-persDept {
+  ion-title {
+    text-align: center;
+  }
+  .zktree-custom{
+    padding: 10px;
+  }
+  zk-tree .zktree-box .zktree-node .zktree-item {
+    font-size: 2rem;
+  }
+}

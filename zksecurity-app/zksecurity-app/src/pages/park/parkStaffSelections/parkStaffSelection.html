@@ -1,0 +1,37 @@
+<!-- 停车场 - 人员选择页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PAGE_STAFFSELECTION" >
+      <button clear ion-button icon-only (click)="finish()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+  <ion-row align-items-baseline >
+    <ion-col col-12>
+       <ion-searchbar item-left placeholder="{{'PERS_NAME_PIN'|translate}}" class="" (ionInput)="search($event)"></ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list radio-group [(ngModel)]="myParam">
+      <ion-item *ngFor="let item of items">
+        <ion-label color="dark">{{item.personName}}({{item.personPin}})</ion-label>
+        <ion-radio value="{{item.personPin}}" ></ion-radio>
+      </ion-item>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

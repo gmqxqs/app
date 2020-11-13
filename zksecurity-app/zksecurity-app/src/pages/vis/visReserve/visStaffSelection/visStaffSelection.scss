@@ -1,0 +1,16 @@
+page-parkStaffSelection {
+  ::-webkit-scrollbar { //去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+
+  ion-list {
+    //margin: 0px;
+    padding: 0;
+    display: block;
+    list-style-type: none;
+  }
+}

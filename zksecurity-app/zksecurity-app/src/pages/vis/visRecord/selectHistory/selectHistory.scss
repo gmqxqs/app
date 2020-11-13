@@ -1,0 +1,169 @@
+// Page selectHistory sass --预约 - 历史记录 - 搜索页面 样式
+page-selectHistory {
+  .person-list-search.item-ios.item-block .item-inner, person-list-search.item-md.item-block .item-inner {
+    border-bottom: 0;
+    background-color: #fff;
+    width: 80%;
+    display: inline-block;
+  }
+  ion-header {
+    background-color: white;
+  }
+
+  .person-list-search .search-event.searchbar-ios {
+    background: #fff;
+    display: block;
+    //width: 76%;
+    float: left;
+  }
+
+  .person-list-search {
+    .item {
+      padding-left: 0;
+    }
+    ion-searchbar {
+      border-bottom-style: none;
+    }
+  }
+  .button-ios {
+    //margin: 0 0.6rem 0 0;
+    padding: 0;
+    float: left;
+  }
+
+  .person-list-search .searchbar-input {
+    background: #EEEEEE;
+  }
+
+  .btn_cancel .button-ios {
+    margin: 0;
+    padding: 0;
+  }
+
+  .btn_cancel {
+
+  }
+
+  .searh-background {
+    background: #fff;
+  }
+
+  .search-h3 {
+    background: #fff;
+    text-align: center;
+    color: #78b847;
+  }
+
+  .search-title {
+    color: #D6D7D5;
+  }
+
+  .searchbar-ios .searchbar-input {
+    padding: 0;
+  }
+
+  .item-title {
+    color: #8c8c8c;
+    text-align: center;
+  }
+  .item-block {
+    min-height: 2rem !important;
+  }
+  .item-content {
+    color: #7ac143;
+    text-align: center;
+  }
+  .searchbar-input {
+    text-align: center;
+  }
+  .person-list-search.item-ios.item-block .item-inner,person-list-search.item-md.item-block .item-inner{
+    border-bottom:0;
+    background-color:#fff;
+    width:80%;
+    display:inline-block;
+  }
+  ion-header{
+    background-color: white;
+  }
+
+
+  .person-list-search .searchbar-input {
+    background:#EEEEEE;
+  }
+
+  .person-list-search {
+    ion-searchbar {
+      border-bottom-style: none;
+    }
+  }
+
+  .btn_cancel .button-ios{
+    margin:0;
+    padding:0;
+  }
+
+  .btn_cancel {
+    float:right;
+
+  }
+
+  .btn_search{
+    //margin-left:0.8rem;
+  }
+
+  .searh-background{
+    background:#fff;
+  }
+
+  .search-h3{
+    background:#fff;
+    text-align:center;
+    color: #78b847;
+  }
+
+  .search-title{
+    color:#D6D7D5;
+  }
+
+  .searchbar-ios .searchbar-input{
+    padding:0;
+  }
+
+
+  .search-by-door,.search-by-time{
+    background:#f5f0f0;
+  }
+
+  .item-ios.item-block.search-by-door .item-inner,.item-ios.item-block.search-by-time .item-inner {
+    border-bottom: 0px solid #c8c7cc;
+  }
+
+  .list-ios {
+    margin: 0.6rem;
+  }
+
+  .item-ios.item-block.no-line .item-inner,
+  .item-md.item-block.no-line .item-inner {
+    border-bottom:0px solid #eee;
+  }
+
+  .list-ios > .item-block:first-child {
+    border-top: 0px solid #c8c7cc;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: 0px solid #c8c7cc;
+  }
+
+  .view-report{
+    margin:0.6rem 0;
+  }
+
+  .time-right{
+    float:right;
+  }
+
+  .search-time-title{
+    color:#999;
+  }
+}

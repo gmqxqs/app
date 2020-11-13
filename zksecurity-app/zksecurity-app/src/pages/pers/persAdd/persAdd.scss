@@ -1,0 +1,113 @@
+// Page persAdd sass --新增页面样式
+page-persAdd {
+
+	.page-personAdd-icon {
+		border-radius: 50%;
+		width: 10rem;
+		height: 10rem;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+		display: inline-block;
+		border:0.45rem #E6F2DD solid;
+		margin-top:2rem;
+	}
+
+	.page-person-iconbox{
+		margin:0.8rem 0;
+	}
+
+	.pers-add-photo {
+		background-color: #fff;
+		margin-bottom: $zk-top-width;
+	}
+
+	.pers-item-phone {
+		button {
+			zk-icon {
+				font-size: 2.4rem;
+			}
+			margin:0!important;
+			padding:0.6rem!important;
+		}
+
+		button.pers-phone-icon {
+			width: 2.4em;
+			height: 2.4em;
+			border-radius: 50%;
+			background-color: #7ac143;
+			color:#fff;
+		}
+	}
+
+	.pers-add-item.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+	.pers-add-item.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+		background:#fff;
+		box-shadow: none;
+	}
+
+	.pers-add-item .text-input {
+		text-align: right;
+	}
+
+	.pers-dept-btn {
+		width: 50%;
+		.button-inner {
+			text-overflow: ellipsis;
+			overflow: hidden;
+			display: inline-block;
+			height: 4rem;
+		    position: relative;
+		    width: 100%;
+		    bottom: 0.5rem;
+		    font-size: 1.7rem!important;
+		    ion-icon {
+		    	position: relative;
+		    	bottom: -0.3rem;
+		    }
+		}
+	}
+
+	.pers-dept-item, .pers-acclevel-item{
+		margin-bottom:$zk-top-width;
+	}
+
+	.pers-add-item .button {
+    	text-align: right;
+    	height: 2.4rem;
+    	color: #6e6e6e;
+    }
+
+    .pers-add-item {
+    	padding-left:$zk-padding-width;
+    }
+
+    .page-person-icon {
+		font-size: 1.2em;
+		color:#7ac143;
+	}
+
+	.page-person-iconbox{
+		font-size: 1.2em;
+	}
+
+	.item-input {
+		ion-label {
+			max-width: none;
+		}
+	}
+
+	.select {
+		.select-icon {
+		    width: 1.2rem;
+		    height: 1.8rem;
+		}
+	}
+
+	.pers-add-item-hide{
+		display:none;
+	}
+
+	.deptBtn{
+		margin-top:100px;
+	}
+}

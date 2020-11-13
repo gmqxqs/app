@@ -1,0 +1,88 @@
+// Page persSet sass --设置页面样式
+page-persSet {
+	.list-ios > .item-block:first-child {
+   		border-top-width: 0px;
+	}
+
+	.set-pers-code .button-ios-light .button-inner, .set-pers-card .button-ios-light .button-inner,
+	.set-pers-code .button-ios-light, .set-pers-card .button-ios-light {
+    	background-color: #fff;
+	}
+
+
+
+	.set-pers-card .item-ios .item-inner .item-block .item-inner,
+	.set-pers-code .item-md .item-inner .item-block .item-inner{
+		border-bottom:0px;
+	}
+
+	.set-pers-code .button-inner,.set-pers-card .button-inner{
+		color:#999;
+		font-size:1.6rem;
+	}
+
+	.set-pers-card .item-ios .item-button {
+		height:2.4rem;
+	}
+
+	.item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+    	color: #000;
+	}
+
+	.item-two{
+		width:100%;
+		background:#fff;
+	}
+
+	.item-two ion-label{
+		padding-left:3.2rem;
+	}
+
+	.set-pers-code.list-ios, .set-pers-card.list-ios{
+		margin:$zk-top-width 0 0 0;
+	}
+
+	.item-ios.item-two [item-right],
+	.item-md.item-two [item-right]{
+		margin: 0px;
+	}
+
+	.item-two .text-input{
+		text-align: right;
+		color:#999;
+	}
+
+	.card-type .item-block{
+		width:auto;
+	}
+
+	.item-ios.card-type [item-right], .item-ios.card-type [item-end],
+	.item-md.card-type [item-right], .item-md.card-type [item-end]{
+		margin:0px;
+	}
+
+	.list {
+		.item {
+			padding-left:$zk-padding-width;
+		}
+	}
+	
+	item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    	border-bottom: 0px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	ion-label {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: inherit;
+    text-overflow: clip ;
+    white-space: normal;
+  }
+}

@@ -1,0 +1,93 @@
+<!-- 停车场 - 新增固定车授权页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PARKFIXCARDNUMADD">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="swipeGoBack()">
+  <form [formGroup]="cardNumForm">
+  <ion-row class="vis-top row">
+    <ion-col col class="page-item-box"  align="center" >
+      <zk-icon name="park-car" class="vis-img" ></zk-icon>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col style="padding: 0">
+      <ion-list no-lines>
+        <ion-item class="charge-list-margin" tappable (click)="staffSelection()">
+          <span item-left>{{'PARK_PERSONNEL'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color" >{{myParam}}{{staffId}}
+          <zk-icon name="next"></zk-icon>
+            </span>
+        </ion-item>
+        <ion-item *ngIf="parkingLotModel=='one'" tappable (click)="cardNum()">
+          <span item-left>{{'PARK_CARDNUM'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color" >{{certType}}
+            <zk-icon name="next"></zk-icon>
+          </span>
+        </ion-item>
+        <ion-item class="item-two" *ngIf="displayParkingSpace=='true'" tappable (click)="spaceSelection()">
+          <ion-label>{{'PRAK_SPACE'|translate}}<div class="point">*</div></ion-label>
+          <span item-right class="item-right-color" >{{spaceName}}
+            <zk-icon name="next"></zk-icon>
+          </span>
+        </ion-item>
+        <ion-item class="charge-list-margin " tappable (click)="entranceArea()">
+          <ion-label>{{'PARK_IMPORTEXPORT_AREA'|translate}}<div class="point">*</div></ion-label>
+          <span item-right class="item-right-color1" >{{parkEntranceAreaName}}
+          </span>
+          <zk-icon item-right name="next" style="color: #999;"></zk-icon>
+        </ion-item>
+        <ion-item tappable (click)="cardTypeData()">
+          <span item-left> {{'PARK_CARTYPE'|translate}}<div class="point">*</div></span>
+          <button class="vis-btn-right" color="light"  item-end>{{type}}
+          <zk-icon name="next"></zk-icon>
+          </button>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='true'" tappable (click)="fixedFeeData()">
+          <span item-left> {{'PARK_FIXED_CHARGE_NAME'|translate}}<div class="point">*</div></span>
+          <button class="vis-btn-right" color="light"  item-end>{{fixedFee}}
+            <zk-icon name="next"></zk-icon>
+          </button>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='false'" class="charge-list-margin">
+          <span item-left>{{'PARK_START_TIME'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color1" >{{stratTime}}</span>
+          <zk-icon name="vis-calendar" style="color: #BABABA" item-right></zk-icon>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='false'">
+          <ion-label>{{'PARK_EXIT_TIME'|translate}}<div class="point">*</div></ion-label>
+          <ion-datetime item-content displayFormat="YYYY-MM-DD" style="color: #BABABA" formControlName="endTime"  min="{{minEtime}}" max="{{maxDate}}" cancelText="{{ 'COMMON_CANCEL'|translate }}" doneText="{{ 'COMMON_SURE'|translate }}"></ion-datetime>
+          <zk-icon name="vis-calendar" style="color: #7ac143" item-right></zk-icon>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='true'" class="charge-list-margin">
+          <span item-left>{{'PARK_START_TIME'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color1" >{{scaleStratTime}}</span>
+          <zk-icon name="vis-calendar" style="color: #BABABA" item-right></zk-icon>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='true'">
+          <span item-left>{{'PARK_EXIT_TIME'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color1" >{{scaleEndTime}}
+          </span>
+          <zk-icon name="vis-calendar" style="color: #BABABA" item-right></zk-icon>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='false'" class="charge-list-margin item-two">
+          <ion-label>{{'PARK_COLLECT_MONEY'|translate}}<div class="point">*</div></ion-label>
+          <ion-input type="text" formControlName="debt" maxLength=7></ion-input>
+          <span item-right>{{customCurrency}}</span>
+        </ion-item>
+        <ion-item *ngIf="fixedFeeScale=='true'" class="charge-list-margin item-two">
+          <span item-left>{{'PARK_COLLECT_MONEY'|translate}}<div class="point">*</div></span>
+          <span item-right class="item-right-color1" >{{change}}
+          </span>
+          <span item-right>{{customCurrency}}</span>
+        </ion-item>
+      </ion-list>
+
+    </ion-col>
+  </ion-row>
+  </form>
+</ion-content>
+

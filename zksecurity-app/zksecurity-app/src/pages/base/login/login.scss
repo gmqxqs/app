@@ -1,0 +1,190 @@
+page-login {
+
+	.content {
+		background-color: $loginContentColor;
+	}
+
+	ion-input {
+	    .text-input {
+	      color:#fff;
+	    }
+	}
+
+	.list {
+
+		.item-block:first-child {
+			border-top-style:none;
+		}
+
+		.item {
+			background-color: $loginContentColor;
+			color:#fff;
+			padding-left: 0rem;
+			
+		}
+
+		.item-block {
+			.item-inner{
+				border-bottom:0.2rem solid #5a616d;
+				.input-wrapper {
+					.label {
+						color:#5a616d;
+						zk-icon {
+							font-size: 2rem;
+						}
+					}
+					input::-webkit-input-placeholder {
+					  /* WebKit browsers */
+					  color: #5a616d;
+					}
+					input:-moz-placeholder {
+					  /* Mozilla Firefox 4 to 18 */
+					  color: #5a616d;
+					}
+					input::-moz-placeholder {
+					  /* Mozilla Firefox 19+ */
+					  color: #5a616d;
+					}
+					input::-ms-input-placeholder {
+					  /* Internet Explorer 10+ */
+					  color: #5a616d;
+					}
+				}
+			}
+		}
+	}
+	.item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+	    box-shadow:none;
+		-webkit-box-shadow:none;
+		border-bottom:0.2rem solid #5a616d;
+	}
+	.toolbar-background{
+		background-color: $loginContentColor;
+	}
+	
+	.toolbar-title {
+		color: #fff;
+		text-align: center;
+	}
+	.login-form-box{
+		padding-top: 0rem!important;
+		padding-bottom: 0rem!important;
+	}
+	.login-header-bg {
+		text-align: center;
+		height: 37.5%;
+		width: 100%;
+		font-size: 20rem;
+		background-repeat: no-repeat;
+		background-size: 69% auto;
+		background-position: center center; 
+	}
+
+
+
+	.scroll-content {
+		overflow-y: auto;
+		left: 8%;
+		right: 8%;
+		padding-bottom:0rem!important;
+	}
+
+	.page-login-pers{
+		border: 0.2rem solid #5d8449!important;
+		border-right: 0.25rem solid #5d8449!important;
+		color:#7ac143;
+		background-color: $loginContentColor;
+		margin-top: 1rem;
+		text-align: true;
+		width: 48.5%;
+		display: inline-block;
+		float: left;
+	}
+	.page-login-admin{
+		border: 0.2rem solid #5d8449!important;
+		border-right: 0.25rem solid #5d8449!important;
+		color:#7ac143;
+		background-color: $loginContentColor;
+		margin-top: 1rem;
+		text-align: true;
+		width: 48.5%;
+		display: inline-block;
+		float:right;
+	}
+	.page-login-btn button:first {
+		margin-top: 2rem;
+	}
+
+	.page-login-btn {
+		.activated {
+			color:#fff;
+		}
+	}
+	.page-login-network {
+		border: 0.2rem solid #5d8449!important;
+		border-right: 0.25rem solid #5d8449!important;
+		color:#7ac143;
+		background-color: $loginContentColor;
+		margin-top: 1rem;
+	}
+
+	.typeChoose{
+		position: absolute;
+		margin-top: -2rem;
+		left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+	}
+	
+	.adminspan{
+		
+		position: absolute;
+		font-size:1.7rem;
+		color: #FFF;
+		margin-left: -7rem;
+		margin-top: 0.3rem;
+
+	}
+	.adminspanEs{
+		position: absolute;
+		font-size:1.7rem;
+		color: #FFF;
+		margin-left: -13rem;
+		margin-top: 0.3rem;
+	}
+	.linespan{
+		width: 0.1rem;
+		height: 3rem;
+		background: #5a616d;
+		position: absolute;
+	}
+	.userspan{
+		position: absolute;
+		color: #5a616d;
+		font-size:1.7rem;
+		margin-top: 0.3rem;
+		margin-left: 2rem;
+	}
+
+
+
+	.page-login-version {
+		color: #7c8697;
+		margin-top: 2rem;
+	}
+
+	.page-login-copyright {
+		color: #7c8697;
+		position: absolute;
+		bottom: 0.1rem;
+		left:0rem;
+		right:0rem;
+		font-size: 1rem;
+		.label {
+			margin:0;
+		}
+	}
+}

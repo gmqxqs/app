@@ -1,0 +1,54 @@
+<!-- 考勤 - 考勤月历页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ATTMONTH">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-item no-lines>
+	    <ion-avatar item-start>
+	      <img [src]="userPhoto">
+	    </ion-avatar>
+	    <h4>{{ userName }}</h4>
+	    <p>{{ userDept}}</p>
+	    <h4 item-end style="margin:0px 8px 16px 8px">{{ todayText }}</h4>
+	</ion-item>
+	<ion-grid class="att-month-header">
+		<ion-row>
+			<ion-col text-center *ngFor="let w of weeks">
+				{{w|translate}}
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-grid class="att-month-body" (swipe)="changeMonth($event)">
+		<ion-row *ngFor="let row of days">
+			<ion-col tappable (click)="activeClick(day)" text-center *ngFor="let day of row">
+				<div [ngClass]="{'att-month-day':true,'att-month-active':activeDay && (activeDay.date.getDate() === day.text),'att-month-today':day.isToday}">{{day.text}}
+				</div>
+				<div text-center class="att-month-pox">
+					<div class="att-month-point" [style.background-color]="getStateColor(day.state)"></div>
+				</div>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+	<ion-row>
+		<ion-col>{{'ATT_SHIFT'|translate}}: {{ getShift()}}</ion-col>
+	</ion-row>
+	<ion-item no-lines style="font-size: 1.6rem">
+		<div class="att-month-data-title">
+			<zk-icon name="att-signed"></zk-icon>
+			<span class="att-month-text">{{todayCountMsg}}</span>
+		</div>
+		<div *ngIf="activeDay!=null">
+			<div class="att-month-item"  *ngFor="let item of activeDay.items; let i=index">
+				<div class="att-month-icon" 
+				[style.background-color]="item.state === -1?'#fea803':'#7ac143'" *ngIf="i===0">{{'ATT_UP'|translate}}</div>
+				<div class="att-month-icon" style="color:#7ac143" *ngIf="i>0 && i<activeDay.items.length-1">{{'ATT_UP'|translate}}</div>
+				<div class="att-month-icon" 
+				[style.background-color]="item.state === -1?'#fea803':'#7ac143'" 
+				*ngIf="i===activeDay.items.length-1 && item !== activeDay.items[0]">{{'ATT_DOWN'|translate}}</div>
+				<span>{{getTimeTex(item.time)}}</span>&nbsp;&nbsp;
+				<span [style.color]="item.state===-1?'#fea803':'inherit'">{{item.desc|translate}}</span>
+			</div>
+		</div>
+	</ion-item>
+</ion-content>

@@ -1,0 +1,23 @@
+<!-- ÈËÊÂ - Ò³Ãæ -->
+<ion-header>
+	<ion-navbar hideBackButton="true">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="navCtrl.pop()" no-bounce class="no-scroll" (swiperight)="goBack()">
+          <zk-icon style="font-size: 2.4rem" name="nav_back"></zk-icon>
+        </button>
+    </ion-buttons>
+		<ion-title>{{'PAGE_PERSDEPT'|translate}}</ion-title>
+	  <ion-buttons end>
+      <button ion-button icon-only (click)="finish()">
+        <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+
+  <div style="background-color:#ffffff;margin: 10px 0px 10px 0px">
+    <zk-tree [data]="items" (onChecked)="checkedClick($event)"
+             [cssClass]="'zktree-custom'"></zk-tree>
+  </div>
+</ion-content>

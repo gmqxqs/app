@@ -1,0 +1,69 @@
+<!-- 人事 - 头像编辑 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PERSPHOTOEDIT">
+       <button clear ion-button icon-only (click)="save()">
+            <zk-icon name="OK" style="color: #fff; font-size: 2.4rem"></zk-icon>
+        </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <div class="photo-edit-imgbox" 
+      [style.top]="imgTop + 'px'"
+      [style.right]="imgRight + 'px'"
+      [style.bottom]="imgBottom + 'px'"
+      [style.left]="imgLeft + 'px'">
+    <img #imgObj class="photo-edit-img" [src]="imgData"/>
+  </div>
+  <div class="photo-overlay-top" [style.height]="top + 'px'"></div>
+  <div class="photo-overlay-right" 
+        [style.top]="top + 'px'"
+        [style.bottom]="bottom + 'px'"  
+        [style.width]="right + 'px'"></div>
+  <div class="photo-overlay-bottom" [style.height]="bottom + 'px'"></div>
+  <div class="photo-overlay-left" 
+        [style.top]="top + 'px'" 
+        [style.bottom]="bottom + 'px'" 
+        [style.width]="left + 'px'"></div>
+  <div class="photo-overlay-center"
+        (touchmove)="move($event)"
+        (touchstart)="start($event)"
+        [style.top]="top + 'px'"
+        [style.left]="left + 'px'"
+        [style.bottom]="bottom + 'px'" 
+        [style.right]="right + 'px'">
+        <div class="photo-range-tl" 
+          #angle
+          (touchmove)="resizeMove($event, 'tl')"
+          (touchstart)="start($event)">
+        </div>
+        <div class="photo-range-tr"
+          (touchmove)="resizeMove($event, 'tr')"
+          (touchstart)="start($event)">
+        </div>
+        <div class="photo-range-bl" 
+          (touchmove)="resizeMove($event, 'bl')"
+          (touchstart)="start($event)">
+        </div>
+        <div class="photo-range-br"
+          (touchmove)="resizeMove($event, 'br')"
+          (touchstart)="start($event)">
+        </div>
+  </div>
+  <!--
+  <ion-fab left bottom>
+    <button ion-fab mini><ion-icon name="arrow-dropright"></ion-icon></button>
+    <ion-fab-list side="right">
+      <button (click)="zoom($event)" color="dark" ion-fab><zk-icon name="zoom-in"></zk-icon></button>
+      <button (click)="narrow($event)" color="dark" ion-fab><zk-icon name="zoom-out"></zk-icon></button>
+      <button (click)="undo()" color="dark" ion-fab><ion-icon name="undo"></ion-icon></button>
+    </ion-fab-list>
+  </ion-fab>
+  -->
+
+  <!--
+  <div class="photo-toolbtn">
+    <zk-icon name="zoom-in" (click)="zoom($event)"></zk-icon>
+    <zk-icon name="zoom-out" (click)="narrow($event)"></zk-icon>
+  </div>
+  -->
+</ion-content>

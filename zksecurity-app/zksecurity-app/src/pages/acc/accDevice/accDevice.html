@@ -1,0 +1,67 @@
+<!-- 门禁 - 门禁设备页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCDEVICE">
+  	</zk-nav-bar>
+	<ion-row align-items-baseline class="acc-search-item">
+		<ion-col col-12>
+			<ion-item no-lines style="background-color: #eee">
+				<div item-start style="white-space: nowrap;">{{ 'COMMON_SUM'|translate }}: {{doorCount}}</div>
+				<ion-searchbar item-content [(ngModel)]="filter" placeholder="{{ 'ACC_DOOR_NAME'|translate }}" (ionInput)="search($event)"></ion-searchbar>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<!-- 下拉刷新器 begin-->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+	      pullingIcon="arrow-dropdown"
+	      pullingText="{{ 'COMMON_PULLREF'|translate }}"
+	      refreshingSpinner="crescent"
+	      refreshingText="{{ 'COMMON_REFRESHING'|translate }}">
+	    </ion-refresher-content>
+    </ion-refresher>
+	<!-- 下拉刷新器 end-->
+
+	<ion-list>
+		<ion-item *ngFor="let item of items" tappable (click)="showDetail(item)">
+			<div item-start *ngIf="item.doorAlarmStatus==0" class="acc-device-status">
+				<!--<zk-icon name="acc-door" [style.background]="item.color" [style.border-color]="item.color">
+	        	</zk-icon>-->
+	        	<ion-thumbnail class="device-img">
+					<img src="assets/img/device_normal.png"/>
+				</ion-thumbnail>	
+			</div>
+			<div item-start *ngIf="item.doorAlarmStatus==1" class="acc-device-status">
+	        	<ion-thumbnail class="device-img">
+					<img src="assets/img/device_alarm.png"/>
+				</ion-thumbnail>	
+			</div>
+			<div item-start *ngIf="item.doorAlarmStatus==2" class="acc-device-status">
+	        	<ion-thumbnail class="device-img">
+					<img src="assets/img/door_disable.png"/>
+				</ion-thumbnail>	
+			</div>
+			<div item-start *ngIf="item.doorAlarmStatus==3" class="acc-device-status">
+	        	<ion-thumbnail class="device-img">
+					<img src="assets/img/device_offline.png"/>
+				</ion-thumbnail>	
+			</div>
+			<div item-start *ngIf="item.doorAlarmStatus!=0 && item.doorAlarmStatus!=1 && item.doorAlarmStatus!=2&& item.doorAlarmStatus!=3" class="acc-device-status">
+	        	<ion-thumbnail class="device-img">
+					<img src="assets/img/door_default.png"/>
+				</ion-thumbnail>	
+			</div>
+			<h2>{{ item.doorName }}</h2>
+			<h2 class="acc-device-lab">{{ item.devName }}</h2>
+		</ion-item>
+		<ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+	    </ion-label>
+	</ion-list>
+	<!-- 上拉加载器 begin -->
+	<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+	   <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+	   </ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+	<!-- 上拉加载器 end -->
+</ion-content>

@@ -1,0 +1,102 @@
+<!-- 人事 - 新增页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="{{ pageTitle|translate }}">
+       <button clear ion-button icon-only (click)="save()">
+        	<zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="action-sheets-basic-page" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<form [formGroup]="persForm">
+		<ion-row class="pers-add-photo">
+			<ion-col align="center" col-12>
+				<div class="page-personAdd-icon" tappable (click)="goToPhotoPage()"
+				[style.background-image]="'url('+photoImg+')'">
+				</div>
+				<div class="page-person-iconbox">
+					<span>{{persForm.value.name}}</span>
+					<zk-icon [style.color]="persForm.value.fingerTemplateCount?'#7ac143':'#848684'" 
+						class="page-person-icon" name="fingerprint">
+					</zk-icon>
+					<zk-icon [style.color]="persForm.value.cardNo?'#7ac143':'#848684'" 
+						class="page-person-icon" name="card">
+					</zk-icon>
+					<zk-icon [style.color]="persForm.value.personPwd?'#7ac143':'#848684'"
+						class="page-person-icon" name="password">
+					</zk-icon>
+				</div>
+			</ion-col>
+		</ion-row>
+		<ion-list>
+			
+			<ion-item class="pers-add-item">
+				<ion-label *ngIf="lang === 'zh'">{{ 'COMMON_NAME'|translate }}</ion-label>
+				<ion-label *ngIf="lang !== 'zh'">{{ 'COMMON_FIRSTNAME'|translate }}</ion-label>
+				<ion-input type="text" name="name" formControlName="name" maxlength="50"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="lang !== 'zh'" class="pers-add-item">
+				<ion-label>{{ 'PERS_LASTNAME'|translate }}</ion-label>
+				<ion-input type="text" name="lastName" formControlName="lastName" maxlength="50"></ion-input>
+			</ion-item>
+			<ion-item class="pers-add-item">
+				<ion-label>{{ 'PERS_PIN'|translate }}<span class="required">*</span></ion-label>
+				<label class="item-zk-disable" *ngIf="isEditPage" item-right>{{persForm.value.pin}}</label>
+				<ion-input *ngIf="!isEditPage" type="text" name="pin" formControlName="pin"></ion-input>
+			</ion-item>
+
+			<ion-item class="pers-add-item pers-gender" >
+			    <ion-label>{{ 'PERS_GENDER'|translate }}</ion-label>
+			    <!--
+			    <ion-select name="gender" interface="action-sheet" [selectOptions]="{cssClass:'base-code-sheet'}" cancelText="{{'COMMON_CANCEL'|translate}}" formControlName="gender">
+			    	<ion-option value="F">{{ 'PERS_FEMALE'|translate }}</ion-option>
+			    	<ion-option value="M">{{ 'PERS_MALE'|translate }}</ion-option>
+			    </ion-select>
+				-->
+				<button ion-button class="pers-dept-btn" color="dark" clear item-end icon-right (click)="setGender()">
+    				{{ genderText|translate }}
+					<ion-icon item-right name="arrow-forward"></ion-icon>
+    			</button>
+			</ion-item>
+
+			<ion-item class="pers-add-item pers-dept-item">
+				<button class="pers-dept-btn " style="padding-top: 0.5rem" color="dark" clear ion-button item-end icon-right (click)="selectDepartment()">
+    				{{persForm.value.deptName|translate}}
+					<ion-icon  name="arrow-forward"></ion-icon>
+    			</button>
+				<ion-label>{{ 'VIS_DEPARTMENT'|translate }}<span class="required">*</span></ion-label>
+			</ion-item>
+
+			<ion-item  class="pers-add-item pers-item-phone">
+				<ion-label>{{ 'VIS_MOBILENO'|translate }}</ion-label>
+				<ion-input item-content type="text" name="mobilePhone" formControlName="mobilePhone">
+				</ion-input>
+				<button (click)="callPhone()" item-end clear ion-button icon-only>
+					<zk-icon name="phone"></zk-icon>
+				</button>
+				<button (click)="callMessage()" item-end clear ion-button icon-only>
+					<zk-icon name="messange"></zk-icon>
+				</button>
+			</ion-item>
+			<ion-item class="pers-add-item">
+				<ion-label>{{ 'PERS_EMAIL'|translate }}</ion-label>
+				<ion-input type="text" name="email" formControlName="email"></ion-input>
+			</ion-item>
+			<ion-item class="pers-add-item">
+				<ion-label>{{ 'PERS_CARDNO'|translate }}</ion-label>
+				<ion-input type="text" name="cardNo" formControlName="cardNo"></ion-input>
+			</ion-item>
+			<ion-item class="pers-add-item">
+				<ion-label>{{ 'COMMON_PSW'|translate }}</ion-label>
+				<ion-input type="password" name="personPwd" formControlName="personPwd"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="hasAcc" class="pers-add-item pers-acclevel">
+				<ion-label>{{ 'PAGE_PERSACCLEVEL'|translate }}</ion-label>
+				<button ion-button class="pers-dept-btn" color="dark" clear item-end icon-right (click)="selectAccLevel(persForm.value,persForm.value.pin)">
+    				{{accLevelsText}}
+					<ion-icon item-right name="arrow-forward"></ion-icon>
+    			</button>
+			</ion-item>
+			
+		</ion-list>
+	</form>
+</ion-content>

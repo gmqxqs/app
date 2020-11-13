@@ -1,0 +1,76 @@
+<!-- ÃÅ½û - Ò³Ãæ -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCDOORREPORT">
+       <button clear ion-button icon-only (click)="searchEvent()">
+        	<zk-icon name="search" style="font-size: 2.4rem;"></zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="acc-door-report-content" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<!-- 下拉刷新器 begin-->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+	      pullingIcon="arrow-dropdown"
+	      pullingText="{{'COMMON_PULLREF'|translate}}"
+	      refreshingSpinner="crescent"
+	      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+	    </ion-refresher-content>
+    </ion-refresher>
+	<!-- 下拉刷新器 end-->
+	<div class="acc-door-report-box">
+		<ion-card class="acc-door-report">
+			<zk-icon name="acc-door" class="acc-door-report-icon">
+			</zk-icon>
+			<h3 class="acc-door-report-area">{{ door.doorName }}</h3>
+			<h3 class="acc-door-report-door">{{ door.areaName }}</h3>
+		</ion-card>
+		<div class="acc-door-report-top">
+			<span>{{ 'ACC_EVENT_LIST'|translate }}</span>
+		</div>
+		<div class="acc-door-report-item" *ngFor="let item of items" tappable (click)="showDetail(item)">
+			<div class="acc-door-report-div">
+				<zk-icon *ngIf="item.status=='normal'" item-left name="OK" class="acc-door-report-icon" [style.background]="'#7AC143'" >
+				</zk-icon>
+				<zk-icon *ngIf="item.status=='warning'" item-left name="acc-link-failure" class="acc-door-report-icon" [style.background]="'#EC910F'" >
+				</zk-icon>
+				<zk-icon *ngIf="item.status=='alarm'" item-left name="acc-alarm" class="acc-door-report-icon" [style.background]="'#ed220F'" >
+				</zk-icon>
+
+				<ion-row class="acc-report-row1">
+					<ion-col col-7>
+						{{ item.eventName }}
+					</ion-col>
+					<ion-col  col-5  class="acc-door-report-time">
+						{{ item.eventTime }}
+					</ion-col>
+				</ion-row>
+
+				<ion-row *ngIf="item.areaName" class="acc-report-row2">
+					<ion-col col-12>
+						{{ 'COMMON_AREA_NAME'|translate }}：{{ item.areaName }}
+					</ion-col>
+				</ion-row>
+				<ion-row *ngIf="item.eventPointName" class="acc-report-row2">
+					<ion-col col-12>
+						{{ 'ACC_DOOR_NAME'|translate }}：{{ item.eventPointName }}
+					</ion-col>
+				</ion-row>
+				
+				<ion-row class="acc-report-row4">
+					<ion-col col-6>
+						{{ 'PERS_PIN'|translate }}：{{ item.pin }}
+					</ion-col>
+					<ion-col col-6>
+						{{ 'COMMON_NAME'|translate }}：{{ item.personName }}
+					</ion-col>
+				</ion-row>
+			</div>	
+		</div>
+		<!-- 上拉加载器 begin -->
+		<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+		   <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+		   </ion-infinite-scroll-content>
+		</ion-infinite-scroll>
+		<!-- 上拉加载器 end -->
+	</div>
+</ion-content>

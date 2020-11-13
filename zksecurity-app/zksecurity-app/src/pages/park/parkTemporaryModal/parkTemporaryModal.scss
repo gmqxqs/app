@@ -1,0 +1,48 @@
+page-parkTemporaryModal{
+  .item-right-color{
+    color:#9F9F9F;
+    text-align: center;
+  }
+  item-title{
+    color:#9F9F9F;
+    font-size: 12px;
+    text-align: center;
+  }
+  zk-icon{
+    float: right;
+    color: #7ac143;
+  }
+
+  .content{
+    background-color: #FFFFFF;
+    height: 100%;
+    border-radius: 8%;
+  }
+  .toolbar-title-md {
+    padding: 0 12px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color:#9F9F9F;
+  }
+  zk-tree .zktree-box .zktree-node .zktree-item {
+    position: relative;
+    padding: 5px 0px 5px 10px;
+    font-size: 1.6rem;
+  }
+  buttonend{
+    display: inline-block;
+    width: 100%;
+  }
+}
+ion-modal.inset-modal {
+  // transparent black background overlay
+  background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 30vh 15vw 45vh 15vw;
+}
+ion-modal.inset-modal1 {
+  // transparent black background overlay
+  //background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 45vh 18vw 30vh 18vw;
+}

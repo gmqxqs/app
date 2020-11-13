@@ -1,0 +1,302 @@
+// Page network sass --网络设置页面样式
+page-network {
+	.header::after {
+		height: 0rem;
+	}
+	.header {
+		.toolbar-background {
+			border-style: none;
+		}
+
+		.back-button.show-back-button {
+			color: #fff;
+		}
+	}
+	.content {
+		background-color: $loginContentColor;
+	}
+	.page-network-item {
+		padding-bottom: 1rem;
+	}
+
+	ion-input {
+	    .text-input {
+	      color:#fff;
+	    }
+	}
+
+	zk-nav-bar {
+	    /**.custom-toolbar-android {
+	        background-color: $loginContentColor;
+	        .custom-toolbar-button-end {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+
+	         .custom-toolbar-android-title {
+	                color: #fff;
+	         	
+	         }
+
+	        .custom-toolbar-button-start {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+	    }
+
+
+	    .custom-toolbar-iosX {
+	        background-color: $loginContentColor;
+	        .c {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+
+	         .custom-toolbar-ios-title {
+	                color: #fff;
+	         	
+	         }
+
+	        .custom-toolbar-button-start {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+	    }**/
+
+
+	    .custom-toolbar {
+	        background-color: $loginContentColor;
+	        .custom-toolbar-button-end {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+
+	         .custom-toolbar-title {
+	                color: #fff;
+	         	
+	         }
+
+	        .custom-toolbar-button-start {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+	    }
+
+
+
+	 }	
+
+	.list { 
+		.item-block:first-child {
+			border-top-style:none;
+		}
+
+		.item {
+			background-color: $loginContentColor;
+			color:#fff;
+			padding-left: 0rem;
+		}
+		.item-block {
+			.item-inner{
+				box-shadow:none;
+				-webkit-box-shadow:none;
+				border-bottom:0.2rem solid #5a616d;
+				zk-icon{
+					color:#5a616d;
+				}
+				.barcode-scan-icon {
+					z-index: 100;
+					font-size: 2rem;
+					padding: 0.8rem 0 0 3rem;
+				}
+				.input-wrapper {
+					.label {
+						color:#5a616d;
+						zk-icon {
+							font-size: 2rem;
+						}
+					}
+					input::-webkit-input-placeholder {
+					  /* WebKit browsers */
+					  color: #5a616d;
+					}
+					input:-moz-placeholder {
+					  /* Mozilla Firefox 4 to 18 */
+					  color: #5a616d;
+					}
+					input::-moz-placeholder {
+					  /* Mozilla Firefox 19+ */
+					  color: #5a616d;
+					}
+					input::-ms-input-placeholder {
+					  /* Internet Explorer 10+ */
+					  color: #5a616d;
+					}
+				}
+			}
+		}
+	}
+	.item.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner{
+	    box-shadow:none;
+		-webkit-box-shadow:none;
+		border-bottom:0.2rem solid #5a616d;
+	}
+	.toolbar-background{
+		background-color: $loginContentColor;
+	}
+	
+	.toolbar-title {
+		color: #fff;
+		text-align: center;
+	}
+
+	/*.form{
+		border:0.1rem solid ;
+		padding:1.5rem;
+	} */
+
+	/*.login-form-box{
+		padding-top: 0px!important;
+		padding-bottom: 0px!important;
+
+	}*/
+
+	/*@media screen and (min-height: 900px){
+		.login-header-bg {
+			text-align: center;
+			height: 35%;
+			width: 100%;
+			font-size: 20rem;
+			background-repeat: no-repeat;
+			background-size: 69% auto;
+			background-position: center center; 
+		}	
+	}
+	
+
+	@media screen and (max-height: 400px){
+		.login-header-bg {
+			text-align: center;
+			height: 5%;
+			width: 100%;
+			font-size: 20rem;
+			background-repeat: no-repeat;
+			background-size: 69% auto;
+			background-position: center center; 
+		}
+	}*/
+
+
+
+	.login-header-bg {
+			text-align: center;
+			height: 35%;
+			width: 100%;
+			font-size: 20rem;
+			background-repeat: no-repeat;
+			background-size: 69% auto;
+			background-position: center center; 
+		}
+	
+	.scroll-content {
+		overflow-y: auto;
+		left: 8%;
+		right: 8%;
+		padding-bottom:0rem!important;
+	}
+	.page-login-version {
+		color: #7c8697;
+		margin-top: 2rem;
+	}
+
+	.page-login-copyright {
+		color: #7c8697;
+		position: absolute;
+		left:0rem;
+		right:0rem;
+		bottom: 0.4rem;
+		font-size: 1rem;
+		.label {
+			margin:0;
+		}
+	}
+	.page-login-btn button {
+		margin-top: 1rem;
+
+	}
+
+	.page-login-btn {
+		.activated {
+			color:#fff;
+		}
+	}
+	
+	.page-login-network {
+		border: 0.2rem solid #5d8449!important;
+		border-right: 0.25rem solid #5d8449!important;
+		color:#7ac143;
+		background-color: $loginContentColor;
+	}
+}
+
+.loader-network {
+	.loading-wrapper {
+		background-color: transparent!important;
+	}
+}
+
+input::-webkit-input-placeholder {
+    font-size: 1.4rem;
+}
+
+
+/**.item.item-select {
+    .input-wrapper {
+        ion-select {
+        	
+            width: 75vw;
+            max-width: unset;
+            position:absolute;
+            margin-left:2.6rem;
+            .select-text {
+                text-align: start;
+            }
+            width:80%;
+             
+        }
+    }
+}**/
+
+/*span .button-inner{
+	margin-left:200px;
+}*/

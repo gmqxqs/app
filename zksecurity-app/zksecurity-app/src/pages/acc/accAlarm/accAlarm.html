@@ -1,0 +1,62 @@
+<!-- 门禁 - 报警页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCALARM"  >
+       <button clear ion-button icon-only (click)="alarmSet()">
+        	<zk-icon color="primary" style="font-size:2.4rem"  float-right name="setting">
+			</zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<div>
+		<ion-label *ngIf="showNoData && items.length == 0" style="line-height: 30" text-center>{{ 'COMMON_NODATA'|translate }}</ion-label>
+		<div *ngFor="let item of items" float-left class="acc-device-item">
+			
+			<div float-left>
+	        	<zk-icon  item-left name="acc-alarm" class="acc-monitor-icon" [style.background]="'#ed220F'" >
+	        	</zk-icon>
+			</div>
+			<div class="acc-device-status">
+				
+				<ion-row class="acc-report-row1">
+					<ion-col col-7>
+						{{ item.eventName }}
+					</ion-col>
+					<ion-col  col-5  class="acc-report-time">
+						{{ item.eventTime }}
+					</ion-col>
+				</ion-row>
+			
+				<div class="acc-device-div">
+					<ion-row *ngIf="item.areaName" class="acc-device-area">
+						<ion-col col-6>
+							{{item.devAlias}}
+						</ion-col>
+						<ion-col col-6>
+							{{item.eventPointName}}
+						</ion-col>
+					</ion-row>
+					<ion-row *ngIf="item.personPin" class="acc-device-per">
+						<ion-col col-6>
+							{{item.personPin}}
+						</ion-col>
+						<ion-col col-6>
+							{{item.personName}}
+						</ion-col>
+					</ion-row>
+				</div>
+    			<ion-checkbox (ionChange)="showAlarmButton(item,$event)"  
+    						class="acc-device-check" float-right checked="false">
+    			</ion-checkbox>
+    		</div>
+		</div>
+	</div>
+</ion-content>
+<ion-footer>
+	<button [disabled]="!isShow" 
+			ion-button block light 
+			class="alarm-button" 
+			(click)="alarm()">
+			{{ 'ACC_ALARM_SURE'| translate }}
+	</button>
+</ion-footer>

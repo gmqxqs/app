@@ -1,0 +1,171 @@
+<ion-header>
+    <zk-nav-bar titleMsg="{{titleName}}">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="goBack()">
+  <form [formGroup]="channelForm">
+    <ion-row class="vis-top row">
+      <ion-col col class="page-item-box"  align="center" >
+        <zk-icon name="passageway" class="vis-img" ></zk-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list class="charge-list-margin">
+          <ion-item class="item-two">
+            <ion-label class="park-channel-inline">{{'PARK_CHANNEL_NAME'|translate}}<div class="point">*</div></ion-label>
+            <ion-input  type="text" name="name" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='accReader'&&states!='PARK_CHARGE_CENTER'" tappable class="item-two" (click)="showParkDoor()">
+            <span item-left>{{'ACC_DOOR_NAME'|translate}}<div class="point">*</div></span>
+            <span item-right class="item-right-color" >
+              {{parkAccDoorName}}<zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='accReader'&&states=='PARK_CHARGE_CENTER'" class="item-two">
+            <span item-left class="item-right-color">{{'ACC_DOOR_NAME'|translate}}</span>
+            <span item-right class="item-right-color" >
+             <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item  class="item-two" tappable (click)="pavilioId()">
+            <ion-label>{{'PARK_PAVILIO_NAEM'|translate}}<div class="point">*</div></ion-label>
+            <span item-right class="item-right-color" >{{parkPavilioName}}</span>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+          <ion-item  class="item-two pers-gender" tappable (click)="selectGender3()">
+            <ion-label>{{'PARK_IMPORTEXPORT_AREA_SET'|translate}}<div class="point">*</div></ion-label>
+            <button *ngIf="lang !== 'zh'" class="select-hide" name="state" ion-button color="light" item-end icon-right >
+              {{states|translate}}
+            </button>
+            <button *ngIf="lang === 'zh'" name="state" ion-button color="light" item-end icon-right >
+              {{states|translate}}
+            </button>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='lprCamera'&&states!='PARK_CHARGE_CENTER'" class="item-two" tappable (click)="ip('ip1')">
+            <span item-left>IPC1_IP<div class="point">*</div></span>
+            <span item-right class="item-right-color" >{{ipType1}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='accReader'&&states!='PARK_CHARGE_CENTER'" class="item-two" tappable (click)="video('videoType1')">
+            <span item-left>{{'PARK_CHANNEL_VIDEO1'|translate}}</span>
+            <span item-right class="item-right-color" >{{videoType1}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="states=='PARK_CHARGE_CENTER'" class="item-two" >
+            <span *ngIf="runningMode=='lprCamera'" class="item-right-color" item-left>
+              IPC1_IP<div class="point">*</div>
+            </span>
+            <span *ngIf="runningMode=='accReader'" class="item-right-color" item-left>{{'PARK_CHANNEL_VIDEO1'|translate}}
+            </span>
+            <span item-right class="item-right-color" >
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item  *ngIf="states!='PARK_CHARGE_CENTER'" class="item-two  pers-gender" tappable (click)="selectIPCIP('avoption1')">
+            <!--<span item-left class="new-line">IPC1{{'PARK_VIDEO_POSITION'|translate}}<div class="point">*</div></span>-->
+            <ion-label *ngIf="runningMode=='lprCamera'">
+              {{'PARK_CHANNEL_IPC1AVOPTION'|translate}}<div class="point">*</div>
+            </ion-label>
+            <ion-label *ngIf="runningMode=='accReader'">
+              {{'PARK_CHANNEL_VIDEO1AVOPTION'|translate}}<div *ngIf="vid1Required" class="point">*</div>
+            </ion-label>
+            <span item-right class="item-right-color" >
+              {{avoption1}}<zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item  *ngIf="states=='PARK_CHARGE_CENTER'" class="item-two" >
+            <span *ngIf="runningMode=='lprCamera'" item-left  class="item-right-color">{{'PARK_CHANNEL_IPC1AVOPTION'|translate}}<div class="point">*</div>
+            </span>
+            <span *ngIf="runningMode=='accReader'" item-left  class="item-right-color">{{'PARK_CHANNEL_VIDEO1AVOPTION'|translate}} 
+            </span>
+            <span item-right class="item-right-color" >
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='lprCamera'&&states!='PARK_CHARGE_CENTER'" class="item-two" tappable (click)="ip('ip2')">
+            <span item-left>IPC2_IP</span>
+            <span item-right class="item-right-color" >{{ipType2}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='accReader'&&states!='PARK_CHARGE_CENTER'" class="item-two" tappable (click)="video('videoType2')">
+            <span item-left>{{'PARK_CHANNEL_VIDEO2'|translate}}</span>
+            <span item-right class="item-right-color" >{{videoType2}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='lprCamera'&&states=='PARK_CHARGE_CENTER'" class="item-two">
+            <span item-left class="item-right-color" >IPC2_IP</span>
+            <span item-right class="item-right-color" >{{ipType2}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="runningMode=='accReader'&&states=='PARK_CHARGE_CENTER'" class="item-two">
+            <span item-left class="item-right-color" >{{'PARK_CHANNEL_VIDEO2'|translate}}</span>
+            <span item-right class="item-right-color" >{{videoType2}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="states!='PARK_CHARGE_CENTER'" class="item-two" tappable (click)="selectIPCIP('avoption2')">
+            <!--<span item-left>IPC2{{'PARK_VIDEO_POSITION'|translate}}</span>-->
+            <ion-label *ngIf="runningMode=='lprCamera'">{{'PARK_CHANNEL_IPC2AVOPTION'|translate}}</ion-label>
+            <ion-label *ngIf="runningMode=='accReader'">
+              {{'PARK_CHANNEL_VIDEO2AVOPTION'|translate}}<div *ngIf="vid2Required" class="point">*</div>
+            </ion-label>
+            <span item-right class="item-right-color" >{{avoption2}}
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item *ngIf="states=='PARK_CHARGE_CENTER'" class="item-two" >
+            <span *ngIf="runningMode=='lprCamera'" item-left class="item-right-color" >{{'PARK_CHANNEL_IPC2AVOPTION'|translate}}
+            </span>
+            <span *ngIf="runningMode=='accReader'" item-left class="item-right-color" >{{'PARK_CHANNEL_VIDEO2AVOPTION'|translate}}
+            </span>
+            <span item-right class="item-right-color" >
+              <zk-icon name="next"></zk-icon>
+            </span>
+          </ion-item>
+          <ion-item  *ngIf="states!='PARK_CHARGE_CENTER'&&states!='PARK_CHARGE_CENTEROUT'" class="item-two pers-gender" tappable (click)="selectGender()">
+            <ion-label>{{'PARK_FIXCAR_GATE_OPENING_WAY'|translate}}<div class="point">*</div></ion-label>
+            <button  name="monthCarOpenType" ion-button color="light" item-end icon-right >
+            {{fixopen|translate}}
+            </button>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+
+          <ion-item *ngIf="states!='PARK_CHARGE_CENTER'&&states!='PARK_CHARGE_CENTEROUT'" class="item-two pers-gender" tappable (click)="selectGender2()">
+            <ion-label>{{'PARK_TEMPORARYCAR_GATE_OPENING_WAY'|translate}}<div class="point">*</div></ion-label>
+            <button  name="tempCarOpenType" ion-button color="light" item-end icon-right >
+            {{tempopen|translate}}
+            </button>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+          <ion-item  *ngIf="states=='PARK_CHARGE_CENTER'||states=='PARK_CHARGE_CENTEROUT'" class="item-two pers-gender" >
+            <ion-label class="item-right-color">
+              {{'PARK_FIXCAR_GATE_OPENING_WAY'|translate}}<div class="point">*</div>
+            </ion-label>
+            <button  name="monthCarOpenType" ion-button color="light" item-end icon-right >
+            {{fixopen|translate}}</button>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+          <ion-item *ngIf="states=='PARK_CHARGE_CENTER'||states=='PARK_CHARGE_CENTEROUT'" class="item-two pers-gender">
+            <ion-label class="item-right-color">
+              {{'PARK_TEMPORARYCAR_GATE_OPENING_WAY'|translate}}<div class="point">*</div>
+            </ion-label>
+            <button  name="tempCarOpenType" ion-button color="light" item-end icon-right >
+            {{tempopen|translate}}
+            </button>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

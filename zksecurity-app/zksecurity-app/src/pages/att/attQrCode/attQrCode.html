@@ -1,0 +1,35 @@
+<!-- 门禁 - 电子工牌二维码页面 -->
+<ion-header>
+	<zk-nav-bar hideBackButton="true" titleMsg="PAGE_ElETRONIC_BADGE">
+		<button button-start clear ion-button icon-only (click)="goBack()">
+            <zk-icon name="nav_back"></zk-icon>
+        </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="pageContent" no-bounce class="no-scroll" (swiperight)="swipeGoBack()">
+	
+	 <!-- <qr-code [value]="'http://www.baidu.com'" [canvas]="'true'"></qr-code> -->
+	<div class="qrcodeDiv">
+			
+			<div  class="qrcodeCanvas"  *ngIf="!booleanShow">
+				<canvas tappable id="qrcode" class="qrcode" (click)="manRefresh()">
+				
+				</canvas>
+
+			</div>
+			<div tappable *ngIf="!booleanShow" id="showRefresh" class="showRefresh" (click)="manRefresh()">
+				<ion-label>
+					<zk-icon id="refreshImg" name="refresh"></zk-icon>
+					<zk-icon id="completedImg" name="completed" style='display: none'></zk-icon>
+					<!-- <zk-icon id="refreshImg" name="completed" style="hidden"></zk-icon> -->
+					<span id="refreshWord">{{'QR_MANNUAL_REFRESH' | translate}}</span>
+				</ion-label>
+			</div>
+			
+
+			
+			
+			
+	</div>
+
+</ion-content>

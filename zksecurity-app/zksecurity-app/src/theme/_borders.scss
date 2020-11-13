@@ -1,0 +1,866 @@
+@media only screen and (max-height: 321px) {
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 0.8px;
+		      }
+		    }
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 0.8px solid #dbdbdf;
+	  		border-right: 0.8px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 0.8px solid #dbdbdf;
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 0.8px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 0.8px;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-persList .list .item,
+	  	page-visSet .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkCarSet .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkcartype .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	page-userSetting .user-set-item1,
+	  	page-mgrNoReserve .list .item,
+	  	page-visLevelInfo .div-right,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	.item-ios.item-block .item-inner {
+	  		border-bottom-width: 0.8px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 0.8px;
+			border-left-color: $zk-border-color;
+	  	}
+
+		page-userSetting .user-set-border,
+		.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrNoReserve .list .item,
+		page-parkcartype .list .item,
+		page-parkdelayoperation .list .item,
+		page-persList .list .item,
+		page-mgrReserve .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 0.8px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 0.8px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 0.8px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 0.8px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 321px) and (max-height: 481px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 1px;
+		      }
+		    }
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 1px solid #dbdbdf;
+	  		border-right: 1px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 1px solid #dbdbdf;
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 1px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 1px;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 1px;
+				}
+			}
+		}
+
+		page-accReport .acc-report-item,
+		page-attMonth .att-month-item,
+		page-accMonitor .acc-monitor-item {
+	  		border-left-width: 1px;
+			border-left-color: $zk-border-color;
+	  	}
+
+		page-accDevice .list .item,
+		page-visSet .list .item,
+		page-accReport .acc-report-div,
+		page-accMonitor .acc-monitor-div,
+		page-parkCardNumDetail .list .item,
+		page-parkPavilioDetail .list .item,
+		page-visRecordDetail .list .item,
+		page-parkChannelDetail .list .item,
+		page-parkChargeInfo .list .item,
+		page-persList .list .item,
+		page-visReserve .list .item,
+		page-userSetting .user-set-item1,
+		page-parkdelayoperation .list .item,
+		page-parkCarSet .list .item,
+		page-parkcartype .list .item,
+		page-mgrReserve .list .item,
+		page-mgrNoReserve .list .item,
+		zk-tree .zktree-box .zktree-sep,
+		page-parkPavilioDetail .list-ios > .item-block:last-child,
+		.item-ios.item-block .item-inner,
+		page-visLevelInfo .div-right{
+	  		border-bottom-width: 1px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrReserve .list .item,
+		page-mgrNoReserve .list .item,
+		page-parkdelayoperation .list .item,
+		page-persList .list .item,
+		page-parkcartype .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 1px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 1px!important;
+	  	}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 1px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 481px) and (max-height: 681px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 1.2px;
+		      }
+		    }
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 1.2px solid #dbdbdf;
+	  		border-right: 1.2px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 1.2px solid #dbdbdf;
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 1.2px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 1.2px;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-parkCarSet .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-userSetting .user-set-item1,
+	  	page-visRecordDetail .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-persList .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkcartype .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-mgrNoReserve .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	.item-ios.item-block .item-inner,
+	  	page-visLevelInfo .div-right{
+	  		border-bottom-width: 1.2px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 1.2px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrReserve .list .item,
+		page-persList .list .item,
+		page-parkdelayoperation .list .item,
+		page-parkcartype .list .item,
+		page-mgrNoReserve .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 1.2px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 1.2px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 1.2px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 1.2px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 681px) and (max-height: 881px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 1.5px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 1.5px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 1.5px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 1.5px solid #dbdbdf;
+	  		border-right: 1.5px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 1.5px solid #dbdbdf;
+	  	}
+
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 1.5px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-persList .list .item,
+	  	page-parkcartype .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-userSetting .user-set-item1,
+	  	page-visReserve .list .item,
+	  	page-mgrNoReserve .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-parkCarSet .list .item,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	.item-ios.item-block .item-inner,
+	  	page-visLevelInfo .div-right{
+	  		border-bottom-width: 1.5px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-parkdelayoperation .list .item,
+		page-parkcartype .list .item,
+		page-persList .list .item,
+		page-mgrNoReserve .list .item,
+		page-mgrReserve .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 1.5px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 1.5px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 1.5px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 1.5px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 881px) and (max-height: 1081px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 1.8px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 1.8px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 1.8px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 1.8px solid #dbdbdf;
+	  		border-right: 1.8px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 1.8px solid #dbdbdf;
+	  	}
+
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-persList .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-userSetting .user-set-item1,
+	  	page-mgrNoReserve .list .item,
+	  	page-parkcartype .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-parkChargeInfo .list .item,
+	  	page-parkCarSet .list .item,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	.item-ios.item-block .item-inner,
+	  	page-visLevelInfo .div-right {
+	  		border-bottom-width: 1.8px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 1.8px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrNoReserve .list .item,
+		page-mgrReserve .list .item,
+		page-persList .list .item,
+		page-parkdelayoperation .list .item,
+		page-parkcartype .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 1.8px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 1.8px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 1.8px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 1.8px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 1081px) and (max-height: 1281px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 2px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 2px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 2px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 2px solid #dbdbdf;
+	  		border-right: 2px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 2px solid #dbdbdf;
+	  	}
+
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 2px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkPavilioDetail .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-parkCardNumDetail .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-persList .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkcartype .list .item,
+	  	page-userSetting .user-set-item1,
+	  	page-mgrNoReserve .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-parkCarSet .list .item,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	.item-ios.item-block .item-inner,
+	  	page-visLevelInfo .div-right {
+	  		border-bottom-width: 2px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrReserve .list .item,
+		page-mgrNoReserve .list .item,
+		page-persList .list .item,
+		page-parkdelayoperation .list .item,
+		page-parkcartype .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 2px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 2px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 2px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 2px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 1281px) and (max-height: 1481px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 2.2px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 2.2px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 2.2px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 2.2px solid #dbdbdf;
+	  		border-right: 2.2px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 2.2px solid #dbdbdf;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 2.2px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-persList .list .item,
+	  	page-parkcartype .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-parkChannelDetail .list .item,
+	  	page-mgrNoReserve .list .item,
+	  	page-parkCarSet .list .item,
+	  	page-userSetting .user-set-item1,
+	  	zk-tree .zktree-box .zktree-sep,
+	  	page-visLevelInfo .div-right,
+	  	.item-ios.item-block .item-inner{
+	  		border-bottom-width: 2.2px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrNoReserve .list .item,
+		page-parkdelayoperation .list .item,
+		page-persList .list .item,
+		page-parkcartype .list .item,
+		page-mgrReserve .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 2.2px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 2.2px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 2.2px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 2.2px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 1481px) and (max-height: 1681px){
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 2.4px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 2.4px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 2.4px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 2.4px solid #dbdbdf;
+	  		border-right: 2.4px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 2.4px solid #dbdbdf;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 2.4px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-mgrNoReserve .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-persList .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-parkChargeInfo .list .item,
+	  	page-parkcartype .list .item,
+	  	page-parkCarSet .list .item,
+	  	page-userSetting .user-set-item1,
+	  	.item-ios.item-block .item-inner,
+	  	page-visLevelInfo .div-right,
+	  	zk-tree .zktree-box .zktree-sep {
+	  		border-bottom-width: 2.4px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrReserve .list .item,
+		page-parkcartype .list .item,
+		page-persList .list .item,
+		page-mgrNoReserve .list .item,
+		page-parkdelayoperation .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 2.4px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 2.4px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 2.4px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 2.4px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}
+
+@media only screen and (min-height: 1681px) {
+	ion-app {
+
+	  	.list {
+		    .item {
+		      .item-inner { 
+		        border-bottom: $zk-border-style;
+		        border-bottom-width: 2.6px;
+		      }
+		    }
+	  	}
+
+	  	.alert-custom .alert-button-group .alert-button {
+	  		border-top: $zk-border-style;
+	  		border-top-width: 2.6px;
+	  		border-right: $zk-border-style;
+	  		border-right-width: 2.6px;
+	  	}
+
+	  	.dl-cus-alert .alert-button:first-child {
+	  		border-top: 2.6px solid #dbdbdf;
+	  		border-right: 2.6px solid #dbdbdf;
+	  	}
+
+	  	.dl-cus-alert .alert-button {
+	  		border-top: 2.6px solid #dbdbdf;
+	  	}
+
+	  	page-accReport .acc-report-item,
+	  	page-attMonth .att-month-item,
+	  	page-accMonitor .acc-monitor-item {
+	  		border-left-width: 2.6px;
+			border-left-color: $zk-border-color;
+	  	}
+
+	  	page-accDevice .list .item,
+	  	page-visSet .list .item,
+	  	page-accReport .acc-report-div,
+	  	page-accMonitor .acc-monitor-div,
+	  	page-parkCardNumDetail .list .item,
+	  	page-parkPavilioDetail .list .item,
+	  	page-parkChargeInfo .list .item,
+	  	page-visReserve .list .item,
+	  	page-parkdelayoperation .list .item,
+	  	page-mgrReserve .list .item,
+	  	page-persList .list .item,
+	  	page-parkcartype .list .item,
+	  	page-visRecordDetail .list .item,
+	  	page-mgrNoReserve .list .item,
+	  	page-parkChannelDetail .list .item,
+	  	page-parkPavilioDetail .list-ios > .item-block:last-child,
+	  	page-visLevelInfo .div-right,
+	  	page-userSetting .user-set-item1,
+	  	page-parkCarSet .list .item,
+	  	.item-ios.item-block .item-inner,
+	  	zk-tree .zktree-box .zktree-sep {
+	  		border-bottom-width: 2.6px;
+			border-bottom-color: $zk-border-color;
+			border-bottom-style: solid;
+	  	}
+
+	  	page-userSetting .user-set-border,
+	  	.picker-ios .picker-toolbar,
+		.picker-ios .picker-above-highlight,
+		page-visReserve .list .item,
+		page-mgrReserve .list .item,
+		page-parkdelayoperation .list .item,
+		page-persList .list .item,
+		page-mgrNoReserve .list .item,
+		page-parkcartype .list .item,
+	  	page-accDoor .acc-door-card {
+	  		border-bottom-width: 2.6px!important;
+	  	}
+
+	  	.picker-ios .picker-below-highlight {
+	  		border-top-width: 2.6px!important;
+	  	}
+
+	  	.person-item-list{
+			.list {
+				.item {
+	    			border-bottom: $zk-border-style;
+		        	border-bottom-width: 2.6px;
+				}
+			}
+		}
+
+		.action-sheet-ios {
+			.action-sheet-button, .action-sheet-title {
+				border-bottom-width: 2.6px;
+				border-bottom-color: $zk-border-color;
+			}
+		} 
+	}
+}

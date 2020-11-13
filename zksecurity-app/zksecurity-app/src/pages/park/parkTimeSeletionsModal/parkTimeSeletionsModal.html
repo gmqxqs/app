@@ -1,0 +1,50 @@
+<ion-content padding class="content" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <h3 style="margin: 1.5rem">
+      <ion-icon color="primary" tappable (click)="dismiss()" style="padding: 0 0.5rem" ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      {{'COMMON_QUERY_BY_TIME'|translate}}
+  </h3>
+  <ion-list radio-group class="set-pers-code">
+    <h5 style="margin: 1.5rem;color:#9F9F9F;">{{'COMMON_DATE'|translate}}</h5>
+    <ion-item>
+      <ion-label>{{'COMMON_TODAY_RECORD'|translate}}</ion-label>
+      <ion-radio  value="1"tappable (click)="selectTime(0)" checked="true"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'COMMON_YESTERDAY_RECORD'|translate}}</ion-label>
+      <ion-radio  value="2" tappable (click)="selectTime(-1)"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'COMMON_NEARLY_THREE_DAYS_RECORD'|translate}}</ion-label>
+      <ion-radio  value="3" tappable (click)="selectTime(2)"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'COMMON_WEEK_RECORD'|translate}}</ion-label>
+      <ion-radio  value="4" tappable (click)="selectTime(3)"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{'COMMON_MONTH_RECORD'|translate}}</ion-label>
+      <ion-radio  value="5" tappable (click)="selectTime(4)"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <h5 style="margin: 1.5rem;color:#9F9F9F;" >{{'COMMON_PERIOD_OF_TIME'|translate}}</h5>
+    <ion-item>
+      <ion-label col-4>{{'COMMON_FROM'|translate}}</ion-label>
+      <ion-label  col-8 class="item-left-color">{{startTime}}</ion-label>
+      <!--<span item-left>{{'COMMON_FROM'|translate}}</span>
+      <span item-right class="item-left-color">{{startTime}}</span>-->
+    </ion-item>
+    <ion-item style="margin-bottom: 4rem">
+      <ion-label col-4>{{'COMMON_TO'|translate}}</ion-label>
+      <ion-label  col-8 class="item-left-color">{{endTime}}</ion-label>
+      <!--<span item-left>{{'COMMON_TO'|translate}}</span>
+      <span item-right class="item-left-color">{{endTime}}</span>-->
+    </ion-item>
+  </ion-list>
+  <ion-footer style="padding: 0px">
+    <button ion-button block class="view-report" (click)="searchByTime()">{{'COMMON_VIEW_REPORTS'|translate}}
+    </button>
+  </ion-footer>
+
+</ion-content>
+

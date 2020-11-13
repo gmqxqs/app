@@ -1,0 +1,114 @@
+// Page parkCardNum sass --车牌授权页面样式
+page-parkCardNum {
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+
+  .carNo{
+    float:left;
+  }
+  .importExport-area1{
+    color:#BBBBBB;
+    width: 70%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+
+  .enterTime{
+    color:#BBBBBB;
+  }
+
+  .delete{
+    width:10rem;
+    background: red;
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color:#eee;
+  }
+  .charge{
+    color: green;
+    float: right;
+  }
+
+  .item {
+    margin: 0.5rem;
+    padding: 0 !important;
+    .input-wrapper {
+      border-color: greenyellow;
+    }
+  }
+
+  .item1 {
+    margin: 0.5rem;
+    padding: 0 !important;
+    .input-wrapper {
+      border-color: orange;
+    }
+  }
+
+  .popover{
+    background: red;
+    float: right;
+  }
+
+  .input-wrapper {
+    border-left-style: solid;
+    border-width: 5px;
+    border-color: #2ec95c;
+  }
+
+  .label-md {
+    margin: 13px 8px 13px 5px;
+  }
+  // 标签 - 绿色
+  .signs-green {
+    display: inline-block;
+    float: right;
+    padding: 2px 6px;
+    margin-right: 5px;
+    background: #7AC143;
+    transform: skew(-18deg);
+  }
+
+  // 标签 - 黄色
+  .signs-yellow {
+    display: inline-block;
+    float: right;
+    padding: 2px 6px;
+    margin-right: 5px;
+    background: #FEB52F;
+    transform: skew(-18deg);
+  }
+
+  // 标签 - 子内容
+  .signs-son {
+    font-size: 1.4rem;
+    color: #FFFFFF;
+    transform: skew(18deg);
+    background: transparent;
+  }
+
+  h3{
+    display: inline-block;
+  }
+  .circle1 {
+    width: 6px;
+    height: 6px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin:4px 6px;
+  }
+
+}
+
+
+

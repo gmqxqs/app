@@ -1,0 +1,48 @@
+<!-- 停车场 - 通道页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PAGE_PARKCHANNEL">
+      <button clear ion-button icon-only (click)="add()">
+          <ion-icon color="primary" style="font-size:4.5rem"  float-right name="add">
+          </ion-icon>
+      </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let item of items" >
+      <ion-item tappable (click)="showDetail(item)">
+        <div class="page-item-box">
+          <zk-icon name="passageway" [style.background]="'#7ac143'" [style.border-color]="'#7ac143'">
+          </zk-icon>
+        </div>
+        <div class="page-item-text">
+          <h3 ><span class="channel">{{item.name}}</span></h3>
+          <h6 class="fixed">{{'PARK_PAVILIO_NAEM'|translate}}:{{item.parkPavilioName}}</h6>
+          <h6 class="fixed">{{'PARK_IMPORTEXPORT_AREA_SET'|translate}}:{{item.state|parkstate|translate}}</h6>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <!--<button class="open" *ngIf="item.state!=5 &&item.opengagebyhandFlag==1" outline (click)="showGate_Alert(item)">{{'PARK_MANNAL_GATE_OPENING'|translate}}</button>-->
+        <button class="delete" outline (click)="showAlert(item)">{{'COMMON_DEL'|translate}}</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+    </ion-label>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

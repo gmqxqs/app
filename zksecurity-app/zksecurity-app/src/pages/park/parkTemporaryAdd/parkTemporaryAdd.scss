@@ -1,0 +1,15 @@
+page-parkTemporaryAdd{
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .item-overflow{
+    width: 80%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+}

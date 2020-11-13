@@ -1,0 +1,79 @@
+<!-- 人事 - 人事页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_PERSLIST">
+       <button clear ion-button icon-only (click)="addPerson()">
+        <ion-icon style="font-size: 4.5rem" name="add"></ion-icon>
+      </button>
+  	</zk-nav-bar>
+	<ion-row align-items-baseline>
+		<ion-col col-12>
+			<ion-item no-lines style="background-color: #eee">
+				<div item-start style="white-space: nowrap;">{{ 'COMMON_SUM'|translate }}: {{personCount}}</div>
+				<ion-searchbar item-content [(ngModel)]="filter" placeholder="{{'COMMON_NAME'|translate}},{{'PERS_PIN'|translate}}" (ionInput)="search($event)">
+				</ion-searchbar>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	
+	<!-- 下拉刷新器 begin-->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+	      pullingIcon="arrow-dropdown"
+	      pullingText="{{'COMMON_PULLREF'|translate}}"
+	      refreshingSpinner="crescent"
+	      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+	    </ion-refresher-content>
+    </ion-refresher>
+	<!-- 下拉刷新器 end-->
+	<ion-list no-lines>
+		<ion-item-sliding *ngFor="let item of items">
+			<ion-item tappable (click)="showDetail(item)">
+				<ion-avatar item-start>
+					<img [src]="item.photoImg">
+				</ion-avatar>
+				<h4 *ngIf="lang !== 'zh'">
+					<label class="page-person-label">{{'COMMON_NAME'|translate}}:</label>
+					{{item.name}}&nbsp;{{item.lastName}}
+				</h4>
+				<h4 *ngIf="lang === 'zh'">
+					<label class="page-person-label">{{'COMMON_NAME'|translate}}:</label>
+					{{item.name}}
+				</h4>
+				<h4>
+					<label class="page-person-label">{{'PERS_PIN'|translate}}:</label>
+					{{item.pin}}
+				</h4>
+				<h4 item-end>
+					<zk-icon [style.color]="item.fingerTemplateCount?'#7ac143':'#848684'"
+							class="page-person-icon" 
+							name="fingerprint">
+					</zk-icon>
+					<zk-icon [style.color]="item.cardNo?'#7ac143':'#848684'"
+							class="page-person-icon" 
+							name="card">
+					</zk-icon>
+					<zk-icon [style.color]="item.personPwd?'#7ac143':'#848684'"
+							class="page-person-icon" 
+							name="password">
+					</zk-icon>
+				</h4>
+			</ion-item>
+			<ion-item-options>
+				<button ion-button color="danger" icon-start (click)="delPerson(item)">
+	        		{{'COMMON_DEL'|translate}}
+	        	</button>
+			</ion-item-options>
+		</ion-item-sliding>
+		<ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+		</ion-label>
+	</ion-list>
+
+	<!-- 上拉加载器 begin -->
+	<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+	   <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+	   </ion-infinite-scroll-content>
+	</ion-infinite-scroll>
+	<!-- 上拉加载器 end -->
+</ion-content>

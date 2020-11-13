@@ -1,0 +1,107 @@
+<ion-header>
+  <zk-nav-bar titleMsg="VIS_DETAILS">
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-row class="vis-top row" *ngIf="data.visState == 0">
+    <ion-col col class="page-item-box" align="center" col-12>
+      <zk-icon name="vis-appointment-ing" class="vis-img"></zk-icon>
+      <div class="vis-title">{{'VIS_CHECK_IN'|translate}}</div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="vis-top row" *ngIf="data.visState == 1">
+    <ion-col col class="page-item-box1" align="center" col-12>
+      <zk-icon name="vis-appointment-already" class="vis-img1"></zk-icon>
+      <div class="vis-title">{{'VIS_LEAVE'|translate}}</div>
+    </ion-col>
+  </ion-row>
+  <ion-row class="vis-top row" *ngIf="data.visState == 2">
+    <ion-col col class="page-item-box2" align="center" col-12>
+      <zk-icon name="vis-appointment-abate" class="vis-img2"></zk-icon>
+      <div class="vis-title">{{'VIS_ERROR'|translate}}</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p style="color:#BABABA">{{'VIS_INTERVIEWEEINFO'|translate}}</p>
+      <ion-list>
+        <ion-item class="charge-list-margin">
+          <span item-left>{{'VIS_NAME'|translate}}</span>
+          <span item-right class="vis-span-right">{{data.visitedEmpName}}<span
+            *ngIf="data.visitedEmpPin!=null && data.visitedEmpPin!=''">({{data.visitedEmpPin}})</span>
+          </span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_DEPARTMENT'|translate}}</span>
+          <span item-right class="vis-span-right">{{visitedEmpDept}}</span>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p style="color:#BABABA">{{'VIS_VISITPEOPLEINFO'|translate}}</p>
+      <ion-list>
+        <ion-item>
+          <span *ngIf="lang === 'zh'" item-left>{{'COMMON_NAME'|translate}}</span>
+          <span *ngIf="lang !== 'zh'" item-left>{{'COMMON_FIRSTNAME'|translate}}</span>
+          <span item-right class="vis-span-right">{{data.visEmpName}}</span>
+        </ion-item>
+
+        <ion-item *ngIf="lang !== 'zh'">
+          <span item-left>{{'PERS_LASTNAME'|translate}}</span>
+          <span item-right class="vis-span-right">{{data.visEmpLastName}}</span>
+        </ion-item>
+
+        <ion-item>
+          <span item-left>{{'VIS_COMPANY'|translate}}</span>
+          <span item-right class="vis-span-right">{{visitorCompany}}</span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_VISITINGTIME'|translate}}</span>
+          <span item-right class="item-right-color">{{data.enterTime}}</span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_LTIME'|translate}}</span>
+          <span item-right class="item-right-color">{{data.exitTime}}</span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_IDTYPE'|translate}}</span>
+          <span item-right class="item-right-color">{{visitorCertTypeName}}</span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_IDNO'|translate}}</span>
+          <span item-right class="item-right-color">{{visitorCertNumber}}</span>
+        </ion-item>
+        <ion-item>
+          <span item-left>{{'VIS_MOBILENO'|translate}}</span>
+          <span item-right class="item-right-color">{{visitorPhone}}
+          </span>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <p style="color:#BABABA">{{'VIS_RECORD_INFO'|translate}}</p>
+      <ion-list>
+        <ion-item tappable (click)="preview(visitorCertPhoto)">
+          <span item-left>{{'VIS_ID_PHONE'|translate}}</span>
+          <ion-img item-right width="50" height="50" src="{{visitorCertPhoto}}"></ion-img>
+        </ion-item>
+        <ion-item tappable (click)="preview(visitorEnterPhoto)">
+          <span item-left>{{'VIS_ENTER_PHONE'|translate}}</span>
+          <ion-img item-right width="50" height="50" src="{{visitorEnterPhoto}}"></ion-img>
+        </ion-item>
+        <ion-item tappable (click)="preview(visitorExitPhoto)">
+          <span item-left>{{'VIS_EDIT_PHONE'|translate}}</span>
+          <ion-img item-right width="50" height="50" src="{{visitorExitPhoto}}"></ion-img>
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+  
+</ion-content>
+<div *ngIf="showPreview" tappable (click)="closeView()" class="vis-view-box">
+  <img [src]="previewSrc"/>
+</div>

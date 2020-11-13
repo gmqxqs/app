@@ -1,0 +1,43 @@
+<div [ngClass]="['zktree-box',cssClass, isChild?'':'zktree-root']">
+	<div *ngIf="!isChild && displayLines" [style.left]="(-2*num) + 'rem'" class="zktree-sep"></div>
+	<div class="zktree-node" *ngFor="let item of items">
+		<div [ngClass]="{'zktree-item':true,'zktree-selected': item.selected && item.selected!=='false'}" 
+			 tappable (click)="_nodeClick($event,item)">
+			<ion-icon class="zktree-open-icon" *ngIf="!hideNodeIcon && !closeIcon && !openIcon && _getProp(item, 'children') && _getProp(item, 'children').length>0" 
+			[name]="getOpenFlag(item)?'md-arrow-dropdown':'md-arrow-dropright'">
+			</ion-icon>
+			<zk-icon class="zktree-open-icon" *ngIf="!hideNodeIcon && closeIcon && openIcon && _getProp(item, 'children') && _getProp(item,'children').length>0" [name]="getOpenFlag(item)?openIcon:closeIcon">
+			</zk-icon>
+			<!--
+			<div class="zktree-empty" *ngIf="hideNodeIcon || !_getProp(item,'children') || _getProp(item,'children').length===0"></div>-->
+			<ion-icon class="zktree-empty" *ngIf="hideNodeIcon || !_getProp(item,'children') || _getProp(item,'children').length===0" name="md-arrow-dropright">
+			</ion-icon>
+			<zk-icon *ngIf="item.icon" [name]="item.icon"></zk-icon>
+			<span class="zktree-text">{{_getProp(item,'text')}}</span>
+			<ion-icon *ngIf="!hideCheckedIcon && !radioIcon && !checkedIcon" [name]="radio?'checkmark-circle':'checkbox'"
+			[ngClass]="{'zktree-checked':item.checked,'zktree-unchecked':!item.checked}" tappable (click)="_checkedClick($event,item)">
+			</ion-icon>
+			<zk-icon *ngIf="!hideCheckedIcon && (radioIcon || checkedIcon)" [name]="radioIcon?radioIcon:checkedIcon" [ngClass]="{'zktree-checked':item.checked,'zktree-unchecked':!item.checked}" tappable (click)="_checkedClick($event,item)">
+			</zk-icon>
+		</div>
+		<div *ngIf="displayLines" [style.left]="(-2*num) + 'rem'" [ngClass]="{'zktree-sep':true,'zktree-sep-selected': item.selected}"></div>
+		<zk-tree class="zktree-child" 
+				 [radio]="radio"
+				 [item]="item"
+				 [num]="num"
+				 [displayLines]="displayLines"
+				 [cascadeCheck]="cascadeCheck" 
+				 [radioIcon]="radioIcon"
+				 [checkedIcon]="checkedIcon"
+				 [closeIcon]="closeIcon"
+				 [openIcon]="openIcon"
+				 [hideCheckedIcon]="hideCheckedIcon"
+				 [hideNodeIcon]="hideNodeIcon"
+				 [parentTree]="this"
+				 [props]="props"
+				 [isChild]="true"
+				 *ngIf="getOpenFlag(item) && _getProp(item,'children') && _getProp(item,'children').length>0" 
+		[data]="_getProp(item,'children')">
+		</zk-tree>
+	</div>
+</div>

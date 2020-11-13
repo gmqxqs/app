@@ -1,0 +1,66 @@
+<!-- 访客 - 权限组管理页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_VISLEVEL">
+      <button clear ion-button icon-only>
+         <span class="vis-button" tappable (click)="select()">
+            <zk-icon name="search" style="font-size: 2.4rem"></zk-icon>
+          </span>
+          <span class="vis-button" tappable (click)="more($event)">
+            <zk-icon name="common-more" style="font-size: 2.4rem"></zk-icon>
+          </span>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items" >
+      <ion-item *ngIf="item.visLevelModule=='ele'" tappable (click)="selectItem(item)">
+        <div class="item-top">
+          <div class="circle1"></div>
+          {{item.visLevelName}}
+        </div>
+        <div class="item-bottom">
+          <zk-icon name="vis-module"></zk-icon>
+          <span>{{'ELE'|translate}}</span>
+          <zk-icon name="vis-numberofpeople" class="num"></zk-icon>
+          <span *ngIf="lang === 'zh'">{{item.totalCount}}人</span>
+          <span *ngIf="lang !== 'zh'">{{item.totalCount}}</span>
+        </div>
+      </ion-item>
+      <ion-item *ngIf="item.visLevelModule!='ele'" tappable (click)="selectItem(item)">
+        <div class="item-top">
+          <div class="circle2"></div>
+          {{item.visLevelName}}
+        </div>
+        <div class="item-bottom">
+          <zk-icon name="vis-module"></zk-icon>
+          <span>{{'ACC'|translate}}</span>
+          <zk-icon name="vis-numberofpeople" class="num"></zk-icon>
+          <span *ngIf="lang === 'zh'">{{item.totalCount}}人</span>
+          <span *ngIf="lang !== 'zh'">{{item.totalCount}}</span>
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <button class="delete" outline (click)="showAlert(item)">{{'COMMON_DEL'|translate}}</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+    </ion-label>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

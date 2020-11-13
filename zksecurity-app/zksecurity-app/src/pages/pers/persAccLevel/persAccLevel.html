@@ -1,0 +1,16 @@
+<!-- 门禁权限 - 页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_PERSACCLEVEL">
+       <button clear ion-button icon-only (click)="save()">
+        	<zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="pers-acclevel-color" no-bounce class="no-scroll" (swiperight)="goBack()">
+		<ion-list class="ion-list-acclevel">
+			<ion-item *ngFor="let item of items">
+				<ion-label>{{item.accLevelName}}</ion-label>
+	    		<ion-checkbox item-right [(ngModel)]="item.selected"></ion-checkbox>
+			</ion-item>
+		</ion-list>
+</ion-content>

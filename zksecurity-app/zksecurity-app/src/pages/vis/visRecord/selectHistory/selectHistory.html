@@ -1,0 +1,85 @@
+<!-- 历史记录---搜索页面-->
+<ion-header>
+  <zk-nav-bar>
+    <ion-row align-items-baseline>
+      <ion-col class="person-list-search" col-12 class="person-list-search">
+         <ion-item no-lines>
+            <ion-searchbar class="search-event" (keydown)="onInput($event)"  placeholder="{{'VIS_RESERVE_HINT'|translate}}" [(ngModel)]="filters">
+            </ion-searchbar>
+            <div item-end>
+              <button ion-button clear
+                  class="btn_search"
+                  (click)="search()">
+                  {{'COMMON_SEARCH'|translate}}
+              </button>
+              <button ion-button clear
+                  class="btn_cancel"
+                  (click)="cancle()">
+                  {{'COMMON_CANCEL'|translate}}
+              </button>
+            </div>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+ </zk-nav-bar>
+
+</ion-header>
+<ion-content has-subheader="false" class="searh-background" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-list radio-group class="set-pers-code">
+    <ion-item class="no-line search-by-time" tappable (click)="historyShowHideTime()">
+      <button ion-button color="light" item-end icon-right >
+        <ion-icon item-right [name]="isTimeShow? 'arrow-up' : 'arrow-down'"></ion-icon>
+      </button>
+      <ion-label >{{ 'COMMON_QUERY_BY_TIME'|translate }}</ion-label>
+    </ion-item>
+
+    <div *ngIf="isTimeShow">
+      <ion-item class="search-time-title">{{ 'COMMON_DATE'|translate }}</ion-item>
+      <ion-item>
+        <ion-label>{{ 'COMMON_TODAY_RECORD'|translate }}</ion-label>
+        <ion-radio  value="1" tappable (click)="selectTime(0)" checked="true"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'COMMON_YESTERDAY_RECORD'|translate }}</ion-label>
+        <ion-radio  value="2" tappable (click)="selectTime(-1)"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'COMMON_NEARLY_THREE_DAYS_RECORD'|translate }}</ion-label>
+        <ion-radio  value="3" tappable (click)="selectTime(2)"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'COMMON_WEEK_RECORDALL'|translate }}</ion-label>
+        <ion-radio  value="4" tappable (click)="selectTime(3)"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'COMMON_MONTH_RECORDALL'|translate }}</ion-label>
+        <ion-radio  value="5" tappable (click)="selectTime(4)"></ion-radio>
+      </ion-item>
+
+      <ion-item class="search-time-title">{{ 'COMMON_PERIOD_OF_TIME'|translate }}</ion-item>
+
+      <ion-item>
+        <ion-label>{{ 'COMMON_FROM'|translate }}</ion-label>
+        <ion-input class="time-left" [(ngModel)]="startTime" text-right [disabled]="true">{{startTime}}-</ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>{{ 'COMMON_TO'|translate }}</ion-label>
+        <ion-input class="time-right" [(ngModel)]="endTime" text-right [disabled]="true">{{endTime}}</ion-input>
+      </ion-item>
+      <button ion-button block class="view-report" (click)="searchByTime()">{{ 'COMMON_VIEW_REPORTS'|translate }}</button>
+
+    </div>
+  </ion-list>
+  <ion-list no-lines>
+    <ion-item class="item-title">
+      {{'VIS_SELECTCONTENT'|translate}}
+    </ion-item>
+    <ion-item class="item-content" [style.font-weight]="item.criteriaCore == criteriaCore ? 'bold':'normal'" *ngFor="let item of items" tappable (click)="select(item)">
+      {{item.criteriaName|translate}}
+    </ion-item>
+  </ion-list>
+</ion-content>

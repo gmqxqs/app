@@ -1,0 +1,157 @@
+// Page accDoorReport sass --
+page-accDoorReport {
+	.acc-door-report.card-ios, .acc-door-report.card-md{
+		background:#fff;
+		text-align:center;
+		margin:0;
+		width:100%;
+		border:0;
+		border-bottom:0.55px solid #E9E9E9;
+		-webkit-box-shadow:none; 
+    	box-shadow:none; 
+	}
+
+	.acc-door-report zk-icon{
+		line-height:8rem;
+    	border-radius: 50%;
+    	text-align: center;
+   		font-size: 3.6rem;
+    	color: #fff;
+    	padding: 1rem 1.6rem;
+    	border:0.4rem;
+    	background:#A1B8C5;
+	}
+
+	.acc-door-report h3{
+		text-align:center;
+		margin:0;
+		line-height:2rem;
+	}
+
+	.acc-door-report-content{
+		.scroll-content {
+			.acc-door-report-box {
+				background-color: #fff;
+				position: relative;
+				top: $zk-top-width;
+				width: 100%;
+			}
+		}
+	}
+
+	.acc-door-report-door{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-door-report-item{
+		border-left:1px solid #DFE1DD;	
+		margin:0 0 0 3rem;
+	}
+	 .acc-door-report-item:active {
+	    background-color:$zk-active-color;
+	 }
+
+	.acc-door-report-div{
+		margin:0 0 0 2rem;
+		border-bottom:1px solid #DFE1DD;
+		//padding-bottom:0.8rem;	
+		padding-right:0.8rem;
+	}
+
+	.acc-door-report-top{
+		//border-left:1px solid #DFE1DD;
+		padding:$zk-padding-width 0 0 0.6rem;
+	}
+
+	.acc-door-report-top span{
+  		color:#fff;
+  		background:#7AC143;
+  		border-radius:1rem;	
+  		width:6rem;
+		//height:1.7rem;
+		//line-height:1.7rem;
+		display: block;
+		text-align:center;
+		font-size:1rem;
+	}
+
+	.acc-door-report-item.item-ios{
+
+	}
+
+	.acc-door-report-icon{
+		//font-size:2rem;
+	}
+
+	.acc-door-report-item .acc-door-report-icon {
+	    line-height: 3rem;
+	    //display: inline-block;
+	    border-radius: 50%;	
+	    text-align:center;
+	    font-size:1.7rem;
+	    color:#fff;
+	    position: relative;
+	    left:-3.3rem;
+	    top:1rem;
+	    padding:0.3rem 0.6rem;
+	}
+
+	.acc-door-report-item p{
+		height:2rem;
+		line-height:1.7rem;
+		height:1.7rem;
+		font-size:1.2rem;
+		margin:0 0 0 0;
+		color:#C5C5C5;
+	}
+
+	.acc-door-report-item h6,.acc-report-row1{
+		//margin:-2rem 0 0 0;
+		line-height:2.4rem;
+		font-size:1.7rem;
+		margin-top: -1.7rem;
+	}
+	.acc-door-report-item p,.acc-report-row2,.acc-report-row3,.acc-report-row4{
+		//line-height:1.7rem;
+		//height:1.7rem;
+		font-size:1.2rem;
+		margin:0 0 0 0;
+		color:#C5C5C5;
+
+	}
+
+	.acc-door-report-item [col-12], .acc-door-report-item [col-5],.acc-door-report-item [col-2],.acc-door-report-item [col-6]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-door-report-item [col-7]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-door-report-time{
+		//float:right;
+		text-align:right;
+		font-size:1.2rem;
+		color:#D3D3D3;
+	}
+
+	.acc-door-report-pin{
+		margin-right:2rem;
+	}
+
+	.acc-door-report-right-icon {
+    	font-size: 1.8em;
+    	color: #7ac143;
+	}
+}

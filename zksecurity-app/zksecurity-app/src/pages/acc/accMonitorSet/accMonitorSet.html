@@ -1,0 +1,21 @@
+<!-- ÃÅ½û - Ò³Ãæ -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCMONITORSET">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-list>
+		<ion-item>
+			<ion-label>{{ 'ACC_STATUS_NORMAL'|translate }}</ion-label>
+			<ion-toggle [formControl]="normal" checked="normal" (onChange)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'ACC_SATUS_ERROR'|translate }}</ion-label>
+			<ion-toggle [formControl]="warning" checked="warning" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'ACC_STATUS_ALARM'|translate }}</ion-label>
+			<ion-toggle [formControl]="alarm" checked="alarm" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+	</ion-list>
+</ion-content>

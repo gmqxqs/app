@@ -1,0 +1,44 @@
+<!-- 停车场 - 车辆详情页面 -->
+<ion-content has-subheader="false" class="transparent-header" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-header>
+    <zk-nav-bar titleMsg="PARK_INCARDETAIL">
+    </zk-nav-bar>
+  </ion-header>
+  <div id="profile-bg" *ngIf="car.photoPathIn" [style.background-image]="'url(data:image/png;base64,' + removeSpace(car.photoPathIn)+')'">
+  </div>
+  <div id="profile-bg" *ngIf="!car.photoPathIn" [style.background-image]="'url(' + serverUrl +'/park/images/carnumber_blank.png)'">
+  </div>
+  <div id="content">
+    <ion-list no-lines>
+      <ion-item>
+        <span item-left>{{'PARK_NAME'|translate}}</span>
+        <span item-right class="item-right-color">{{car.parkingLotName}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_CARDNUM'|translate}}</span>
+        <span item-right class="item-right-color">{{car.carNumber}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_REGISTER_TYPE'|translate}}</span>
+        <span item-right class="item-right-color">{{car.parkCarType}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_EINLASS'|translate}}</span>
+        <span item-right class="item-right-color">{{car.checkInTime}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_CHANNEL_NAME'|translate}}</span>
+        <span item-right class="item-right-color">{{car.channelName}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_IMPORTEXPORT_AREA_SET'|translate}}</span>
+        <span item-right class="item-right-color">{{car.channelState|translate}}</span>
+      </ion-item>
+      <ion-item>
+        <span item-left>{{'PARK_EVENT_TYPE'|translate}}</span>
+        <span item-right class="item-right-color">{{car.eventType|translate}}</span>
+      </ion-item>
+
+    </ion-list>
+  </div>
+</ion-content>

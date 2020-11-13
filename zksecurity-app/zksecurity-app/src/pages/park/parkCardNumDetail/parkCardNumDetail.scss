@@ -1,0 +1,88 @@
+page-parkCardNumDetail {
+
+  ::-webkit-scrollbar { //去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .charge-list-margin {
+    margin-top: $zk-top-width;
+  }
+  .item-two{
+    width:100%;
+    background:#fff;
+  }
+
+  .item-two:first-child {
+    margin-top: $zk-top-width;
+  }
+
+  .item-right-color {
+    color: #999999;
+  }
+  .item-right-color [item-left] {
+    color: #000;
+  }
+  .list {
+    .item {
+      border-bottom: $zk-border-style;
+      .item-inner {
+        border-bottom-width: 0;
+      }
+    }
+  }
+  .item-right-color1 {
+    color: #9F9F9F;
+    text-align: right;
+    width: 150px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin: 0px;
+  }
+
+  .vis-top {
+    width: 100%;
+    background-color: #ffffff;
+    color: #2F2F2F;
+  }
+  .vis-img {
+    background-color: #7ac143;
+    color: #ffffff;
+    width: 100px;
+    height: 100px;
+  }
+  .page-item-box {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;
+    zk-icon {
+      line-height: 8rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      background-color: #7ac143;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+    }
+  }
+  .car-title {
+    font-size: 18px;
+  }
+  .next {
+    background-color: transparent;
+  }
+  .circle1 {
+    width: 6px;
+    height: 6px;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin:4px 6px;
+  }
+
+}

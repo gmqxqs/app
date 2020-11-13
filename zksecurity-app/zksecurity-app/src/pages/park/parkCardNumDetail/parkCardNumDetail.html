@@ -1,0 +1,64 @@
+<!-- 停车场 - 固定车牌授权详情页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PARKCARDNUMDETAIL">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="goBack()">
+  <form [formGroup]="cardNumForm">
+    <ion-row class="vis-top row">
+      <ion-col col class="page-item-box" align="center">
+        <zk-icon name="park-car" class="vis-img"></zk-icon>
+        <div class="car-title">{{car['personName']}}
+          <div *ngIf="parkingLotModel=='one'" class="circle1"></div>
+          {{car['carNumber']}}
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col style="padding: 0;">
+        <ion-list>
+          <ion-item class="item-two" *ngIf="displayParkingSpace=='true'" tappable (click)="spaceSelection()">
+            <ion-label>{{'PRAK_SPACE'|translate}}</ion-label>
+            <span item-right class="item-right-color">{{spaceName}}
+              </span>
+            <zk-icon item-right name="next" style="color: #999999;"></zk-icon>
+          </ion-item>
+          <ion-item class="charge-list-margin item-two" tappable (click)="entranceArea()">
+            <span item-left>{{'PARK_IMPORTEXPORT_AREA'|translate}}</span>
+            <span item-right class="item-right-color1">{{car['entranceAreaName']}}
+            </span>
+            <zk-icon item-right name="next" style="color: #999999;"></zk-icon>
+          </ion-item>
+          <ion-item class="item-right-color">
+            <span item-left>{{'PARK_CARTYPE'|translate}}</span>
+            <span item-right>{{car['parkCarTypeName']}}
+               <zk-icon name="next"></zk-icon>
+          </span>
+          </ion-item>
+          <ion-item class="item-right-color">
+            <span item-left>{{'PARK_START_TIME'|translate}}</span>
+            <span item-right>{{car['stratTime']}}
+          <zk-icon name="vis-calendar"></zk-icon>
+          </span>
+          </ion-item>
+          <ion-item class="item-right-color">
+            <span item-left>{{'PARK_EXIT_TIME'|translate}}</span>
+            <span item-right>{{car['endTime']}}
+            <zk-icon name="vis-calendar"></zk-icon>
+          </span>
+          </ion-item>
+          <ion-item class="charge-list-margin item-right-color">
+            <span item-left>{{'PARK_COLLECT_MONEY'|translate}}</span>
+            <span item-right>{{car['debt']}}
+            <span item-right>{{customCurrency}}</span>
+          </span>
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

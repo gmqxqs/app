@@ -1,0 +1,70 @@
+<ion-header>
+	<ion-navbar hideBackButton="true">
+		<ion-title></ion-title>
+	</ion-navbar>
+</ion-header>
+<ion-content has-subheader="false"  no-bounce class="no-scroll">
+	<div class="login-header-bg" 
+		[style.background-image]="'url('+logo+')'"
+		[style.background-size]="imgLang=='zh'?'69% auto': 'auto 60%'">
+	</div>
+
+	<div class="typeChoose">
+		<ion-label>
+			<span tappable *ngIf="translate.currentLang==='zh'" id="adminspan" class="adminspan" (click)="chooseAdmin()">{{'COMMON_LOGINTYPE_ADMIN' | translate}}</span>
+			<span tappable *ngIf="translate.currentLang==='en'" id="adminspan" class="adminspan" (click)="chooseAdmin()">{{'COMMON_LOGINTYPE_ADMIN' | translate}}</span>
+			<span tappable *ngIf="translate.currentLang==='es'" id="adminspan" class="adminspanEs" (click)="chooseAdmin()">{{'COMMON_LOGINTYPE_ADMIN' | translate}}</span>
+			<span tappable *ngIf="translate.currentLang==='po'" id="adminspan" class="adminspan" (click)="chooseAdmin()">{{'COMMON_LOGINTYPE_ADMIN' | translate}}</span>
+			<span class="linespan"></span>
+			<span tappable id="userspan" class="userspan" (click)="chooseUser()">{{'COMMON_LOGINTYPE_PER' | translate}}</span>
+		</ion-label>
+	</div>
+	<br>
+	<br>
+	<form [formGroup]="form">
+		<div padding class="login-form-box">
+			<ion-list >
+				<ion-item>
+					 <ion-label [style.max-size]="imgLang=='zh'?'20rem': '30rem'"><zk-icon name="admin" fixed></zk-icon></ion-label>
+					 <ion-input tappable type="text" name="username" formControlName="username"
+					  (ionFocus)="inputFocus()"
+					  (ionBlur)="inputBlur()"
+					 	placeholder="{{'LOGIN_INPUT_USER'| translate}}">
+					 </ion-input>
+				</ion-item>
+				<ion-item>
+				 	 <ion-label [style.max-size]="imgLang=='zh'?'20rem': '30rem'"><zk-icon name="zk-password" fixed></zk-icon></ion-label>
+					 <ion-input tappable type="password" name="password" formControlName="password"
+					  (ionFocus)="inputFocus()"
+					  (ionBlur)="inputBlur()"
+					 	placeholder="{{'LOGIN_INPUT_PSW'| translate}}">
+					 </ion-input>
+				</ion-item>
+
+				
+			
+				<ion-item no-lines>
+
+				</ion-item>
+			
+				<div class="page-login-btn">
+					<button tappable ion-button block (click)="login()">
+					{{'COMMON_LOGIN' | translate}}
+					</button>
+				</div>
+				
+				
+					<button class="page-login-network" tappable (click)="networkSet()" ion-button block>{{'COMMON_NETWORK' | translate}}
+					</button>
+			
+			</ion-list>
+			<div class="page-login-copyright" *ngIf="showCopyRight">
+				<ion-label class="page-login-version" text-center>{{versionMsg}}</ion-label>
+				<ion-label  text-center>V{{version}}</ion-label>
+				<ion-label  text-center>
+				Copyright © 2020 ZKTECO CO., LTD.All rights reserved. 
+				</ion-label>
+			</div>
+		</div>
+	</form>
+</ion-content>

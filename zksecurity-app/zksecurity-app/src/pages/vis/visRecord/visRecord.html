@@ -1,0 +1,68 @@
+<!-- 访客 - 访客历史记录页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_VISRECORD">
+      <button clear ion-button icon-only (click)="select()">
+          <zk-icon name="search"></zk-icon>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list>
+    <ion-item *ngFor="let item of items" tappable (click)="showDetail(item)">
+      <h3 style="margin-bottom: 10px">
+        <zk-icon name="person-admin" class="font-gray"></zk-icon>
+        <span class="font-gray">{{'VIS_INTERVIEWEE'|translate}}:</span>
+        <span class="vis-span-right">{{item.visitedEmpName}}
+          <span *ngIf="item.visitedEmpPin!=null && item.visitedEmpPin!=''">({{item.visitedEmpPin}})</span></span>
+        <zk-icon *ngIf="item.visState==0" name="vis-appointment-ing" class="vis-record-icon"
+                 style="color: #FD9705;"></zk-icon>
+        <zk-icon *ngIf="item.visState==1" name="vis-appointment-already" class="vis-record-icon"
+                 style="color: #E6674A;"></zk-icon>
+        <zk-icon *ngIf="item.visState==2" name="vis-appointment-abate" class="vis-record-icon"
+                 style="color: #909196;"></zk-icon>
+      </h3>
+      <h3>
+        <zk-icon name="person-admin" class="font-gray"></zk-icon>
+        <span class="font-gray">{{'VIS_VISITPEOPLE'|translate}}:</span>
+        <span class="vis-span-right">{{item.visEmpName}}</span></h3>
+      <h3 *ngIf="lang !== 'zh'">
+        <zk-icon name="person-admin" class="font-gray"></zk-icon>
+        <span class="font-gray">{{'PERS_LASTNAME'|translate}}:</span>
+        <span class="vis-span-right">{{item.visEmpLastName}}</span></h3>
+
+      <h3>
+        <zk-icon name="acc-report" class="font-gray"></zk-icon>
+        <span class="font-gray">{{'VIS_VISITTHEREASON'|translate}}:</span>
+        <span class="charge">{{item.visReason}}</span></h3>
+      <h3>
+        <zk-icon name="person-admin" class="font-gray"></zk-icon>
+        <span class="font-gray">{{'VIS_VISITINGTIME'|translate}}:</span>
+        <span class="charge" style="display: block;padding:0.4rem 1rem">{{item.enterTime}} <span style="color: #BABABA"> {{ 'COMMON_TO1'|translate }} </span> {{item.exitTime}}</span>
+      </h3>
+      <!--<h3>-->
+      <!--<zk-icon name="person-admin" class="font-gray"></zk-icon>-->
+      <!--<span class="font-gray">{{'VIS_LTIME'|translate}}:</span>-->
+      <!--<span class="charge">{{item.exitTime}}</span>-->
+      <!--</h3>-->
+    </ion-item>
+    <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>
+      ----{{'COMMON_LIST_BOTTOM'|translate}}----
+    </ion-label>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

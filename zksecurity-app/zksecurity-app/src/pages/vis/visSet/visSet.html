@@ -1,0 +1,100 @@
+<!-- 访客 - 参数设置页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_VISSET">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-list radio-group class="list-top">
+    <ion-item tappable (click)="showAccredit()">
+      <span item-left>{{'VIS_ACCREDIT'|translate}}</span>
+      <span item-right class="item-right-color">
+
+					<ion-icon item-right [name]="data.accredit? 'arrow-up' : 'arrow-down'"></ion-icon>
+      </span>
+    </ion-item>
+
+    <div *ngIf="data.accredit==true">
+
+      <ion-item class="radio-left">
+        <ion-label>{{'VIS_AUTH_NOT'|translate}}</ion-label>
+        <ion-radio *ngIf="isAuth == false" checked="true" tappable (click)="getItems(false)"></ion-radio>
+        <ion-radio *ngIf="isAuth == true" tappable (click)="getItems(false)"></ion-radio>
+      </ion-item>
+      <ion-item class=" radio-left">
+        <ion-label>{{'VIS_AUTH'|translate}}</ion-label>
+        <ion-radio *ngIf="isAuth == true" checked="true" tappable (click)="getItems(true)"></ion-radio>
+        <ion-radio *ngIf="isAuth == false" tappable (click)="getItems(true)"></ion-radio>
+      </ion-item>
+
+      <ion-item *ngIf="isAuth == true" class="radio-left-child">
+        <ion-label>{{'VIS_AUTH_CARD'|translate}}</ion-label>
+        <ion-checkbox item-end *ngIf="isNeedIssueCard=='1'" checked="true" tappable
+                      (click)="getNeedAuthItems(1)"></ion-checkbox>
+        <ion-checkbox item-end *ngIf="isNeedIssueCard!='1'" tappable
+                      (click)="getNeedAuthItems(1)"></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="isAuth == true" class="radio-left-child">
+        <ion-label>{{'VIS_AUTH_FP'|translate}}</ion-label>
+        <ion-checkbox item-end *ngIf="isNeedFP=='1'" checked="true" tappable
+                      (click)="getNeedAuthItems(2)"></ion-checkbox>
+        <ion-checkbox item-end *ngIf="isNeedFP!='1'" tappable (click)="getNeedAuthItems(2)"></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="isAuth == true" class="radio-left-child">
+        <ion-label>{{'VIS_AUTH_PSW'|translate}}</ion-label>
+        <ion-checkbox item-end *ngIf="isNeedPwd=='1'" checked="true" tappable (click)="getNeedAuthItems(3)"></ion-checkbox>
+        <ion-checkbox item-end *ngIf="isNeedPwd!='1'" tappable (click)="getNeedAuthItems(3)"></ion-checkbox>
+      </ion-item>
+      <ion-item *ngIf="isAuth == true" class="radio-left-child">
+        <ion-label>{{'VIS_AUTH_SCAN'|translate}}</ion-label>
+        <ion-checkbox item-end *ngIf="isNeedSC=='1'" checked="true" tappable (click)="getNeedAuthItems(4)"></ion-checkbox>
+        <ion-checkbox item-end *ngIf="isNeedSC!='1'" (click)="getNeedAuthItems(4)"></ion-checkbox>
+      </ion-item>
+    </div>
+
+  </ion-list>
+  <ion-list>
+    <ion-item tappable (click)="showRequired()">
+      <span item-left>{{'VIS_REQUIRED'|translate}}</span>
+      <span item-right class="item-right-color">
+					<ion-icon item-right [name]="data.required? 'arrow-up' : 'arrow-down'"></ion-icon>
+      </span>
+    </ion-item>
+
+    <div *ngIf="data.required==true">
+      <ion-item>
+        <ion-label class="item-left-color">{{'VIS_INTERVIEWEE'|translate}}</ion-label>
+        <ion-toggle [(ngModel)]="requiredVisitedEmp"></ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-label class="item-left-color">{{'VIS_VISIT_DEP'|translate}}</ion-label>
+        <ion-toggle [(ngModel)]="requiredVisitedDept"></ion-toggle>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-list>
+    <ion-item tappable (click)="showReceiver()">
+      <span item-left>{{'VIS_RECEIVER_EMAIL'|translate}}</span>
+      <span item-right class="item-right-color">
+					<ion-icon item-right [name]="data.receiver? 'arrow-up' : 'arrow-down'"></ion-icon>
+      </span>
+    </ion-item>
+
+    <div *ngIf="data.receiver==true">
+      <ion-item>
+        <ion-label item-left class="item-left-color">{{'VIS_EMAIL_TIME'|translate}}</ion-label>
+        <ion-label item-right></ion-label>
+        <ion-datetime displayFormat="HH:mm" style="color: #BABABA" [(ngModel)]="selTime"
+                      minuteValues="0,5,10,15,20,25,30,35,40,45,50,55" cancelText="{{'COMMON_CANCEL'|translate}}"
+                      doneText="{{'COMMON_SURE'|translate}}"></ion-datetime>
+        <zk-icon name="vis-time" style="color: #7ac143" item-right></zk-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label class="item-left-color">{{'VIS_EMAIL_SITE'|translate}}</ion-label>
+        <ion-input [(ngModel)]="receiver" item-right type="email" style="color: #BABABA"></ion-input>
+      </ion-item>
+    </div>
+  </ion-list>
+</ion-content>

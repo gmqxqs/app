@@ -1,0 +1,62 @@
+// Page parkInCar sass --场内车辆页面样式
+page-parkInCar {
+  .img-size{
+    font-size: 5rem;
+  }
+
+	.park-in-car-img{
+		
+	}
+
+	.car-title-time{
+		background:#fff;
+    margin-top: 0rem;
+    padding: 0.5rem
+	}
+
+  .searchbar {
+    background-color: #ffffff;
+  }
+
+  .searchbar-ios .searchbar-input {
+    background-color: #eeeeee;
+  }
+
+	.park-img-title{
+		color:#BBBBBB;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+	}
+  .park-title {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+  .box_img {
+    width: 100%;
+    height: 15rem;
+  }
+
+	.park-enter-time{
+		color:#D3D3D3;
+    margin-top: 0.3rem;
+    margin-bottom: 0rem;
+    text-align:right;
+    font-size:1.4rem;
+	}
+
+  .col {
+    padding: 0.6rem;
+  }
+ 
+
+  .search{
+    background-color: transparent;
+  }
+  
+  .charge-search{
+    background-color: transparent;
+    margin: 0;
+  }
+
+}

@@ -1,0 +1,79 @@
+// Page visLevel sass --权限组管理页面样式
+page-visLevel {
+  ::-webkit-scrollbar { //去掉滚动条
+    display: none !important;
+  }
+  ion-navbar {
+    width: 80%;
+  }
+
+   ion-content.has-refresher > .scroll-content {
+    padding-top: $zk-top-width;
+  }
+
+  .button-md {
+    background-color: white;
+    //color: black;
+  }
+  .item-top {
+    margin-left: 2.5rem;
+  }
+  .item-bottom {
+    margin-top: 1rem;
+    margin-left: 5rem;
+    color: #BABABA;
+  }
+  ion-title {
+    text-align: center;
+  }
+  .num {
+    margin-left: 2rem;
+  }
+
+  ion-buttons, .vis-buttons {
+    padding-right:1rem;
+    .vis-button {
+      color: #7ac143;
+      padding: 0 0.5rem;
+      background:transparent;
+      display: inline-block;
+      z-index: 99;
+      pointer-events: all;
+    }
+
+
+  }
+
+  .delete {
+    width: 10rem;
+    background: red;
+    color: #eee;
+    font-size: 1.8rem;
+  }
+
+  .circle2 {
+    width: 1rem;
+    height: 1rem;
+    background-color: #7AC143;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .circle1 {
+    width: 1rem;
+    height: 1rem;
+    background-color: #FA9718;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+}
+

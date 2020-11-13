@@ -1,0 +1,101 @@
+<ion-content no-bounce class="no-scroll" > 
+  <zk-nav-bar id="zk" style="position:absolute" hideBackButton="true">
+      <img id="zkImg" title class="page-home-logo" [style.height]="getHeaderHeight()" src="assets/img/header_logo{{imgLang}}.png"/>
+       <button id="zkBtn" clear ion-button icon-only (click)="goToUserSetting()">
+        <zk-icon #settingIcon class="page-home-settings" name="setting">
+        </zk-icon>
+      </button>
+  </zk-nav-bar>
+ 
+  <div class="page-home-box">
+  <div *ngIf="bgPosition" class="page-home-slides" [style.height]="getSlideHeight()" style="position: fixed;">
+   
+   <ion-slides pager="true" autoplay="3500" loop="true">
+   
+
+
+    <ion-slide  style="background-image: url('assets/img/e5.png');">
+        <div text-center class="slide-item-box1">
+          <span class="slide-item-box1-txt3" 
+              innerHTML="{{'HOME_BANNER5_MSG1'|translate}}"> </span>
+        </div>
+      </ion-slide>
+
+
+      <ion-slide  style="background-image: url('assets/img/e6.png');">
+          <div text-center class="slide-item-box1">
+          <span class="slide-item-box1-txt3" 
+              innerHTML="{{'HOME_BANNER6_MSG1'|translate}}"> </span>
+              <br>
+          <span class="slide-item-box1-txt3" 
+              innerHTML="{{'HOME_BANNER6_MSG2'|translate}}"> </span>
+      
+        </div>
+      </ion-slide>
+
+
+    
+
+
+      <ion-slide *ngIf="translate.currentLang==='zh'"  style="background-image: url('assets/img/e7.png');">
+        <div text-center class="slide-item-box1-1">
+          <span class="slide-item-box1-txt3" 
+              innerHTML="{{'HOME_BANNER7_MSG1'|translate}}"> </span>
+        </div>
+      </ion-slide>
+
+
+     <ion-slide *ngIf="translate.currentLang==='en'"  style="background-image: url('assets/img/e7.png');">
+        <div text-center class="slide-item-box7">
+          <span class="slide-item-box1-txt7" 
+              innerHTML="{{'HOME_BANNER7_MSG1'|translate}}"> </span>
+        </div>
+      </ion-slide>
+ 
+
+      <ion-slide *ngIf="translate.currentLang==='es'"  style="background-image: url('assets/img/e7.png');">
+        <div text-center class="slide-item-box7">
+          <span class="slide-item-box1-txt7" 
+              innerHTML="{{'HOME_BANNER7_MSG1'|translate}}"> </span>
+        </div>
+      </ion-slide>
+
+
+      <ion-slide *ngIf="translate.currentLang==='po'"  style="background-image: url('assets/img/e7.png');">
+        <div text-center class="slide-item-box7">
+          <span class="slide-item-box1-txt7" 
+              innerHTML="{{'HOME_BANNER7_MSG1'|translate}}"> </span>
+        </div>
+      </ion-slide>
+
+    </ion-slides> 
+
+      
+    <!--<img src="assets/img/e1.png" style="width: 100%; height: 100%"/>-->
+  </div>
+  <!--
+  <arrow-animation duration="2s" autoplay="true" onlyOnce="homeArrow" time="3"></arrow-animation>
+  -->
+  <div class="page-home-module-box" [style.top]="getSlideHeight()">
+    <ion-card *ngFor="let module of modules">
+      <ion-card-header class="page-home-module"  *ngIf="booleanShow">
+
+        {{ module.name|translate }}
+      </ion-card-header>
+      <ion-card-content style="border-top: 1px solid #eee;">
+        <!-- Add card content here! -->
+      <ion-row *ngFor="let rows of module.children">
+            <div *ngFor="let child of rows"  tappable class="page-item-box" (click)="openPage(child)">
+              <zk-icon name="{{child.icon}}" [style.background]="child.color" 
+                [style.border-color]="child.color">
+              </zk-icon>
+              <div>{{child.text|translate}}</div>
+            </div>
+
+        </ion-row>
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+</div>
+</ion-content>

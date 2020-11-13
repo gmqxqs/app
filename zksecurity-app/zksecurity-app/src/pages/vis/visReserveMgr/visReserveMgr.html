@@ -1,0 +1,77 @@
+<!-- 访客 - 预约管理页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_VISRESERVEMGR">
+    <button clear ion-button icon-only (click)="select()">
+      <zk-icon name="search" style="font-size: 2.4rem;"></zk-icon>
+    </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list no-lines>
+    <ion-item-sliding *ngFor="let item of items">
+
+      <ion-item tappable (click)="edit(item)">
+        <h3>
+          <zk-icon class="vis-label-color" name="person-admin"></zk-icon>
+          <span class="vis-label-color">{{'VIS_INTERVIEWEE'|translate}}：</span>
+          <span class="vis-span-right">{{item.visitEmpName}}<span
+            *ngIf="item.visitEmpPin!=null&&item.visitEmpPin!=''">({{item.visitEmpPin}})</span></span>
+        </h3>
+        <hr style="margin:0px;height:0.15rem;border:0px;background-color:#eee;color:#D5D5D5;"/>
+        <ion-item>
+          <h3>
+            <zk-icon class="vis-label-color" name="vis-visitor"></zk-icon>
+            <span class="vis-label-color">{{'VIS_VISITPEOPLE'|translate}}：</span>
+            <span class="vis-span-right">{{item.visName}}</span></h3>
+          <h3>
+            <zk-icon class="vis-label-color" name="vis-reason"></zk-icon>
+            <span class="vis-label-color">{{'VIS_VISITTHEREASON'|translate}}：</span>
+            <span class="vis-span-right">{{item.visReason}}</span></h3>
+          <h3>
+            <zk-icon class="vis-label-color" name="vis-time"></zk-icon>
+            <span class="vis-label-color">{{'VIS_VISITINGTIME'|translate}}：</span>
+            <span class="charge">{{item.visDate}}</span></h3>
+          <ion-note item-end *ngIf="item.isVisited==0" class="note-md0">
+            <zk-icon *ngIf="item.isVisited==0" name="vis-appointment-already" class="zkicon-size"></zk-icon>
+            <br/>
+            <span *ngIf="item.isVisited==0">{{'VIS_HAVEBEENVISITING'|translate}}</span>
+          </ion-note>
+          <ion-note item-end *ngIf="item.isVisited==1" class="note-md1">
+            <zk-icon *ngIf="item.isVisited==1" name="vis-appointment-havenot" class="zkicon-size"></zk-icon>
+            <br/>
+            <span *ngIf="item.isVisited==1">{{'VIS_NOTVISIT'|translate}}</span>
+          </ion-note>
+          <ion-note item-end *ngIf="item.isVisited==2" class="note-md2">
+            <zk-icon *ngIf="item.isVisited==2" name="vis-appointment-abate" class="zkicon-size"></zk-icon>
+            <br/>
+            <span *ngIf="item.isVisited==2">{{'VIS_FAILURE'|translate}}</span>
+          </ion-note>
+        </ion-item>
+      </ion-item>
+      <div class="across"></div>
+      <ion-item-options>
+        <button class="delete" outline (click)="showAlert(item)">{{'COMMON_DEL'|translate}}</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>
+    ----{{'COMMON_LIST_BOTTOM'|translate}}----
+  </ion-label>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+
+</ion-content>

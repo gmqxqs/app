@@ -1,0 +1,107 @@
+// Page visReserveMgr sass --预约管理页面样式
+page-visReserveMgr {
+  h3 {
+    font-size: 1.5rem !important;
+    padding: 0.3rem 0;
+  }
+  span {
+    //font-size: 1.8rem !important;
+  }
+  ion-title {
+    text-align: center;
+  }
+  ion-list {
+    ion-item-sliding {
+      border-bottom: 0.4rem solid #eee;
+    }
+  }
+  zk-icon {
+    //padding-left: 10px;
+  }
+
+  .vis-label-color {
+    color: #909196;
+  }
+
+  .charge {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 65%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+
+  zk-icon.vis-label-color {
+    padding:0 1rem;
+    padding-left:$zk-padding-width;
+  }
+
+  span.vis-label-color {
+    padding-right:1rem;
+  }
+
+  //ion-item {
+  //  padding-left: 0px !important;
+    ion-item {
+      text-align: center;
+      padding-left: 0px !important;
+      ion-note {
+        text-align: center;
+      }
+    }
+  //}
+
+  ion-content.has-refresher > .scroll-content {
+    padding-top: $zk-top-width;
+  }
+
+  ion-list {
+    border-bottom: 0.4rem solid #eee;
+  }
+
+  .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+    border-bottom: none;
+  }
+  .item-ios.item-block .item-inner {
+    padding-right: 0px;
+  }
+  page-visReserveMgr .label-ios {
+   // margin: 5px 0px 0 0;
+  }
+  .label-ios {
+    //margin: 5px 0px 0px 0;
+  }
+  .zkicon-size {
+    padding-left: 0px !important;
+    font-size: 3.5rem;
+  }
+  .note-md0 {
+    color: #E6674A;
+
+  }
+  .note-md1 {
+    color: #7ac143;
+  }
+  .note-md2 {
+    color: #909196;
+  }
+  .across {
+    width: 100%;
+    background-color: #eee;
+    height: 5px;
+  }
+  .delete {
+    width: 10rem;
+    background: red;
+    color: #eee;
+    font-size: 1.8rem;
+  }
+
+  .vis-span-right {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 65%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}

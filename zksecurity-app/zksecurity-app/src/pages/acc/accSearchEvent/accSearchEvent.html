@@ -1,0 +1,127 @@
+<!-- ÃÅ½û - Ò³Ãæ -->
+<ion-header>
+	<zk-nav-bar>
+		<ion-row align-items-baseline>
+			<ion-col class="person-list-search" col-12 class="person-list-search">
+				<ion-item no-lines>
+					<ion-searchbar item-content class="search-event"  placeholder="{{'REPORT_SEARCH'|translate}}" [(ngModel)]="filters">
+					</ion-searchbar>
+					<div item-end>
+						<button ion-button clear 
+								class="btn_search" 
+								(click)="search()">
+								{{'COMMON_SEARCH'|translate}}
+						</button>
+						<button ion-button clear 
+								class="btn_cancel" 
+								(click)="cancle()">
+								{{'COMMON_CANCEL'|translate}}
+						</button>
+					</div>
+				</ion-item>		
+			</ion-col>
+		</ion-row>
+	</zk-nav-bar>
+	
+</ion-header>
+<ion-content class="searh-background" has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-list radio-group *ngIf="!door">
+		<ion-item class="no-line search-by-door" tappable (click)="showHideDoor()">
+			<button ion-button color="light" item-end icon-right >
+				<ion-icon item-right [name]="isDoorShow? 'arrow-up' : 'arrow-down'"></ion-icon>
+			</button>
+			<ion-label >{{'ACC_REPORTSEARCHBYDOOR'|translate}}</ion-label>
+		</ion-item>
+		<div *ngIf="isDoorShow" class="doorDivHigh">
+			<ion-item  *ngFor="let door of doors">
+				<ion-label>{{door.doorName}}</ion-label>
+				<ion-radio  value="{{door.id}}" tappable (click)="selectDoor(door.id)"></ion-radio>
+			</ion-item>
+			<!--<button ion-button block class="view-report" (click)="searchByDoor()">{{ 'COMMON_VIEW_REPORTS'|translate }}</button>-->
+		</div>
+		<div class="" *ngIf="isDoorShow">
+			<button ion-button block class="view-report" (click)="searchByDoor()">{{ 'COMMON_VIEW_REPORTS'|translate }}</button>
+		</div>
+	</ion-list>
+	<ion-list radio-group class="set-pers-code">
+		<ion-item class="no-line search-by-time" tappable (click)="showHideTime()">
+			<button ion-button color="light" item-end icon-right >
+				<ion-icon item-right [name]="isTimeShow? 'arrow-up' : 'arrow-down'"></ion-icon>
+			</button>
+			<ion-label >{{ 'COMMON_QUERY_BY_TIME'|translate }}</ion-label>
+		</ion-item>
+
+		<div *ngIf="isTimeShow">
+			<ion-item class="search-time-title">{{ 'COMMON_DATE'|translate }}</ion-item>
+			<ion-item>
+				<ion-label>{{ 'COMMON_TODAY_RECORD'|translate }}</ion-label>
+				<ion-radio  value="1" tappable (click)="selectTime(0)" checked="true"></ion-radio>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>{{ 'COMMON_YESTERDAY_RECORD'|translate }}</ion-label>
+				<ion-radio  value="2" tappable (click)="selectTime(-1)"></ion-radio>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>{{ 'COMMON_NEARLY_THREE_DAYS_RECORD'|translate }}</ion-label>
+				<ion-radio  value="3" tappable (click)="selectTime(2)"></ion-radio>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>{{ 'COMMON_WEEK_RECORDALL'|translate }}</ion-label>
+				<ion-radio  value="4" tappable (click)="selectTime(3)"></ion-radio>
+			</ion-item>
+
+			<ion-item>
+				<ion-label>{{ 'COMMON_MONTH_RECORDALL'|translate }}</ion-label>
+				<ion-radio  value="5" tappable (click)="selectTime(4)"></ion-radio>
+			</ion-item>
+
+			<ion-item class="search-time-title">{{ 'COMMON_PERIOD_OF_TIME'|translate }}</ion-item>
+
+			<ion-item>
+				<ion-label>{{ 'COMMON_FROM'|translate }}</ion-label>
+				<ion-input class="time-left" text-right [(ngModel)]="startTime" [disabled]="true">{{startTime}}-</ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-label>{{ 'COMMON_TO'|translate }}</ion-label>
+				<ion-input class="time-right" text-right [(ngModel)]="endTime" [disabled]="true">{{endTime}}</ion-input>
+			</ion-item>
+			<button ion-button block class="view-report" (click)="searchByTime()">{{ 'COMMON_VIEW_REPORTS'|translate }}</button>
+
+		</div>
+	</ion-list>
+	<div class="acc-door-report-hbox">
+		<h3 class="search-h3 search-title">{{ 'VIS_SELECTCONTENT'|translate }}</h3>
+		
+		<h3  *ngIf="eventType=='normal'" class="search-select-h3" tappable (click)="searchByEvent('normal')">{{ 'ACC_SEARCH_NORMAL'|translate }}</h3>
+		<h3  *ngIf="eventType!='normal'" class="search-h3" tappable (click)="searchByEvent('normal')">{{ 'ACC_SEARCH_NORMAL'|translate }}</h3>
+		<h3 *ngIf="eventType=='alarm'" class="search-select-h3" tappable (click)="searchByEvent('alarm')">{{ 'ACC_SEARCH_ALARM'|translate }}</h3>
+		<h3 *ngIf="eventType!='alarm'" class="search-h3" tappable (click)="searchByEvent('alarm')">{{ 'ACC_SEARCH_ALARM'|translate }}</h3>
+		<h3 *ngIf="eventType=='warning'" class="search-select-h3" tappable (click)="searchByEvent('warning')">{{ 'ACC_SEARCH_WARNING'|translate }}</h3>
+		<h3 *ngIf="eventType!='warning'" class="search-h3" tappable (click)="searchByEvent('warning')">{{ 'ACC_SEARCH_WARNING'|translate }}</h3>
+	</div>
+	<div class="acc-door-report-item" *ngFor="let item of items" tappable (click)="showDetail(item)">
+		<div class="acc-door-report-div">
+			<zk-icon *ngIf="item.status=='normal'" item-left name="OK" class="acc-door-report-icon" [style.background]="'#7AC143'" >
+			</zk-icon>
+			<zk-icon *ngIf="item.status=='warning'" item-left name="wrong" class="acc-door-report-icon" [style.background]="'#ed220F'" >
+			</zk-icon>
+			<zk-icon *ngIf="item.status=='alarm'" item-left name="acc-alarm" class="acc-door-report-icon" [style.background]="'#EC910F'" >
+			</zk-icon>
+			<h6><span>{{item.eventName}}</span><span class="acc-door-report-time">{{item.eventTime}}</span></h6>
+			<p><span>{{ 'COMMON_AREA_NAME'|translate }}：{{item.areaName}}</span></p>
+			<p class="acc-door-report-p">
+				<span class="acc-door-report-pin">{{ 'PERS_PIN'|translate }}: {{item.pin}}</span><span>{{ 'COMMON_NAME'|translate }}：{{item.personName}}</span>
+				<span float-right class="">
+					<zk-icon *ngIf="item.cardNo" class="acc-door-report-right-icon" name="card">
+					</zk-icon>
+					<zk-icon *ngIf="item.pwd" class="acc-door-report-right-icon" name="password">
+					</zk-icon>
+				</span>
+			</p>
+		</div>	
+	</div>
+
+</ion-content>

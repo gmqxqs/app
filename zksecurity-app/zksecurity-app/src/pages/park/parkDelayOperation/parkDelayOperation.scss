@@ -1,0 +1,52 @@
+page-parkDelayOperation{
+
+  .charge-list-margin{
+    margin-top:$zk-top-width;
+  }
+  .item-color{
+    color:#9F9F9F;
+  }
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .point{
+    display: inline-block;
+    color: red;
+    margin-bottom: 5px;
+  }
+  .item-input .label-md,
+  .item-select .label-md,
+  .item-datetime .label-md {
+    color: #000;
+  }
+  .item-two{
+    width:100%;
+    background:#fff;
+  }
+  .item-two .text-input{
+    text-align: right;
+    color:#999;
+  }
+  .item-right-color1 {
+    color: #9F9F9F;
+    text-align: right;
+    width: 150px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    margin: 0px;
+  }
+  .btn-right {
+    padding-right: 0px !important;
+    background-color: transparent;
+    color: #BABABA;
+    font-size: 1.7rem;
+  }
+  .item-right-color{
+    color:#9F9F9F;
+  }
+}

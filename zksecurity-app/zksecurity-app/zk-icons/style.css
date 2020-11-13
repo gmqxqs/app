@@ -1,0 +1,566 @@
+@font-face {
+  font-family: 'zk-icons';
+  src:  url('fonts/zk-icons.eot?49aqhq');
+  src:  url('fonts/zk-icons.eot?49aqhq#iefix') format('embedded-opentype'),
+    url('fonts/zk-icons.ttf?49aqhq') format('truetype'),
+    url('fonts/zk-icons.woff?49aqhq') format('woff'),
+    url('fonts/zk-icons.svg?49aqhq#zk-icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="zk-icon-"], [class*=" zk-icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'zk-icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.zk-icon-park-chargedetails_1:before {
+  content: "\e939";
+  color: #474a4e;
+}
+.zk-icon-park-watchhouse:before {
+  content: "\e937";
+}
+.zk-icon-park-setting:before {
+  content: "\e938";
+}
+.zk-icon-vis-reason:before {
+  content: "\e99c";
+}
+.zk-icon-vis-time:before {
+  content: "\e99d";
+}
+.zk-icon-vis-visitor:before {
+  content: "\e99e";
+}
+.zk-icon-att-signed:before {
+  content: "\e99b";
+  color: #76b845;
+}
+.zk-icon-acc-alarm:before {
+  content: "\e92a";
+}
+.zk-icon-acc-alarm-setting:before {
+  content: "\e92b";
+}
+.zk-icon-acc-cancel-alarm .path1:before {
+  content: "\e98a";
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-cancel-alarm .path2:before {
+  content: "\e98b";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-cancel-alarm .path3:before {
+  content: "\e98c";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-cancel-alarm .path4:before {
+  content: "\e98d";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-cancel-alarm .path5:before {
+  content: "\e98e";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-cancel-alarm .path6:before {
+  content: "\e98f";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-acc-cancel-alarm .path7:before {
+  content: "\e990";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-closedoor .path1:before {
+  content: "\e991";
+  color: rgb(0, 0, 0);
+}
+.zk-icon-acc-closedoor .path2:before {
+  content: "\e992";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-acc-closedoor .path3:before {
+  content: "\e993";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-acc-closedoor .path4:before {
+  content: "\e994";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-closedoor .path5:before {
+  content: "\e995";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-acc-door:before {
+  content: "\e996";
+}
+.zk-icon-acc-link-failure:before {
+  content: "\e997";
+}
+.zk-icon-acc-searchreports:before {
+  content: "\e998";
+}
+.zk-icon-down:before {
+  content: "\e986";
+}
+.zk-icon-location:before {
+  content: "\e987";
+}
+.zk-icon-park-car:before {
+  content: "\e988";
+}
+.zk-icon-park-imgbg:before {
+  content: "\e989";
+  color: #f4b138;
+}
+.zk-icon-radioed .path1:before {
+  content: "\e999";
+  color: rgb(71, 74, 78);
+}
+.zk-icon-radioed .path2:before {
+  content: "\e99a";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.zk-icon-vis-calendar:before {
+  content: "\e96a";
+}
+.zk-icon-vis-addaccright:before {
+  content: "\e96b";
+}
+.zk-icon-vis-addelevatorright:before {
+  content: "\e96c";
+}
+.zk-icon-vis-appointment .path1:before {
+  content: "\e96d";
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path2:before {
+  content: "\e96e";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path3:before {
+  content: "\e96f";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path4:before {
+  content: "\e970";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path5:before {
+  content: "\e971";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path6:before {
+  content: "\e972";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path7:before {
+  content: "\e973";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vis-appointment .path8:before {
+  content: "\e974";
+  margin-left: -1em;
+  color: rgb(49, 49, 51);
+}
+.zk-icon-vis-appointment .path9:before {
+  content: "\e975";
+  margin-left: -1em;
+  color: rgb(49, 49, 51);
+}
+.zk-icon-vis-appointment-abate .path1:before {
+  content: "\e976";
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-abate .path2:before {
+  content: "\e977";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-abate .path3:before {
+  content: "\e978";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.zk-icon-vis-appointment-already .path1:before {
+  content: "\e979";
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-already .path2:before {
+  content: "\e97a";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-already .path3:before {
+  content: "\e97b";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.zk-icon-vis-appointment-havenot .path1:before {
+  content: "\e97c";
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-havenot .path2:before {
+  content: "\e97d";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-havenot .path3:before {
+  content: "\e97e";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.zk-icon-vis-appointment-ing .path1:before {
+  content: "\e97f";
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-ing .path2:before {
+  content: "\e980";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-vis-appointment-ing .path3:before {
+  content: "\e981";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.zk-icon-vis-module:before {
+  content: "\e982";
+}
+.zk-icon-common-more:before {
+  content: "\e983";
+}
+.zk-icon-vis-numberofpeople:before {
+  content: "\e984";
+}
+.zk-icon-vis-synchronization:before {
+  content: "\e985";
+}
+.zk-icon-admin:before {
+  content: "\e95f";
+}
+.zk-icon-zk-img:before {
+  content: "\e960";
+}
+.zk-icon-ip:before {
+  content: "\e961";
+}
+.zk-icon-zk-light .path1:before {
+  content: "\e962";
+  color: rgb(51, 51, 51);
+}
+.zk-icon-zk-light .path2:before {
+  content: "\e963";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-nav_back:before {
+  content: "\e964";
+}
+.zk-icon-zk-password:before {
+  content: "\e965";
+}
+.zk-icon-QR:before {
+  content: "\e966";
+}
+.zk-icon-scan:before {
+  content: "\e967";
+}
+.zk-icon-connect-failed:before {
+  content: "\e968";
+}
+.zk-icon-connect-success:before {
+  content: "\e969";
+}
+.zk-icon-opendoor-tr:before {
+  content: "\e95e";
+}
+.zk-icon-about:before {
+  content: "\e913";
+}
+.zk-icon-lang .path1:before {
+  content: "\e914";
+  color: rgb(4, 0, 0);
+}
+.zk-icon-lang .path2:before {
+  content: "\e915";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-next:before {
+  content: "\e916";
+}
+.zk-icon-opendoor:before {
+  content: "\e917";
+}
+.zk-icon-term:before {
+  content: "\e918";
+}
+.zk-icon-camera:before {
+  content: "\e919";
+}
+.zk-icon-card:before {
+  content: "\e91a";
+}
+.zk-icon-fingerprint:before {
+  content: "\e91b";
+}
+.zk-icon-light:before {
+  content: "\e91c";
+}
+.zk-icon-messange:before {
+  content: "\e91d";
+}
+.zk-icon-notsee:before {
+  content: "\e91e";
+}
+.zk-icon-OK:before {
+  content: "\e91f";
+}
+.zk-icon-password .path1:before {
+  content: "\e920";
+  color: rgb(51, 51, 51);
+}
+.zk-icon-password .path2:before {
+  content: "\e921";
+  margin-left: -1em;
+  color: rgb(51, 51, 51);
+}
+.zk-icon-password .path3:before {
+  content: "\e922";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-password .path4:before {
+  content: "\e923";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
+.zk-icon-phone:before {
+  content: "\e924";
+}
+.zk-icon-search:before {
+  content: "\e925";
+}
+.zk-icon-see:before {
+  content: "\e926";
+}
+.zk-icon-switchcamera:before {
+  content: "\e927";
+}
+.zk-icon-wrong:before {
+  content: "\e928";
+}
+.zk-icon-radio:before {
+  content: "\e929";
+  color: #474a4e;
+}
+.zk-icon-alarm:before {
+  content: "\e92c";
+}
+.zk-icon-acc-camera:before {
+  content: "\e92d";
+}
+.zk-icon-door:before {
+  content: "\e92e";
+  color: #474b4f;
+}
+.zk-icon-acc-report:before {
+  content: "\e92f";
+}
+.zk-icon-att-reports:before {
+  content: "\e930";
+}
+.zk-icon-att-statistics:before {
+  content: "\e931";
+}
+.zk-icon-park-auth:before {
+  content: "\e932";
+  color: #474a4e;
+}
+.zk-icon-charge:before {
+  content: "\e933";
+  color: #474a4e;
+}
+.zk-icon-fixeddelay:before {
+  content: "\e934";
+  color: #474a4e;
+}
+.zk-icon-passageway:before {
+  content: "\e935";
+  color: #474a4e;
+}
+.zk-icon-prkingcar:before {
+  content: "\e936";
+}
+.zk-icon-person-add:before {
+  content: "\e953";
+  color: #474a4e;
+}
+.zk-icon-person-admin:before {
+  content: "\e954";
+  color: #474a4e;
+}
+.zk-icon-person-setting:before {
+  content: "\e955";
+  color: #474a4e;
+}
+.zk-icon-setting:before {
+  content: "\e956";
+}
+.zk-icon-appoint:before {
+  content: "\e957";
+}
+.zk-icon-vappointment .path1:before {
+  content: "\e958";
+  color: rgb(51, 51, 51);
+}
+.zk-icon-vappointment .path2:before {
+  content: "\e959";
+  margin-left: -1em;
+  color: rgb(4, 0, 0);
+}
+.zk-icon-vappointment .path3:before {
+  content: "\e95a";
+  margin-left: -1em;
+  color: rgb(4, 0, 0);
+}
+.zk-icon-historyrecords:before {
+  content: "\e95b";
+}
+.zk-icon-rightgroup:before {
+  content: "\e95c";
+}
+.zk-icon-vis-setting:before {
+  content: "\e95d";
+}
+.zk-icon-logo .path1:before {
+  content: "\e900";
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path2:before {
+  content: "\e901";
+  margin-left: -1em;
+  color: rgb(114, 175, 71);
+}
+.zk-icon-logo .path3:before {
+  content: "\e902";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path4:before {
+  content: "\e903";
+  margin-left: -1em;
+  color: rgb(120, 184, 72);
+}
+.zk-icon-logo .path5:before {
+  content: "\e904";
+  margin-left: -1em;
+  color: rgb(71, 74, 78);
+}
+.zk-icon-logo .path6:before {
+  content: "\e905";
+  margin-left: -1em;
+  color: rgb(71, 74, 78);
+}
+.zk-icon-logo .path7:before {
+  content: "\e906";
+  margin-left: -1em;
+  color: rgb(71, 74, 78);
+}
+.zk-icon-logo .path8:before {
+  content: "\e907";
+  margin-left: -1em;
+  color: rgb(120, 184, 72);
+}
+.zk-icon-logo .path9:before {
+  content: "\e908";
+  margin-left: -1em;
+  color: rgb(120, 184, 72);
+}
+.zk-icon-logo .path10:before {
+  content: "\e909";
+  margin-left: -1em;
+  color: rgb(120, 184, 72);
+}
+.zk-icon-logo .path11:before {
+  content: "\e90a";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path12:before {
+  content: "\e90b";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path13:before {
+  content: "\e90c";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path14:before {
+  content: "\e90d";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path15:before {
+  content: "\e90e";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path16:before {
+  content: "\e90f";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path17:before {
+  content: "\e910";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path18:before {
+  content: "\e911";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-logo .path19:before {
+  content: "\e912";
+  margin-left: -1em;
+  color: rgb(119, 183, 69);
+}
+.zk-icon-zoom-in:before {
+  content: "\e99f";
+}
+.zk-icon-zoom-out:before {
+  content: "\e9a0";
+}
+.zk-icon-scissors:before {
+  content: "\ea5a";
+}

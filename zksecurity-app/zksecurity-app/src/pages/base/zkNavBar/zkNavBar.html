@@ -1,0 +1,53 @@
+<!--<div class="custom-toolbar" >
+  
+   
+     <div  *ngIf="titleMsg" class="custom-toolbar-title">
+      <span class="custom-toolbar-title-text">{{ titleMsg|translate }}</span>
+    </div>
+    <div *ngIf="!titleMsg" id="custom-toolbar-title-msg"  >
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div   class="custom-toolbar-buttons">
+      
+      <div class="custom-toolbar-button-start" >
+        <button *ngIf="!hideBackButton" clear ion-button icon-only (click)="navCtrl.pop()">
+            <zk-icon name="nav_back"></zk-icon>
+        </button>
+        <ng-content select="[button-start]"></ng-content>
+      </div>
+    
+      <div class="custom-toolbar-button-end">
+        <ng-content></ng-content>
+      </div>
+    </div>
+  
+    
+</div>
+-->
+
+
+<div class="custom-toolbar">
+    <div *ngIf="titleMsg" class="custom-toolbar-title">
+      <span class="custom-toolbar-title-text">{{ titleMsg|translate }}</span>
+    </div>
+    <div *ngIf="!titleMsg" class="custom-toolbar-title">
+      <ng-content select="[title]"></ng-content>
+    </div>
+    <div class="custom-toolbar-buttons">
+      
+      <div class="custom-toolbar-button-start">
+        <button *ngIf="!hideBackButton" tappable clear ion-button icon-only (click)="navCtrl.pop()">
+            <zk-icon name="nav_back"></zk-icon>
+        </button>
+        <ng-content select="[button-start]"></ng-content>
+      </div>
+    
+      <div class="custom-toolbar-button-end">
+        <ng-content></ng-content>
+      </div>
+    </div>
+</div>
+
+
+
+

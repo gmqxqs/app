@@ -1,0 +1,35 @@
+page-parkTimeSeletionsModal{
+  .item-md {
+    padding-left: 0px;
+  }
+  .view-report{
+    margin: 0px;
+  }
+  .list-ios {
+    margin: -1px 0 0px;
+  }
+
+  .item-left-color{
+    color:#9F9F9F;
+  }
+  ion-footer {
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 10;
+    display: block;
+    width: 100%;
+  }
+}
+
+ion-app.ios [padding],
+ion-app.ios [padding] .scroll-content {
+  padding: 0px!important;
+}
+
+ion-modal.inset-modal1 {
+  // transparent black background overlay
+  background-color: rgba(0, 0, 0, .5) !important;
+  transition: opacity .25s ease-in-out;
+  padding: 0vh 0vw 0vh 15vw;
+}

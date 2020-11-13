@@ -1,0 +1,80 @@
+// Page accEvent sass 
+page-accEvent {
+	.acc-event.card-ios, .acc-event.card-md{
+		background:#fff;
+		text-align:center;
+		margin:0;
+		width:100%;
+		border:0;
+		border-bottom:0.55px solid #E9E9E9;
+		-webkit-box-shadow:none; 
+    	box-shadow:none; 
+	}
+
+	.acc-event zk-icon{
+		line-height:8rem;
+    	border-radius: 50%;
+    	text-align: center;
+   		font-size: 3.6rem;
+    	color: #fff;
+    	padding: 1rem 1.6rem;
+    	border:0.4rem;
+	}
+
+	.acc-event h3{
+		text-align:center;
+		margin:0;
+		line-height:2rem;
+	}
+
+	.acc-event-list{
+		margin-top:$zk-top-width;
+	}
+
+	.list-ios > .item-block:first-child, .list-md > .item-block:first-child {
+	    border-top: 0.55px solid #E9E9E9;
+	}
+
+	.acc-event-list .item-block .item-inner {
+   	 	border-bottom: 0px solid #c8c7cc;
+	}
+
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block,
+	.list-md > .item-block:last-child, .list-md > .item-wrapper:last-child .item-block {
+   		 border-bottom: 0.55px solid #E9E9E9;
+	}
+
+	.acc-event-list .item-ios, .acc-event-list .item-md{
+   	 	border-bottom: 1px solid #eee;
+	}
+
+	.acc-event .acc-event-device{
+		font-size:1.7rem;
+	}
+
+	.acc-event .acc-event-time{
+		font-size:1.6rem;
+		color:#999999;
+		margin-bottom:0.4rem;
+	}
+
+	.acc-event-list .acc-event-right{
+		color:#999;
+		text-align:right;
+	}
+
+	.acc-event-right-icon{
+		font-size: 1.6em;
+    	color: #7ac143;
+	}
+	.acc-event-padding .item-inner{
+	    padding-right: 8px;
+	}
+
+	.item-inner span{
+	    overflow: visible; 
+		display:block;
+		word-wrap:break-word;
+		width:100%;
+	}
+}

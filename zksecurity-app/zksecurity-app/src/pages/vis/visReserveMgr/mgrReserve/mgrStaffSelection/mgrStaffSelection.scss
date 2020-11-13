@@ -1,0 +1,19 @@
+page-mgrStaffSelection{
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .list-ios {
+    //margin: -1px 0 0px;
+  }
+ 
+  ion-list {
+    //margin: 0px;
+    padding: 0;
+    display: block;
+    list-style-type: none;
+  }
+}

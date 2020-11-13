@@ -1,0 +1,23 @@
+<!-- 停车场 - 弹出三级Modal -->
+<ion-content padding class="content" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-title>{{'PAGE_PARKCARDNUMADD'|translate}}</ion-title>
+  <h6>{{'PARK_IMPORTEXPORT_AREA'|translate}}：</h6>
+  <span  class="item-right-color" tappable (click)="show()">软件园三期B区北门
+    <zk-icon name="location" style="color: #000; " item-right></zk-icon>
+  </span>
+  <zk-tree *ngIf="data.isFirst==true"
+            [data]="items"
+            (onChecked)="checkedClick($event)"
+            [cssClass]="'zktree-custom'"
+            [hideCheckedIcon]="true"
+  ></zk-tree>
+</ion-content>
+<ion-footer>
+  <div class="buttonend">
+  <button ion-button clear  style="width: 50%; color: #000" (click)="dismiss()" >{{'COMMON_CANCEL'|translate}}
+</button>
+  <button ion-button  clear style="width:40%" (click)="dismiss()" >{{'COMMON_SURE'|translate}}
+  </button>
+  </div>
+</ion-footer>
+

@@ -1,0 +1,39 @@
+// Page visSet sass --参数设置页面样式
+page-visSet {
+  .item-right-color {
+    color: #9F9F9F;
+  }
+  .item-left-color {
+    min-width: 15rem;
+    padding-left: 3rem;
+    color: #000000 !important;
+  }
+  .datetime-md {
+    padding: 13px 18px 13px 16px;
+  }
+  .radio-left{
+    //padding-left: 30px;
+    ion-label {
+      padding-left: 3rem;
+    }
+  }
+
+  .radio-left-child {
+    //padding-left: 30px;
+    ion-label {
+      padding-left: 5rem;
+    }
+  }
+  .list-top{
+    margin-top: $zk-top-width;
+  }
+
+  .list {
+    .item {
+      border-bottom: $zk-border-style;
+      .item-inner {
+        border-bottom-width: 0;
+      }
+    }
+  }
+}

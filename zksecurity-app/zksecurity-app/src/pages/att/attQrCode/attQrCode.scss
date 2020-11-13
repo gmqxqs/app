@@ -1,0 +1,50 @@
+// Page qrCode sass --电子工牌二维码页面样式
+page-attQrCode {
+    .pageContent{
+        background-color:#FFF;
+    }
+
+
+    
+    
+	/**.qrcode{
+       border:1px solid #000; 
+    }**/
+
+    .qrcodeDiv{
+        position: absolute;
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top:10%;
+
+    }
+
+  
+    .showRefresh{
+        margin-top: -1.2rem;
+        padding-right: 3rem;
+        float:right;
+        display: none;
+    }
+	.whole{
+       
+        position: absolute;
+        left:50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        top:25%;
+    }
+
+    .tip{
+        margin-left: 10rem; 
+        margin-top: -8rem;      
+    }
+	
+}

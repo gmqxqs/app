@@ -1,0 +1,40 @@
+<!-- 停车场 - 进出口区域页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PARK_IMPORTEXPORT_AREA_SELECT">
+      <button clear ion-button icon-only (click)="save(items)">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+  <ion-row align-items-baseline>
+    <ion-col col-12>
+         <ion-searchbar item-left placeholder="{{'PARK_IMPORTEXPORT_AREA'|translate}}" class="" (ionInput)="search($event)"></ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list  *ngFor="let item of items">
+    <ion-item tappable (click)="checks(item)" >
+        <span class="item-overflow" item-left>{{item.parkEntranceAreaName}}</span>
+      <ion-note item-end >
+        <!--<zk-icon name="OK" style="font-size:18px;color:#BABABA" *ngIf="item.selected==false" ></zk-icon>-->
+        <zk-icon name="OK" style="font-size:2rem;color:#7ac143" *ngIf="item.check==true" ></zk-icon>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

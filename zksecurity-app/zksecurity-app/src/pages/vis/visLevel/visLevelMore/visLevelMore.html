@@ -1,0 +1,17 @@
+<!--权限组管理-----更多页面----->
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-list no-lines>
+    <button ion-item (click)="addRKE()">
+      <ion-icon name="vis-addaccright"></ion-icon>
+      {{'VIS_ADD_RKE'|translate}}
+    </button>
+    <button ion-item (click)="addLadder()">
+      <ion-icon name="vis-addelevatorright"></ion-icon>
+      {{'VIS_ADD_LADDER'|translate}}
+    </button>
+    <!-- <button ion-item (click)="sync()">
+      <ion-icon name="vis-synchronization"></ion-icon>
+      {{'VIS_SYNC_OSASM'|translate}}
+    </button> -->
+  </ion-list>
+</ion-content>

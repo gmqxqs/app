@@ -1,0 +1,173 @@
+// Page visReserve sass --预约页面样式
+
+::-webkit-scrollbar { //去掉滚动条
+  display: none !important;
+}
+
+page-visReserve {
+  ion-title {
+    text-align: center;
+  }
+
+ 
+  .save {
+    background: #fff;
+  }
+  div.scroll-content{
+    margin-top: 50px;
+  }
+  .vis-img {
+    background-color: #7ac143;
+    color: #ffffff;
+    width: 120px;
+    height: 120px;
+    font-size: 28px;
+  }
+  .vis-top {
+    width: 100%;
+    background-color: #ffffff;
+    color: #2F2F2F;
+  }
+  .page-item-box {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;
+    zk-icon {
+
+      line-height: 8rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      background-color: #7ac143;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+
+     /* font-size: 6rem;
+      color: #fff;
+      background-color: #7ac143;
+      margin: 1rem;
+      line-height: 9rem;
+      display: inline-block;
+      border: 9px solid #7ac143;
+      border-radius: 9rem;*/
+    }
+  }
+  .vis-item {
+    font-size: 1.3rem;
+    min-height: 2.8rem;
+    background-color: transparent;
+    color: #BABABA;
+    border-top: 0px;
+  }
+  .vis-span-right {
+    background-color: transparent;
+    color: #BABABA;
+    text-align: right;
+    display: block;
+    width: 80%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .vis-btn-right {
+    padding-right: 0px !important;
+    background-color: transparent;
+    color: #BABABA;
+    font-size: 1.7rem;
+  }
+  .item-right-color{
+    color:#9F9F9F;
+  }
+  .item-left-color{
+    color: #000!important;
+  }
+  .text-input {
+    text-align: right;
+  }
+}
+
+/**
+ * 证件类型
+ * 自定义action-sheet样式
+ **/
+.cus-action-sheet {
+  text-align: center;
+
+  .action-sheet-container {
+    padding: 0 10px;
+    background: none;
+  }
+
+  .action-sheet-group {
+    overflow: hidden;
+    margin-bottom: 8px;
+    border-radius: 13px;
+    background: #f9f9f9;
+  }
+
+  .action-sheet-group:last-child {
+    margin-bottom: 10px;
+  }
+
+  .action-sheet-title {
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 0.55px solid #d6d6da;
+    border-radius: 0;
+    font-size: 1.7rem;
+    font-weight: 400;
+    color: #8f8f8f;
+  }
+
+  .action-sheet-button {
+    margin: 0;
+    padding: 18px;
+    min-height: 5.6rem;
+    border-bottom: 0.55px solid #d6d6da;
+    font-size: 2rem;
+    color: #2B2B2B;
+    .button-inner {
+      justify-content: center;
+    }
+  }
+
+
+ .ionDateTime{
+    
+    background: blue;
+  }
+  
+  .action-sheet-button.activated {
+    background: #ebebeb;
+    color: #7AC143;
+  }
+
+  .action-sheet-destructive {
+    color: #7AC143;
+  }
+
+  .action-sheet-cancel {
+    background: #fff;
+    color: #7AC143;
+  }
+
+  .pers-add-item-hide{
+    display:none;
+  }
+  .pers-add-item .button {
+    text-align: right;
+    height: 2.4rem;
+  }
+
+  .pers-add-item.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+  .pers-add-item.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    background:#fff;
+    box-shadow: none;
+  }
+
+  .pers-add-item .text-input {
+    text-align: right;
+  }
+
+
+}

@@ -1,0 +1,204 @@
+<!-- 考勤 - 考勤统计页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ATTCOUNT">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-row class="personal-top row">
+		<ion-col col align="center" col-12>
+			<img  class="personal-img"   src="{{userPhoto}}"/>
+			<h6 class="img-title">{{name}}·{{dept}}</h6>
+		</ion-col>
+		
+	</ion-row>
+	<div class="div-list">
+		<!--<ion-list class="att-detail-list">-->
+			<ion-item class="item-month">
+				<ion-label>{{ 'ATT_MONTH_SUM'|translate }}</ion-label>
+				<button  class="button-clear-ios-new" ion-button color="light" icon-right  item-end >
+					<span class="month-count">
+						<ion-datetime displayFormat="YYYY-MM" (ionChange)="selectMonth(month)" style="color: #BABABA" [(ngModel)]="month" max="2100-12" cancelText="{{'COMMON_CANCEL'|translate}}" doneText="{{ 'COMMON_SURE'|translate }}"></ion-datetime>
+						</span>
+					<ion-icon name="arrow-down"></ion-icon>
+				</button>
+			</ion-item>	
+			<ion-item tappable (click)="showHide(0)">
+				<ion-label>{{'ATT_ATTENDANCE_DATA'| translate}}</ion-label>
+				<button ion-button color="light" icon-right clear item-end>
+					<ion-icon [name]="isShowAttendance? 'arrow-up':'arrow-down'"></ion-icon>
+				</button>
+			</ion-item>
+			<ion-item *ngIf="isShowAttendance" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_SHOULD_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.attendanceData.shouldHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowAttendance" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_ACTUAL_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.attendanceData.actualHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowAttendance" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_VALID_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.attendanceData.validHour}}
+				</span>
+			</ion-item>
+
+			<ion-item tappable (click)="showHide(1)">
+				<ion-label>{{'ATT_LATEDATA'|translate}}</ion-label>
+				<button ion-button color="light" icon-right clear item-end>
+					<ion-icon [name]="isShowLate? 'arrow-up':'arrow-down'"></ion-icon>
+				</button>
+			</ion-item>
+			<ion-item *ngIf="isShowLate" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_LATE_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.lateData.lateHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowLate" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_LATE_COUNT'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.lateData.lateCount}}
+				</span>
+			</ion-item>
+
+			<ion-item tappable (click)="showHide(2)">
+				<ion-label>{{'ATT_EARLY_DATA'|translate}}</ion-label>
+				<button ion-button color="light" icon-right clear item-end>
+					<ion-icon [name]="isShowEarly? 'arrow-up':'arrow-down'"></ion-icon>
+				</button>
+			</ion-item>
+			<ion-item *ngIf="isShowEarly" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_EARLY_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.earlyData.earlyHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowEarly" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_EARLY_COUNT'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.earlyData.earlyCount}}
+				</span>
+			</ion-item>
+
+			<ion-item tappable (click)="showHide(3)">
+				<ion-label>{{'ATT_OVERTIME_DATA'|translate}}</ion-label>
+				<button ion-button color="light" icon-right clear item-end>
+					<ion-icon [name]="isShowOvertime? 'arrow-up':'arrow-down'"></ion-icon>
+				</button>
+			</ion-item>
+			<ion-item *ngIf="isShowOvertime" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_USUAL_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.overtimeData.usualHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowOvertime" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_REST_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.overtimeData.restHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowOvertime" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_HOLIDAY_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.overtimeData.holidayHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowOvertime" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_TOTAL_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.overtimeData.totalHour}}
+				</span>
+			</ion-item>
+
+
+			<ion-item tappable (click)="showHide(4)">
+				<ion-label>{{'ATT_EXCEPTION_DATA'|translate}}</ion-label>
+				<button ion-button color="light" icon-right clear item-end>
+					<ion-icon [name]="isShowException? 'arrow-up':'arrow-down'"></ion-icon>
+				</button>
+			</ion-item>
+			<ion-item *ngIf="isShowException" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_ABSENT_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.exceptionData.absentHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowException" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_LEAVE_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.exceptionData.leaveHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowException" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_TRIP_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.exceptionData.tripHour}}
+				</span>
+			</ion-item>
+			<ion-item *ngIf="isShowException" class="detail-count">
+				<span  class="detail-time">
+					{{'ATT_OUT_HOUR'|translate}}
+				</span>
+				<span  class="detail-detail">
+					{{items.exceptionData.outHour}}
+				</span>
+			</ion-item>
+			<!--<div *ngFor="let item of items">
+				<ion-item (click)="showHide(item)">
+					<ion-label>{{item.title}}</ion-label>
+					<button ion-button color="light" icon-right clear item-end>
+						<ion-icon [name]="item.isShow? 'arrow-up':'arrow-down'"></ion-icon>
+					
+					</button>
+				</ion-item>
+				<ion-input hidden [(ngModel)]="item.isShow"></ion-input>
+				
+				<div *ngFor="let detail of item.detailsList">
+				<ion-item *ngIf="item.isShow" class="detail-count">
+					<span  class="detail-time">
+						{{detail.title}}
+					</span>
+					<span  class="detail-detail">
+						{{detail.value}}
+					</span>
+				</ion-item>
+				</div>
+			</div>-->
+			<!--<h6 class="item-average">{{ 'ATT_MONTH_HOUR'|translate }}{{averageHours}}</h6>-->
+		<!--</ion-list>-->
+	</div>
+</ion-content>

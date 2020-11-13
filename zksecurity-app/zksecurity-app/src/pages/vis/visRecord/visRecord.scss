@@ -1,0 +1,24 @@
+// Page visRecord sass --访客历史记录页面样式
+page-visRecord {
+  .font-gray {
+    color: #BABABA;
+  }
+
+  ion-content.has-refresher > .scroll-content {
+    padding-top: $zk-top-width;
+  }
+
+  .vis-record-icon {
+  	font-size:3rem;
+  	margin: 0px 1rem 0px 0rem !important;
+  	float: right;
+  }
+
+  .vis-span-right {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 65%;
+    display: inline-block;
+    vertical-align: bottom;
+  }
+}

@@ -1,0 +1,121 @@
+<!-- 访客 - 预约页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PAGE_VISRESERVE">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="action-sheets-basic-page" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <ion-row class="vis-top row">
+    <ion-col col class="page-item-box" align="center" col-12>
+      <zk-icon name="vappointment" class="vis-img"></zk-icon>
+    </ion-col>
+  </ion-row>
+  <ion-list no-lines>
+    <ion-item class="vis-item">
+      {{'VIS_INTERVIEWEEINFO'|translate}}
+    </ion-item>
+
+    <ion-item class="pers-add-item" tappable (click)="selEmp()">
+      <ion-label item-left>{{'VIS_NAME'|translate}}
+        <span class="required" *ngIf="requiredVisitedEmp=='1'">*</span>
+      </ion-label>
+      <span item-right class="vis-span-right">
+        {{resDent.name}}<span *ngIf="resDent.pin!=null">({{resDent.pin}})</span>
+        <zk-icon name="next"></zk-icon>
+      </span>
+    </ion-item>
+
+    <ion-item class="pers-add-item" tappable (click)="selectDepartment()">
+      <ion-label>
+        {{'VIS_DEPARTMENT'|translate}}
+        <span class="required" *ngIf="requiredVisitedDept=='1'">*</span>
+      </ion-label>
+      <span item-right class="vis-span-right">
+        {{deptParam.text}}
+        <zk-icon name="next"></zk-icon>
+      </span>
+    </ion-item>
+
+    <ion-item class="vis-item">
+      {{'VIS_VISITPEOPLEINFO'|translate}}
+    </ion-item>
+
+    <ion-item class="pers-add-item" tappable (click)="postGetAllCertType()">
+      <ion-label item-left>
+        {{'VIS_IDTYPE'|translate}}<span class="required">*</span>
+      </ion-label>
+      <button class="vis-btn-right" color="light" item-end>
+        {{certType}}
+        <zk-icon name="next"></zk-icon>
+      </button>
+    </ion-item>
+
+    <ion-item class="pers-add-item">
+      <ion-label item-left>
+        {{'VIS_IDNO'|translate}}<span class="required">*</span>
+      </ion-label>
+      <ion-input item-right type="text" (blur)="isExist()" [(ngModel)]="visCertNumber" maxlength="20"></ion-input>
+    </ion-item>
+
+    <ion-item class="pers-add-item">
+      <ion-label *ngIf="lang === 'zh'" item-left>
+        {{'COMMON_NAME'|translate}}<span class="required">*</span>
+      </ion-label>
+      <ion-label *ngIf="lang !== 'zh'" item-left>
+        {{'COMMON_FIRSTNAME'|translate}}<span class="required">*</span>
+      </ion-label>
+      <ion-input item-right type="text" placeholder=""
+                 [(ngModel)]="visName"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="lang !== 'zh'" class="pers-add-item">
+      <ion-label item-left>{{ 'PERS_LASTNAME'|translate }}</ion-label>
+      <ion-input type="text" item-right [(ngModel)]="lastName"></ion-input>
+    </ion-item>
+
+    <ion-item class="pers-add-item">
+      <ion-label item-left>
+        {{'VIS_COMPANY'|translate}}
+      </ion-label>
+      <ion-input item-right type="text" placeholder="" [(ngModel)]="visCompany"></ion-input>
+    </ion-item>
+
+    <ion-item class="pers-add-item pers-gender">
+      <ion-label item-left>
+        {{'VIS_MOBILENO'|translate}}
+      </ion-label>
+
+      <ion-input item-right type="tel" (blur)="isTel()" [(ngModel)]="visPhone" maxlength="20"></ion-input>
+    </ion-item>
+    <ion-item class="pers-add-item pers-gender">
+      <ion-label >{{'VIS_VISITINGTIME'|translate}}<span class="required">*</span>
+      </ion-label>
+       <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" style="color: #BABABA;" [(ngModel)]="selDate" min="{{minDate}}"
+                    max="{{maxDate}}" cancelText="{{'COMMON_CANCEL'|translate}}"
+                    doneText="{{'COMMON_SURE'|translate}}" ></ion-datetime>
+
+      <zk-icon name="vis-calendar" style="color: #7ac143" item-right></zk-icon>
+       <!-- <span item-content class="inline-edit">{{'VIS_VISITINGTIME'|translate}}</span>
+       <span item-content class="inline-edit required">*</span> -->
+  <!--      <ion-datetime displayFormat="YYYY-MM-DD HH:mm:ss" style="color: #BABABA;margin-left: 68px" [(ngModel)]="selDate" min="{{minDate}}"
+                    max="{{maxDate}}" cancelText="{{'COMMON_CANCEL'|translate}}"
+                    doneText="{{'COMMON_SURE'|translate}}"></ion-datetime>
+      <zk-icon name="vis-calendar" style="color: #7ac143" item-right></zk-icon> -->
+     
+    </ion-item>
+
+    <ion-item class="pers-add-item pers-gender" tappable (click)="getVisReason()">
+      <ion-label item-left>
+        {{'VIS_VISITTHEREASON'|translate}}<span class="required">*</span>
+      </ion-label>
+      <span class="vis-span-right" color="light" item-end>
+        {{reasonType}}
+      </span>
+      <zk-icon name="next" style="color: #BABABA;" item-right></zk-icon>
+    </ion-item>
+
+    <!--</ion-row>-->
+  </ion-list>
+</ion-content>

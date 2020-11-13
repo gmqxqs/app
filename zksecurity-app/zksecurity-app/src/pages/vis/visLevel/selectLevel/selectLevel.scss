@@ -1,0 +1,85 @@
+// Page select sass --权限组管理 - 搜索页面  样式
+page-selectLevel {
+
+  .person-list-search.item-ios.item-block .item-inner,person-list-search.item-md.item-block .item-inner{
+    border-bottom:0;
+    background-color:#fff;
+    width:80%;
+    display:inline-block;
+  }
+  ion-header{
+    background-color: white;
+  }
+
+  .person-list-search .search-event.searchbar-ios{
+    background:#fff;
+  }
+
+  .person-list-search {
+    .item {
+      padding-left: 0;
+    }
+    ion-searchbar {
+      border-bottom-style: none;
+    }
+  }
+
+  .button-ios{
+    //margin:0 0.6rem 0 0;
+    padding:0;
+    float:left;
+  }
+
+  .btn_cancel {
+    float:right;
+
+  }
+
+  .btn_search{
+    margin-left:0.8rem;
+  }
+
+  .person-list-search .searchbar-input {
+    background:#EEEEEE;
+  }
+
+  .btn_cancel .button-ios{
+    margin:0;
+    padding:0;
+  }
+
+  .btn_cancel {
+
+  }
+
+  .searh-background{
+    background:#fff;
+  }
+
+  .search-h3{
+    background:#fff;
+    text-align:center;
+    color: #78b847;
+  }
+
+  .search-title{
+    color:#D6D7D5;
+  }
+
+  .searchbar-ios .searchbar-input{
+    padding:0;
+  }
+
+  .item-title {
+    color: #8c8c8c;
+    text-align: center;
+  }
+  .item-block {
+    min-height: 2rem !important;
+  }
+  .item-content {
+    color: #7ac143;
+    text-align: center;
+  }
+
+}

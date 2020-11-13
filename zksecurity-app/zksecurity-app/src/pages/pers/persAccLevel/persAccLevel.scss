@@ -1,0 +1,11 @@
+// Page persAccLevel sass 
+page-persAccLevel {
+	.ion-list-acclevel{
+		padding-top:$zk-top-width;
+		padding-bottom:$zk-top-width;
+	}
+
+	.list-ios > .item-block:first-child {
+   		border-top: 0.55px solid #E6E6E6;
+	}
+}

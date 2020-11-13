@@ -1,0 +1,9 @@
+page-parkCarSpace{
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+}
