@@ -1,0 +1,69 @@
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_NETWORK">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<div class="login-header-bg" 
+		[style.background-image]="'url('+logo+')'" 
+		[style.background-size]="imgLang=='zh'?'69% auto': 'auto 60%'">
+	</div>
+	<form [formGroup]="form" class="form">
+		<div padding class="login-form-box" >
+			<ion-list class="col-xs-6">
+
+				
+				<ion-item>
+					 <ion-label><zk-icon name="ip" fixed></zk-icon></ion-label>
+					 <ion-input tappable  type="text" name="address" formControlName="address"
+					  (ionFocus)="inputFocus()"
+					  (ionBlur)="inputBlur()"
+					 	placeholder="{{'NETWORK_ADDRESS'| translate}}">
+					 </ion-input>
+				</ion-item>
+
+				<ion-item>
+					 <ion-label><zk-icon name="port" fixed></zk-icon></ion-label>
+					 <ion-input tappable type="text" name="port" formControlName="port"
+					  (ionFocus)="inputFocus()"
+					  (ionBlur)="inputBlur()"
+					 	placeholder="{{'NETWORK_PORT'| translate}}">
+					 </ion-input>
+				</ion-item>
+
+				<ion-item>
+				 	 <ion-label><zk-icon name="QR" fixed></zk-icon></ion-label>
+					 <ion-input tappable item-content type="text" name="barcode" formControlName="barcode"
+					 	(ionFocus)="inputFocus()"
+					  	(ionBlur)="inputBlur()"
+					 	placeholder="{{'NETWORK_REGCODE'| translate}}">
+					 </ion-input>
+					 <zk-icon name="scan" class="barcode-scan-icon" item-right tappable (click)="codeScan()"></zk-icon>
+				</ion-item>
+				<ion-item class="page-network-item">
+					 <ion-label><zk-icon name="admin" fixed></zk-icon></ion-label>
+					 <ion-input tappable type="text" name="username" formControlName="username"
+					  (ionFocus)="inputFocus()"
+					  (ionBlur)="inputBlur()"
+					 	placeholder="{{'NETWORK_CLIENT'| translate}}">
+					 </ion-input>
+				</ion-item>
+				<div class="page-login-btn">
+					<button  tappable ion-button block (click)="testLink()">
+					{{ 'NETWORK_TEST'|translate }}
+					</button> 
+					<button tappable class="page-login-network" (click)="save()" ion-button block>{{'COMMON_SAVE' | translate}}
+					</button>
+				</div>
+				
+
+				<div class="page-login-copyright bar-footer"  *ngIf="showCopyRight">
+					<ion-label class="page-login-version" text-center>{{versionMsg}}</ion-label>
+					<ion-label  text-center>V{{version}}</ion-label>
+					<ion-label  text-center>Copyright ©{{copyright}}.ZKTeco.Inc {{'COMMON_COPYRIGHT'|translate}}</ion-label>
+				</div>
+			</ion-list>
+			
+		</div>
+	</form>
+	
+</ion-content>

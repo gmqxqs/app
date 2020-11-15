@@ -1,0 +1,48 @@
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCDOOR">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" class="acc-door-content" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-card class="acc-door-card">
+		<!--<div class="acc-door-img">
+			
+		</div>-->
+		<div  *ngIf="door.doorAlarmStatus==0" class="acc-door-img-status">
+			<img src="assets/img/door_normal.png"/>
+		</div>
+		<div *ngIf="door.doorAlarmStatus==1" class="acc-door-img-status">
+			<img src="assets/img/door_alarm.png"/>
+		</div>
+		<div *ngIf="door.doorAlarmStatus==2" class="acc-door-img-status">
+			<img src="assets/img/door_disable.png"/>
+		</div>
+		<div *ngIf="door.doorAlarmStatus==3" class="acc-door-img-status">
+			<img src="assets/img/door_offline.png"/>	
+		</div>
+		<div *ngIf="door.doorAlarmStatus!=0 && door.doorAlarmStatus!=1 && door.doorAlarmStatus!=2&& door.doorAlarmStatus!=3" class="acc-door-img-status">
+			<img src="assets/img/door_default.png"/>	
+		</div>
+		<h3 >{{ door.doorName }}</h3>
+		<h6 class="acc-door-card-area">{{ door.areaName }}</h6>
+	</ion-card>
+	<ion-card class="acc-open-door">
+		<zk-icon name="opendoor" tappable (click)="selectOpenTime(door)" class="opera-door">
+		</zk-icon>
+		<h6>{{ 'ACC_DOOR_OPEN'|translate }}</h6>
+	</ion-card>
+	<ion-card class="acc-close-door">
+		<zk-icon name="acc-closedoor" tappable (click)="closeDoor(door)" class="opera-door">
+		</zk-icon>
+		<h6>{{ 'ACC_DOOR_CLOSE'|translate }}</h6>
+	</ion-card>
+	<ion-card class="acc-cancle-alarm">
+		<zk-icon name="acc-cancel-alarm" tappable (click)="cancelAlarm(door)" class="opera-door">
+		</zk-icon>
+		<h6>{{ 'ACC_ALARM_CANCEL'|translate }}</h6>
+	</ion-card>
+	<ion-card class="acc-search-report">
+		<zk-icon name="acc-searchreports" tappable (click)="showDetail(door)" class="opera-door">
+		</zk-icon>
+		<h6>{{ 'PAGE_ACCDOORREPORT'|translate }}</h6>
+	</ion-card>
+</ion-content>

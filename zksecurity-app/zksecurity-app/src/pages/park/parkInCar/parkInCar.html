@@ -1,0 +1,61 @@
+<!-- 停车场 - 场内车辆页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PARKINCAR">
+  </zk-nav-bar>
+  <ion-row align-items-baseline>
+    <ion-item style="padding-left:0px" no-lines>
+      <ion-searchbar item-content placeholder="{{ 'PARK_CARDNUM'|translate }}"  (ionInput)="search($event)"></ion-searchbar>
+      <zk-icon name="vis-calendar" tappable (click)="timeSeletions()" style="color: #7ac143;font-size: 2.4rem; padding:0 1rem;" item-right></zk-icon>
+    </ion-item>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+
+  <ion-row *ngFor="let row of tempItems">
+    <ion-col col-6 *ngFor="let item of row">
+       <div class="park-in-car-img" tappable (click)="showDetail(item)">
+          <div class="box_img">
+            <img *ngIf="item.photoPathIn" [src]="'data:image/png;base64,'+removeSpace(item.photoPathIn)" style="height: 15rem;width: 100%;"/>
+            <img *ngIf="!item.photoPathIn" [src]="serverUrl+'/park/images/carnumber_blank.png'" style="height: 15rem;width: 100%;"/>
+          </div>
+          <div class="car-title-time">
+            <h5 class="park-title">{{item.carNumber}} &nbsp;</h5>
+            <span class="park-img-title">{{item.parkingLotName}}</span>
+            <h6 class="park-enter-time">{{item.checkInTime}}</h6>
+          </div>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+  </ion-label>
+  <!--
+  <div class="park-in-car">
+    <div *ngFor="let item of items" class="park-in-car-img" (click)="showDetail(item)">
+      <div class="box_img">
+        <img [src]="serverUrl+removeSpace(item.photoPathIn)" style="height: 15rem">
+      </div>
+      <div class="car-title-time">
+        <h5 class="park-title">{{item.carNumber}}</h5>
+        <span class="park-img-title">{{item.parkingLotName}}</span>
+        <h6 class="park-enter-time">{{item.checkInTime}}</h6>
+      </div>
+    </div>
+  </div>
+  -->
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

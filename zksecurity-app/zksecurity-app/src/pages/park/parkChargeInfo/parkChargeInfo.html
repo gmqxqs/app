@@ -1,0 +1,57 @@
+<!-- 停车场 - 收费明细页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PARK_CHARGEINFO">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-list class="charge-list-bottom">
+	    <ion-item class="charge-list-margin">
+	      <span item-left>{{'PARK_CAR_OWNER'|translate}}</span>
+	      <span item-right class="item-right-color">{{car.userName}}</span>
+	    </ion-item>
+		<ion-item >
+			<span item-left>{{'PARK_CARDNUM'|translate}}</span>
+			<span item-right class="item-right-color">{{car.carNumber}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_CARTYPE'|translate}}</span>
+			<span item-right class="item-right-color">{{car.cardTypeName}}</span>
+		</ion-item>
+		<ion-item  class="charge-list-margin">
+			<span item-left>{{'PARK_EINLASS'|translate}}</span>
+			<span item-right class="item-right-color">{{car.checkInTime}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_PALYING_TIME'|translate}}</span>
+			<span item-right class="item-right-color">{{car.checkOutTime}}</span>
+		</ion-item>
+		<ion-item  class="charge-list-margin">
+			<span item-left>{{'PARK_CHANGE_TYPE'|translate}}</span>
+			<span item-right class="item-right-color">{{car.chargingType|chargetype|translate}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_NEED_MONEY'|translate}}</span>
+			<span item-right class="item-right-color">{{car.amountReceivable}}{{ 'COMMON_MONEY'|translate }}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_DISCOUNT_MONEY'|translate}}</span>
+			<span item-right class="item-right-color">{{car.discountAmount}}{{ 'COMMON_MONEY'|translate }}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_ROLLING_FEE_WAIVER'|translate}}</span>
+			<span item-right class="item-right-color">{{car.reliefAmount}}{{ 'COMMON_MONEY'|translate }}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_ACTUAL_MONEY'|translate}}</span>
+			<span item-right class="item-right-color">{{car.receiveAmount}}{{ 'COMMON_MONEY'|translate }}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{'PARK_PAYMENT_METHOD'|translate}}</span>
+			<span item-right class="item-right-color">{{getPaymentMethod(car.paymentMethod)|translate}}</span>
+		</ion-item>
+		<ion-item  class="charge-list-margin">
+			<span item-left>{{'PARK_OPERATOR'|translate}}</span>
+			<span item-right class="item-right-color">{{car.dutyName}}</span>
+		</ion-item>
+	</ion-list>
+</ion-content>

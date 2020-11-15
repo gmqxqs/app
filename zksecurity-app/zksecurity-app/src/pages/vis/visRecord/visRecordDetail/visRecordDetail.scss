@@ -1,0 +1,121 @@
+page-visRecordDetail{
+  .page-item-box {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;
+    zk-icon {
+      line-height: 8rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      color: #FD9705;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+    }
+  }
+
+  .vis-view-box {
+    position: absolute;
+    height:100%;
+    width:100%;
+    top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.8);
+    z-index: 100;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+  .vis-img {
+    background-color: #FD9705;
+    color: #FD9705;
+  }
+
+  .item-ios.item-block .item-inner {
+    border-bottom-width: 0;
+  }
+
+    ion-img {
+      img {
+        height: 100%;
+        width: 100%;
+      }
+  }
+
+  .vis-img2 {
+    background-color: #909196;
+    color: #909196;
+  }
+  .page-item-box1 {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;;
+    zk-icon {
+      line-height: 8rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      background-color: #E6674A;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+    }
+  }
+  .page-item-box2 {
+    width: 25%;
+    padding: 1rem 0rem;
+    border-right: 1px solid #f2f2f2;
+    zk-icon {
+      line-height: 8rem;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 4.5rem;
+      background-color: #909196;
+      padding: 1rem 1.6rem;
+      border: 0.4rem;
+    }
+  }
+  .vis-img1 {
+    background-color: #E6674A;
+    color: #E6674A;
+  }
+  .col {
+    padding: 0px;
+  }
+  .vis-top {
+    width: 100%;
+    background-color: #ffffff;
+    color: #2F2F2F;
+  }
+  p{
+    padding: 10px;
+    margin: 0px;
+  }
+  .list-md {
+    margin: -1px 0 0px;
+  }
+  .vis-title {
+    font-size: 18px;
+  }
+  .vis-data{
+    color: #9F9F9F;
+    margin-bottom: 20px;
+  }
+
+  .list-ios {
+    margin: -1px 0 0px;
+  }
+
+
+  .vis-span-right {
+    //background-color: transparent;
+    //color: #BABABA;
+    text-align: right;
+    width: 80%;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+}

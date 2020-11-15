@@ -1,0 +1,42 @@
+<ion-header>
+	<zk-nav-bar titleMsg="USER_ABOUT">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()"> 
+	<div class="cn_logo">
+		<img [src]="logoSrc"/>
+		<h2 *ngIf="isLocal">{{ 'ABOUT_PLATFORM'|translate }}</h2>
+	</div>
+	<hr>
+	<div *ngIf="isLocal" class="bard_zhi">
+		<h2>{{ 'ABOUT_INTRO'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_INTRO_BODY'|translate }}
+		<h2>{{ 'ABOUT_COMP'|translate }}</h2>
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG1'|translate }}
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG2'|translate }}
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG3'|translate }}
+		<h2>{{ 'ABOUT_OFFICIAL'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_MORE'|translate }}<em>ZKTeco</em> {{ 'ABOUT_ADDRESS'|translate }}:www.zkteco.com
+		<hr>
+	</div>
+	<div *ngIf="!isLocal" class="bard_zhi">
+		<h2>{{ 'ABOUT_INTRO'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_INTRO_BODY'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG3'|translate }}
+		<h2>{{ 'ABOUT_COMP'|translate }}</h2>
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG1'|translate }}
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_COMP_MSG2'|translate }}
+		<h2>ZKTeco</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'ABOUT_ADDRESS'|translate }} www.zkteco.com.
+		<hr>
+	</div>
+	<div class="zklogo">
+		<img src="assets/img/zklogo.png"/>
+		<h3>Copyright © 2020 ZKTECO CO., LTD. All rights reserved.</h3>
+	</div>
+</ion-content>

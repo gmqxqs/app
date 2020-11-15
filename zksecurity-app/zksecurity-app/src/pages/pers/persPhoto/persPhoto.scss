@@ -1,0 +1,99 @@
+page-persPhoto {
+
+	.pers-photo {
+		position: absolute;
+		top: 0;
+		bottom: 20%;
+		left:0px;
+		right: 0px;
+		background-position: center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		.pers-photo-img {
+			width: 100%;
+			height:100%;
+		}
+	}
+
+	zk-nav-bar {
+	    .custom-toolbar {
+	        background-color: #000;
+	        .custom-toolbar-button-end {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+
+	         .custom-toolbar-title {
+	                color: #fff;
+	         	
+	         }
+
+	        .custom-toolbar-button-start {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+
+	                color: #fff;
+	            }
+	        }
+	    }
+	 }	
+
+	.pers-photo-btn {
+		position: absolute;
+		bottom: 5%;
+		height: 10%;
+		left: 20%;
+		right: 20%;
+		ion-icon {
+			font-size: 5rem;
+			color:#7ac143;
+		}
+
+		ion-icon:first-child {
+			color: #fea803;
+		}
+
+	}
+
+	.scroll-content {
+		background-color: #000;
+	}
+
+	.toolbar {
+		background-color: #000;
+		.back-button {
+			color: #fff;
+		}
+
+		.toolbar-background {
+			background-color: #000;
+		}
+
+		button {
+			.button-inner {
+				color: #fff;
+			}
+		}
+		ion-title {
+			background-color: #000;
+			.toolbar-title {
+				color: #fff;
+			}
+		}
+	} 
+}
+
+.pers-photo-selected {
+	color:#7ac143!important;
+}
+
+.pers-photo-unselected {
+	color:#000!important;
+}

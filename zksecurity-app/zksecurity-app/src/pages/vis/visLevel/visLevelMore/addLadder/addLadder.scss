@@ -1,0 +1,32 @@
+// Page addLadder sass 权限组管理--添加梯控权限组
+page-addLadder {
+  .font-gray {
+    color: #909196;
+  }
+  ion-title {
+    text-align: center;
+  }
+
+  .list-header-md {
+    margin-bottom: 0px;
+  }
+  .range-custom {
+    .label{
+      color: #404040;
+    }
+    .range-custom-left{
+      position: absolute;
+      top: 55px;
+      left: 0px;
+      font-size: 1rem;
+    }
+
+    .range-custom-right{
+      position: absolute;
+      top: 55px;
+      right: 0px;
+      font-size: 1rem;
+    }
+  }
+
+}

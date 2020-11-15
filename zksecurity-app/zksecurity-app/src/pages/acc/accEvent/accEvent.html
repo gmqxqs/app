@@ -1,0 +1,60 @@
+<!-- ÃÅ½û - Ò³Ãæ -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ACCEVENT">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-card class="acc-event">
+		<zk-icon *ngIf="event.status=='normal'" item-left name="OK" class="acc-report-icon" [style.background]="'#7AC143'" >
+		</zk-icon>
+		<zk-icon *ngIf="event.status=='warning'" item-left name="acc-link-failure" class="acc-report-icon" [style.background]="'#EC910F'" >
+		</zk-icon>
+		<zk-icon *ngIf="event.status=='alarm'" item-left name="acc-alarm" class="acc-report-icon" [style.background]="'#ed220F'" >
+		</zk-icon>
+		<h3 class="acc-event-device">{{ event.eventPointName }}</h3>
+		<h3 class="acc-event-time">{{ event.eventTime }}</h3>
+	</ion-card>
+	<ion-list class="acc-event-list">
+		<ion-item>
+			<span item-left>{{ 'PERS_PIN'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.pin}}</span>
+		</ion-item>
+		<ion-item>
+			<span *ngIf="lang === 'zh'" item-left>{{ 'COMMON_NAME'|translate }}</span>
+			<span *ngIf="lang !== 'zh'" item-left>{{ 'COMMON_FIRSTNAME'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.personFirstName||event.personName}}</span>
+		</ion-item>
+		<ion-item *ngIf="lang !== 'zh'" class="pers-add-item">
+			<span item-left>{{ 'PERS_LASTNAME'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.personLastName}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{ 'COMMON_AREA'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.areaName}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{ 'ACC_DEVICE'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.devAlias}}</span>
+		</ion-item>
+		<ion-item acc-event-padding>
+			<span item-left>{{ 'ACC_EVENT_DESC'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.eventName}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{ 'PERS_CARDNO'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.cardNo}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{ 'ACC_READER'|translate }}</span>
+			<span item-right class="acc-event-right">{{event.readerName}}</span>
+		</ion-item>
+		<ion-item>
+			<span item-left>{{ 'ACC_VALID_TYPE'|translate }}</span>
+			<span float-right item-right class="acc-event-right">
+				{{event.verifyModeName}}
+				<!--<zk-icon *ngIf="event.cardNo" class="acc-event-right-icon" name="card">
+				</zk-icon>-->
+			</span>
+		</ion-item>
+	</ion-list>
+</ion-content>

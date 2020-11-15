@@ -1,0 +1,111 @@
+<ion-header>
+	<zk-nav-bar titleMsg="USER_DECLAR">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<div class="cn_logo">
+		<img [src]="logoSrc"/>
+		<h2 *ngIf="isLocal">一站式安防解决方案平台</h2>
+	</div>
+	<hr>
+	<div class="bard_zhi">
+		<h1>{{ 'LICENSE_TITLE'|translate }}</h1>
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;<span class="black-font">{{ 'LICENSE_TIP'|translate }}</span>
+		{{ 'LICENSE_AGREEMENT'|translate }}
+		<span class="black-font">{{ 'LICENSE_AGREEMENT_USE'|translate }}</span>
+		{{ 'LICENSE_AGREEMENT_VISIT'|translate }}
+
+		<br>
+
+		<h2>{{ 'LICENSE_REGULATION'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_REGULATION_SOFT'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_REGULATION_SOFT_ONE'|translate }}
+		<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_REGULATION_SOFT_TWO'|translate }}
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_REGULATION_THIRD_SOFT'|translate }}
+		<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_REGULATION_AGREEMENT'|translate }}
+		<hr>
+
+
+		<h2>{{ 'LICENSE_FINAL_AGREEMENT'|translate }}</h2>		
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_FINAL_AGREEMENT_CONTENT'|translate }}
+		<hr>
+
+
+		<h2>{{ 'LICENSE_USE_LIMIT'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_ONE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_TWO'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_THREE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_THREE_ONE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_THREE_TWO'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_THREE_THREE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FOUR'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_ONE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_TWO'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_THREE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_FOUR'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_FIVE'|translate }}<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_FIVE_SIX'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_SIX'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_LIMIT_SEVEN'|translate }}<hr>
+
+
+		<h2>{{ 'LICENSE_POWER'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_POWER_CONTENT'|translate }}<hr>
+		<h2>{{ 'LICENSE_PRIVACY'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_PRIVACY_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_USE_DATA'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_DATA_ONE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_DATA_TWO'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_USE_DATA_THREE'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_SOFT_UPDATE'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_SOFT_UPDATE_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_TERMINATION'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_TERMINATION_ONE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_TERMINATION_TWO'|translate }}<hr>
+
+
+		<h2>{{ 'LICENSE_EXEMPTION'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_EXEMPTION_ONE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_EXEMPTION_TWO'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_EXEMPTION_THREE'|translate }}<hr>
+
+
+		<h2>{{ 'LICENSE_RESPONSIBILITY'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_RESPONSIBILITY_ONE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_RESPONSIBILITY_TWO'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_RESPONSIBILITY_THREE'|translate }}<hr>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_RESPONSIBILITY_FOUR'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_TECHNOLOGY_SUPPORT'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_TECHNOLOGY_SUPPORT_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_EXPORT_CONTROL'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_EXPORT_CONTROL_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_CONNECT_US'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_CONNECT_US_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_DEAL'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_DEAL_CONTENT'|translate }}<hr>
+
+
+		<h2>{{ 'LICENSE_ENTIRE_AGREEMENT'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_ENTIRE_AGREEMENT_CONTENT'|translate }}<hr>
+
+		<h2>{{ 'LICENSE_PRIVACY_CONFICT'|translate }}</h2>
+		&nbsp;&nbsp;&nbsp;&nbsp;{{ 'LICENSE_PRIVACY_CONFICT_CONTENT'|translate }}<hr>
+
+	</div>
+	<div class="zklogo">
+		<img src="assets/img/zklogo.png"/>
+		<h3>Copyright © 2020 ZKTECO CO., LTD. All rights reserved.</h3>
+	</div>
+</ion-content>

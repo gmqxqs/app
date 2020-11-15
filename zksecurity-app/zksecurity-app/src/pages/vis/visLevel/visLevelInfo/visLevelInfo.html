@@ -1,0 +1,48 @@
+<!-- 权限组管理--权限组详情页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="{{title}}">
+  </zk-nav-bar>
+  <ion-row align-items-baseline>
+    <ion-col col-12>
+       <ion-searchbar placeholder="{{'VIS_LEVEL_PIN'|translate}},{{'VIS_LEVEL_NAME'|translate}},{{'PERS_CARDNO'|translate}}" (ionInput)="search($event)" style="background-color:#eee;border-bottom: 0px">
+      </ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list *ngFor="let item of items"  no-lines>
+    <ion-item style="border-bottom-width: 0; background-color: #eee;">
+      <div class="div-left" float-left></div>
+      <div class="div-left-circle"></div>
+      <div class="div-right" float-right>
+        <div>
+          <label>{{'VIS_LEVEL_PIN'|translate}} :</label>
+        {{item.pin}}</div>
+        <div>
+          <label>{{'VIS_LEVEL_NAME'|translate}} :</label>
+          {{item.name}}
+        </div>
+        <div *ngIf="item.cardNo">
+          <label>{{'PERS_CARDNO'|translate}} :</label>
+          {{item.cardNo}}
+        </div>
+      </div>
+    </ion-item>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

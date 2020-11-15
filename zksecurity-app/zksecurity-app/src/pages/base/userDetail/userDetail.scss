@@ -1,0 +1,23 @@
+// Page userDetail sass --编辑用户页面样式
+page-userDetail {
+	.scroll-content {
+		padding-top: $zk-top-width;
+	}
+
+	.row-bottom
+	  {
+	  	    border-bottom:0.2rem solid #F3F3F3;
+		   
+		     font-size: 1.6rem;
+		    
+	  }
+	 .col-padding{
+	 	  padding: 2px;
+	 }
+
+	 .button-inner{
+ 	    margin-top: 1rem;
+ 	    margin-right: 1rem;
+ 	    width: 4rem;
+	 }
+}

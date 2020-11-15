@@ -1,0 +1,133 @@
+<!-- 系统 - 编辑用户页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_USERDETAIL">
+       <button clear ion-button icon-only (click)="doSubtmit()">
+        	<zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+<form [formGroup]="form">
+	<!-- <ion-list>
+		<ion-item>
+			
+			<ion-label >{{'COMMON_USER'|translate}}</ion-label>
+			<ion-input name="username" disabled formControlName="username"></ion-input>
+
+		</ion-item>
+		<ion-item *ngIf="show">
+			<ion-label>{{'USER_RESET_PSW'|translate}}</ion-label>
+			<ion-toggle formControlName="resetPsw" float-right></ion-toggle>
+		</ion-item>
+		<ion-item *ngIf="form.value.resetPsw">
+			<ion-label>{{'COMMON_OLD_PSW'|translate}}</ion-label>
+	
+		    <ion-input type="password" name="oldpassword" formControlName="oldpassword"></ion-input>
+	
+			
+		</ion-item>
+		<ion-item *ngIf="form.value.resetPsw">
+			<ion-label>{{'COMMON_PSW'|translate}}</ion-label>
+				
+		    <ion-input type="password" name="password" formControlName="password"></ion-input>
+			
+			
+		</ion-item>
+		<ion-item *ngIf="form.value.resetPsw">
+			<ion-label>{{'USER_SURE_PSW'|translate}}</ion-label>
+		
+			<ion-input type="password" name="checkpsw" formControlName="checkpsw"></ion-input>
+			
+		
+		</ion-item>
+		<ion-item>
+			<ion-label>{{'COMMON_EMAIL'|translate}}</ion-label>
+			
+			<ion-input name="email" formControlName="email"></ion-input>
+		
+			
+		</ion-item>
+		<ion-item >
+			<ion-label>{{'COMMON_NAME'|translate}}</ion-label>
+		
+			<ion-input name="name" formControlName="name"></ion-input>
+
+			
+		</ion-item>
+	</ion-list> -->
+
+	<ion-grid style="background-color: white">
+	  <ion-row class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label >{{'COMMON_USER'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	      <ion-input name="username" disabled formControlName="username"></ion-input>
+	    </ion-col>
+	  </ion-row>
+			
+	  <ion-row *ngIf="show" class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'USER_RESET_PSW'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	      <ion-toggle formControlName="resetPsw" float-right class="button-inner"></ion-toggle>
+	    </ion-col>
+	  </ion-row>
+		  
+	  <ion-row *ngIf="form.value.resetPsw" class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'COMMON_OLD_PSW'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	         <ion-input type="password" name="oldpassword" formControlName="oldpassword"></ion-input>
+	    </ion-col>
+	  </ion-row>
+
+
+	  <ion-row *ngIf="form.value.resetPsw" class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'COMMON_PSW'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	       <ion-input type="password" name="password" formControlName="password"></ion-input>
+	    </ion-col>
+	  </ion-row>
+
+
+		
+			
+
+	  <ion-row *ngIf="form.value.resetPsw" class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'USER_SURE_PSW'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	       <ion-input type="password" name="checkpsw" formControlName="checkpsw"></ion-input>
+	    </ion-col>
+	  </ion-row>
+
+
+			
+			
+	  <ion-row class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'COMMON_EMAIL'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	       <ion-input name="email" formControlName="email"></ion-input>
+	    </ion-col>
+	  </ion-row>
+
+	  <ion-row class="row-bottom">
+	    <ion-col class="col-padding">
+	      <ion-label>{{'COMMON_NAME'|translate}}</ion-label>
+	    </ion-col>
+	    <ion-col class="col-padding">
+	       <ion-input name="name" formControlName="name"></ion-input>
+	    </ion-col>
+	  </ion-row>
+
+	</ion-grid>
+</form>
+</ion-content>

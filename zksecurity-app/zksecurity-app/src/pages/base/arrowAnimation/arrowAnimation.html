@@ -1,0 +1,21 @@
+<div *ngIf="showArrow" [ngClass]="['arrow-content', cssClass]" 
+		[style.left]="direction=='right'? '0px':'none'"
+		[style.animation]="'arrow-'+direction+' '+duration+' '+time">
+	<div *ngIf="direction=='top'" [ngClass]="['arrow-box-'+direction]">
+		<div class="arrow-top" [style.border-color]="color"></div>
+    	<div class="arrow-top-body" [style.background-color]="color"></div>
+	</div>
+	<div *ngIf="direction=='bottom'" [ngClass]="['arrow-box-'+direction]">
+    	<div class="arrow-bottom-body" [style.background-color]="color"></div>
+    	<div class="arrow-bottom" [style.border-color]="color"></div>
+	</div>
+	<div *ngIf="direction=='left'" [ngClass]="['arrow-box-'+direction]">
+		<div class="arrow-left" [style.border-color]="color"></div>
+    	<div class="arrow-left-body" [style.background-color]="color"></div>
+	</div>
+	<div *ngIf="direction=='right'" [ngClass]="['arrow-box-'+direction]">
+		<div class="arrow-right-body" [style.background-color]="color"></div>
+		<div class="arrow-right" [style.border-color]="color"></div>
+	</div>
+	<ng-content *ngIf="direction=='custom'"></ng-content>
+</div>

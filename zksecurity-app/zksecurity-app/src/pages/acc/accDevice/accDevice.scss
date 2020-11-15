@@ -1,0 +1,68 @@
+// Page accDevice sass --门禁设备页面样式
+page-accDevice {
+	.att-search{
+		background-color: transparent;
+	}
+
+	.acc-search-item{
+		
+	}
+
+	.has-refresher > .scroll-content {
+		border-top:none;
+	}
+
+	.item-ios ion-avatar[item-start], .item-md ion-avatar[item-start] {
+    	margin: 0.8rem 1.6rem 0px 0;
+	}
+
+	.acc-device-status zk-icon{
+		border-radius: 50%;	
+	}
+
+	.list {
+		.item {
+			border-bottom: $zk-border-style;
+			.item-inner {
+				border-bottom-width: 0;
+			}
+		}
+	}
+
+	.list-ios > .item-block:first-child {
+		border-top-width: 0;
+	}
+
+	.acc-device-lab {
+		color: #C5C5C5;
+
+	}
+
+	.acc-device-status{
+		
+	}
+	h2 {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+
+	.acc-device-status zk-icon {
+	    background-color: #7ac143;
+	    width:4rem;
+	    height:4rem;
+	    line-height: 4rem;
+	    display: inline-block;
+	    border: 1px solid #7ac143;
+	    border-radius: 48%;	
+	    text-align:center;
+	    font-size:2.6rem;
+	    color:#fff;
+	    margin-right: 1rem;
+	}
+	.item-ios ion-thumbnail ion-img, .item-ios ion-thumbnail img {
+    	//max-width: 4.6rem; 
+    	width:auto;
+    	//height: 6.3rem;
+    	margin:auto;
+	}
+}

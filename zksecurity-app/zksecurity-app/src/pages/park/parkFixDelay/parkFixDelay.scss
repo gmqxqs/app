@@ -1,0 +1,113 @@
+// Page parkFixDelay sass --固定车延期页面样式
+page-parkFixDelay {
+  ::-webkit-scrollbar {//去掉滚动条
+    display: none !important;
+  }
+
+  ion-title {
+    text-align: center;
+  }
+  .carNo{
+    float:left;
+  }
+
+  .fixed{
+    color:#BBBBBB;
+    margin-left: 1.5rem;
+  }
+
+  .park-fix-list {
+    margin-top: $zk-top-width;
+  }
+
+  .span{
+    margin-left: 3.2rem;
+  }
+  .delete{
+    width:10rem;
+    font-size: 1.4rem;
+    background: red;
+    color:#eee;
+  }
+  .day{
+    color: green;
+    float: right;
+  }
+
+
+  .label-md {
+    margin: 13px 8px 13px 5px;
+  }
+
+  .waringdays{
+    font-size: 1.4rem;
+    margin-right: 0.4rem;
+  }
+  .circle{
+    width: 0.6rem;
+    height:0.6rem;
+    background-color: yellowgreen;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .circle1{
+    width: 0.6rem;
+    height:0.6rem;
+    background-color: orange;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .circle2{
+    width: 0.6rem;
+    height:0.6rem;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .circle3{
+    width: 0.6rem;
+    height:0.6rem;
+    background-color: grey;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: inline-block;
+    margin-right: 1.2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .item-md {
+    padding-left: 0px;
+  }
+  .delay{
+    width:10rem;
+    font-size: 1.4rem;
+    background: yellowgreen;
+    color:#eee;
+  }
+
+  .item {
+    .note {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      flex-wrap: nowrap;
+    }
+  }
+}

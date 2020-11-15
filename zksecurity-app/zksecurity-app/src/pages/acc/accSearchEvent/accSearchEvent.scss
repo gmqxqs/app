@@ -1,0 +1,132 @@
+// Page accSearchEvent sass --Ò³ÃæÑùÊ½
+page-accSearchEvent {
+
+
+    .person-list-search.item-ios.item-block .item-inner,person-list-search.item-md.item-block .item-inner{
+    	border-bottom:0;
+    	background-color:#fff;
+    	width:80%;
+    	display:inline-block;
+    }
+    ion-header{
+		background-color: white;
+	}
+  
+	.person-list-search .search-event.searchbar-ios{
+		background:#fff;
+		display:block;
+		width: 100%;
+		float:left;
+	}
+	.button-ios{
+		//margin:0 0.6rem 0 0;
+		padding:0;
+		float:left;
+	}
+
+	.acc-door-report-hbox {
+		width:100%;
+		display: inline-block;
+	}
+
+    .person-list-search .searchbar-input {
+		background:#EEEEEE;
+	}
+
+	.person-list-search {
+		.item {
+			padding-left: 0;
+		}
+		ion-searchbar {
+			border-bottom-style: none;
+		}
+	}
+
+	.btn_cancel .button-ios{
+		margin:0;
+		padding:0;
+	}
+
+	.btn_cancel {
+		float:right;
+
+	}
+
+	.btn_search{
+		//margin-left:0.8rem;
+	}
+
+	.searh-background{
+		background:#fff;
+	}
+
+	.search-h3{
+		background:#fff;
+		text-align:center;
+		color: #7ac143;
+		font-size:1.7rem;
+		height:2.6rem;
+		line-height:2.6rem;
+	}
+
+	.search-select-h3{
+		background:#fff;
+		text-align:center;
+		color: #7ac143;
+		font-weight:bold;
+		font-size:1.7rem;
+		height:2.6rem;
+		line-height:2.6rem;
+	}
+
+	.search-title{
+		color:#D6D7D5;
+	}
+
+	.searchbar-ios .searchbar-input{
+		padding:0;
+	}
+
+
+	.search-by-door,.search-by-time{
+		background:#f5f0f0;
+	}
+
+	.item-ios.item-block.search-by-door .item-inner,.item-ios.item-block.search-by-time .item-inner {
+	    border-bottom: 0px solid #c8c7cc;
+	}
+
+	.list-ios {
+	    margin: 0.6rem;
+	}
+
+	.item-ios.item-block.no-line .item-inner,
+	.item-md.item-block.no-line .item-inner {
+		border-bottom:0px solid #eee;
+	}
+
+	.list-ios > .item-block:first-child {
+	    border-top: 0px solid #c8c7cc; 
+	}
+
+	.list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+	    border-bottom: 0px solid #c8c7cc; 
+	}
+
+	.view-report{
+		margin:0.6rem 0;
+	}
+
+	.time-right{
+		float:right;
+	}
+
+	.search-time-title{
+		color:#999;
+	}
+
+	.doorDivHigh{
+		overflow:auto;
+		max-height:30rem;
+	}
+}

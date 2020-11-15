@@ -1,0 +1,95 @@
+<!-- 停车场 - 岗亭详情页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="{{titilName}}">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" center no-bounce class="no-scroll" (swiperight)="goBack()">
+  <form [formGroup]="pavilioForm">
+    <ion-row class="vis-top row">
+      <ion-col col class="page-item-box" align="center">
+        <zk-icon name="park-watchhouse" class="vis-img"></zk-icon>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list class="charge-list-margin">
+          <ion-item class="item-two">
+            <ion-label>{{'PARK_PAVILIO_NAEM'|translate}}<div class="point">*</div></ion-label>
+            <ion-input type="text" name="name" formControlName="name"></ion-input>
+          </ion-item>
+          <ion-item class="item-two">
+            <ion-label>{{'PARK_IP_ADDRESS'|translate}}<div class="point">*</div></ion-label>
+            <ion-input type="text" name="ipAddress" formControlName="ipAddress"></ion-input>
+          </ion-item>
+          <ion-item class="charge-list-margin item-two" tappable (click)="entranceArea()">
+            <span item-left>{{'PARK_IMPORTEXPORT_AREA'|translate}}<div class="point">*</div></span>
+            <span item-right class="item-right-color1" >{{pavilioForm.value.parkEntranceAreaName}}
+              </span>
+            <zk-icon item-right name="next" style="color: #999"></zk-icon>
+          </ion-item>
+          <ion-item >
+            <span item-left class="item-left-color">{{'PARK_SUBJECTION_PARKCAR'|translate}}</span>
+            <span item-right class="item-right-color">{{pavilioForm.value.parkParkingLotName}}</span>
+          </ion-item>
+          <ion-item>
+            <span item-left class="item-left-color">{{'PARK_SUBJECTION_PARKCAR_AREA'|translate}}</span>
+            <span item-right class="item-right-color">{{pavilioForm.value.parkParkingAreaName}}</span>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item>
+            <span item-left>{{'PAGE_VISSET'|translate}}</span>
+            <span [style.transform]="check? 'rotate(180deg)':'rotate(0deg)'" tappable item-right class="item-right-color" (click)="showThird()">
+            <zk-icon name="down"></zk-icon>
+          </span>
+          </ion-item>
+          <ion-item *ngIf="check==true">
+            <ion-label class="item-left-color">{{'PARK_ALLOW_TEMPORARY_CAR_FREE_OF_CHARGE'|translate}}<div class="point">*</div></ion-label>
+            <ion-toggle name="temporaryCarFree" formControlName="temporaryCarFree"></ion-toggle>
+          </ion-item>
+          <ion-item *ngIf="check==true">
+            <ion-label class="item-left-color">{{'PARK_USING_REPLACEMENT_MODELS'|translate}}<div class="point">*</div></ion-label>
+            <ion-toggle name="replacement" formControlName="replacement"></ion-toggle>
+          </ion-item>
+          <ion-item *ngIf="check==true">
+            <ion-label class="item-left-color">{{'PARK_USING_ARTIFICIAL_RELEASE'|translate}}<div class="point">*</div></ion-label>
+            <ion-toggle name="opengagebyhandFlag" formControlName="opengagebyhandFlag"></ion-toggle>
+          </ion-item>
+          <ion-item *ngIf="check==true">
+            <ion-label class="item-left-color">{{'PARK_TEMPORARY_QUICK_PLAYING'|translate}}<div class="point">*</div></ion-label>
+            <ion-toggle name="tempcarQuickoutFlag" formControlName="tempcarQuickoutFlag"></ion-toggle>
+          </ion-item>
+          <!--<ion-item>-->
+            <!--<ion-label class="item-left-color">{{'PARK_USING_FINGERPRINT_ASSISTED_VERIFICAION'|translate}}</ion-label>-->
+            <!--<ion-toggle name="fingerVerificationflag" formControlName="fingerVerificationflag"-->
+                        <!--color="secondary"></ion-toggle>-->
+          <!--</ion-item>-->
+          <!--<ion-item *ngIf="check==true">-->
+            <!--<ion-label class="item-left-color">{{'PARK_WIDE_MODE'|translate}}<div class="point">*</div></ion-label>-->
+            <!--<ion-toggle name="widechannelFlag" formControlName="widechannelFlag">-->
+              <!--<span item-left>{{'PAGE_VISSET'|translate}}</span>-->
+            <!--</ion-toggle>-->
+          <!--</ion-item>-->
+          <!--<div *ngIf="pavilioForm.value.widechannelFlag=='1'||pavilioForm.value.widechannelFlag=='2'">-->
+            <!--<ion-item *ngFor="let item of items">-->
+              <!--<ion-label class="item-left-color1" color="dark">{{item.text|translate}}</ion-label>-->
+              <!--<ion-radio *ngIf="item.value=='1'" checked="true" (click)="getItems(item)"></ion-radio>-->
+              <!--<ion-radio *ngIf="item.value!='1'" (click)="getItems(item)"></ion-radio>-->
+            <!--</ion-item>-->
+          <!--</div>-->
+          <ion-item *ngIf="check==true">
+            <ion-label class="item-left-color">{{'PARK_SINGLE_CHANNEL_MODE'|translate}}<div class="point">*</div></ion-label>
+            <ion-toggle name="onechannelFlag" formControlName="onechannelFlag"></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

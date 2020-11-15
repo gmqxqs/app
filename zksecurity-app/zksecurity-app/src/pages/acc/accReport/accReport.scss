@@ -1,0 +1,123 @@
+// Page accReport sass --报表页面样式
+page-accReport {
+	.acc-report-content{
+		.scroll-content {
+			.acc-report-box {
+				background-color: #fff;
+				position: relative;
+				top: $zk-top-width;
+				width: 100%;
+			}
+		}
+	}
+
+	.acc-report-item{
+		border-left:$zk-border-style;	
+		margin:0 0 0 3rem;
+	}
+
+	.acc-report-item:active {
+		background-color:$zk-active-color;
+	}
+
+	.acc-report-div{
+		margin:0 0 0 2rem;
+		border-bottom:$zk-border-style;
+		padding-right:0.8rem;
+	}
+
+	.acc-report-top{
+		padding:$zk-padding-width 0 0 0.6rem;
+	}
+
+	.acc-report-top span{
+  		color:#fff;
+  		background:#7AC143;
+  		border-radius:1rem;	
+  		width:6rem;
+		display: block;
+		text-align:center;
+		font-size:1.4rem;
+	}
+
+	.acc-report-item.item-ios{
+
+	}
+
+	.acc-report-icon{
+		//font-size:2rem;
+	}
+
+	.acc-report-item .acc-report-icon {
+	    line-height: 3rem;
+	    //display: inline-block;
+	    border-radius: 50%;	
+	    text-align:center;
+	    font-size:1.7rem;
+	    color:#fff;
+	    position: relative;
+	    left:-3.3rem;
+	    top:1rem;
+	    padding:0.3rem 0.6rem;
+	}
+	.acc-report-item h6,.acc-report-row1{
+		//margin:-2rem 0 0 0;
+		line-height:2.4rem;
+		font-size:1.7rem;
+		margin-top: -1.7rem;
+	}
+	.acc-report-item p,.acc-report-row2,.acc-report-row3,.acc-report-row4{
+		//line-height:1.7rem;
+		//height:1.7rem;
+		font-size:1.2rem;
+		margin:0 0 0 0;
+		color:#C5C5C5;
+
+	}
+
+	.acc-report-item [col-12], .acc-report-item [col-5],.acc-report-item [col-2],.acc-report-item [col-7], 
+	.acc-report-item [col-6]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-report-time{
+		//float:right;
+		text-align:right;
+		font-size:1.2rem;
+		color:#D3D3D3;
+	}
+
+	.acc-report-pin{
+		margin-right:2rem;
+	}
+
+	.acc-report-right-icon {
+    	font-size: 1.8em;
+    	color: #7ac143;
+	}
+
+	.acc-report-text-width{
+		max-width:30rem;
+		overflow:hidden;
+		display:-moz-inline-box; 
+		display:inline-block; 
+		max-width:50%;
+	}
+
+	.acc-report-width{
+		display: inline-block;
+		max-width: 50%;
+	  	overflow: hidden;
+	  	height:2.2rem;
+
+	}
+
+
+
+
+}
+	

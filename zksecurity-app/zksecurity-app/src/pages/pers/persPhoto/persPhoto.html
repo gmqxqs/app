@@ -1,0 +1,15 @@
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_PERSPHOTO">
+       <button clear ion-button (click)="change()">
+        	{{ 'PERS_CHANGE'|translate }}
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<div class="pers-photo" #persPhoto [style.background-image]="'url('+photoImg+')'" [style.background-size]="bgSize">
+	</div>
+	<div *ngIf="showButton" class="pers-photo-btn">
+		 <ion-icon float-left tappable (click)="cancel()" name="close-circle"></ion-icon>
+		 <ion-icon float-right tappable (click)="save()" name="checkmark-circle"></ion-icon>
+	</div>
+</ion-content>

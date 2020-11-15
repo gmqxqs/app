@@ -1,0 +1,47 @@
+<!-- 权限组管理--添加梯控权限组页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="VIS_ADD_LADDER">
+      <button clear ion-button icon-only (click)="save(items)">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+  <ion-row align-items-baseline>
+    <ion-col col-12>
+      <ion-searchbar item-left placeholder="{{'VIS_ERROR_NAME'|translate}}"
+                     style="background-color:#eee;border-bottom: 0px" (ionInput)="search($event)">
+      </ion-searchbar>
+    </ion-col>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="swipeGoBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list>
+    <ion-item *ngFor="let item of items" tappable (click)="check(item)">
+      <h3>
+        <span class="font-gray">{{'VIS_ERROR_NAME'|translate}}:</span>
+        <span class="charge">{{item.eleLevelName}}</span></h3>
+      <h3>
+        <span class="font-gray">{{'VIS_LADDER_TIME'|translate}}:</span>
+        <span class="charge">{{item.eleTimeSegName}}</span></h3>
+      <ion-note item-end>
+        <!--<zk-icon name="OK" style="font-size:8px;color:#BABABA" *ngIf="item.selected==false" ></zk-icon>-->
+        <zk-icon name="OK" style="font-size:2rem;color:#7ac143" *ngIf="item.selected==true"></zk-icon>
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

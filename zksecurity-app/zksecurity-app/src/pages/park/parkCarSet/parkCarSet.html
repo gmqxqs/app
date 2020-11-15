@@ -1,0 +1,151 @@
+<!-- 停车场 - 车场参数设置页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PAGE_PARKCARSET">
+      <button clear ion-button icon-only (click)="save()">
+          <zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+    </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <form [formGroup]="setCarForm">
+    <ion-list>
+      <ion-item>
+        <span item-left>{{'PARK_CAR_SET'|translate}}</span>
+        <span item-right class="item-right-color" tappable (click)="showCompany()">
+          <ion-icon item-right [name]="data.company? 'arrow-up' : 'arrow-down'"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="data.company==true" class="item-two company-right" >
+        <ion-label class="item-left-color">{{'COMPANY_NAME'|translate}}</ion-label>
+        <ion-input  item-right type="text" name="companyName" formControlName="companyName" ></ion-input>
+      </ion-item>
+      <ion-item *ngIf="data.company==true" class="item-two pers-gender" tappable  (click)="selectCarMode()">
+        <ion-label class="item-left-color">{{'PARK_CAR_MODE'|translate}}</ion-label>
+        <button *ngIf="lang !== 'zh'" class="select-hide" name="state" ion-button color="light" item-end icon-right>
+          {{carMode}}
+        </button>
+        <button *ngIf="lang === 'zh'" name="state" ion-button color="light" item-end icon-right>
+          {{carMode}}
+        </button>
+        <zk-icon item-right class="item-right-color" name="next"></zk-icon>
+        <!--item-left-company<span class="">{{'PARK_CAR_MODE'|translate}}</span>
+        <span item-right class="item-right-color" >{{carMode}}</span>
+        <zk-icon item-right name="next" style="color: #999"></zk-icon>-->
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <span item-left>{{'PARK_IMPORTEXPORT_AREA_SET'|translate}}</span>
+        <span item-right class="item-right-color" tappable (click)="showSecond()">
+          <ion-icon item-right [name]="data.second? 'arrow-up' : 'arrow-down'"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="data.second==true">
+        <ion-label class="item-left-color">{{'PARK_FIX_MULTIPLE_IN_MULTIPLE_OUT'|translate}}</ion-label>
+        <ion-toggle name="fixedCarGoMore" formControlName="fixedCarGoMore"></ion-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="data.second==true">
+        <ion-label class="item-left-color">{{'PARK_TEMPORARY_MULTIPLE_IN_MULTIPLE_OUT'|translate}}</ion-label>
+        <ion-toggle name="temporaryCarGoMore" formControlName="temporaryCarGoMore"></ion-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="data.second==true">
+        <ion-label class="item-left-color">{{'PARK_USING_CHANGE_SHIFTS'|translate}}</ion-label>
+        <ion-toggle name="shift" formControlName="shift"></ion-toggle>
+      </ion-item>
+
+      <ion-item *ngIf="data.second==true && lang === 'zh'" class="item-two pers-gender" tappable (click)="defaultPlate()">
+        <ion-label class="item-left-color">{{'PARK_DEFAULT_CAR_NUM'|translate}}</ion-label>
+        <button class="select-hide" name="state" ion-button color="light" item-end icon-right>
+          {{myplate}}
+        </button>
+        <zk-icon item-right class="item-right-color" name="next"></zk-icon>
+        <!--<span item-left class="item-left-color">{{'PARK_DEFAULT_CAR_NUM'|translate}}</span>
+        <span item-right class="item-overflow">{{myplate}}</span>
+        <zk-icon item-right class="item-right-color" name="next"></zk-icon>-->
+      </ion-item>
+
+      <ion-item *ngIf="data.second==true" class="item-two pers-gender" tappable (click)="entryPrecision()">
+        <ion-label class="item-left-color">{{'PARK_MATCHING_ACCURACY'|translate}}</ion-label>
+        <button *ngIf="lang !== 'zh'" class="select-hide" name="state" ion-button color="light" item-end icon-right>
+          {{entry}}
+        </button>
+        <button *ngIf="lang === 'zh'" name="state" ion-button color="light" item-end icon-right>
+          {{entry}}
+        </button>
+        <zk-icon item-right class="item-right-color" name="next"></zk-icon>
+      </ion-item>
+
+      <!--<ion-item *ngIf="data.second==true" (click)="type()">-->
+        <!--<span item-left class="item-left-color">{{'ALLOW_CARTYPE'|translate}}</span>-->
+        <!--<span item-right class="item-overflow">{{mTypeName}}</span>-->
+        <!--<zk-icon item-right class="item-right-color" name="next"></zk-icon>-->
+      <!--</ion-item>-->
+
+      <ion-item *ngIf="data.second==true">
+        <ion-label class="item-left-color">{{'PARK_ALL_TEMP'|translate}}</ion-label>
+        <ion-toggle name="parkCarTypeIds" formControlName="parkCarTypeIds"></ion-toggle>
+      </ion-item>
+
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <span item-left>{{'PARK_CHARGE_MANAGE_SET'|translate}}</span>
+        <span item-right class="item-right-color" tappable (click)="showThird()">
+          <ion-icon item-right [name]="data.third? 'arrow-up' : 'arrow-down'"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="data.third==true">
+        <ion-label class="item-left-color">{{'PARK_USING_FIXED_CHARGE_STARDED'|translate}}</ion-label>
+        <ion-toggle name="fixedFeeScale" formControlName="fixedFeeScale"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="data.third==true">
+        <ion-label class="item-left-color">{{'PARK_PRINT_CHARGE_TICKET'|translate}}</ion-label>
+        <ion-toggle name="printReceipts" formControlName="printReceipts"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="data.third==true">
+        <ion-label class="item-left-color">{{'PARK_USING_CHARGE_SALE'|translate}}</ion-label>
+        <ion-toggle name="consumptionDiscount " formControlName="consumptionDiscount"></ion-toggle>
+      </ion-item>
+      <ion-item *ngIf="data.third==true" class="item-two pers-gender" tappable (click)="selectTreatment()">
+        <ion-label class="item-left-color">{{'PARK_UNMATCH_TREATMENT'|translate}}</ion-label>
+        <button *ngIf="lang !== 'zh'" class="select-hide" name="state" ion-button color="light" item-end icon-right>
+          {{myTreatment}}
+        </button>
+        <button *ngIf="lang === 'zh'" name="state" ion-button color="light" item-end icon-right>
+          {{myTreatment}}
+        </button>
+        <!--<zk-icon item-right class="item-right-color" name="next"></zk-icon>-->
+        <!--<span class="item-left-color">{{'PARK_UNMATCH_TREATMENT'|translate}}</span>-->
+        <!--<div item-right class="item-right-color item-treement" >{{myTreatment}}</div>-->
+        <zk-icon item-right name="next" style="color: #999"></zk-icon>
+      </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item>
+        <span item-left>{{'PARK_FIXED_SET'|translate}}</span>
+        <span item-right class="item-right-color" tappable (click)="showFourth()">
+          <ion-icon item-right [name]="data.fourth? 'arrow-up' : 'arrow-down'"></ion-icon>
+        </span>
+      </ion-item>
+      <ion-item *ngIf="data.fourth==true">
+        <ion-label class="item-left-color">{{'PARK_USING_FIXED_CHANGE_TEMPORARY'|translate}}</ion-label>
+        <ion-toggle name="fixedIntoTemporary " formControlName="fixedIntoTemporary"></ion-toggle>
+      </ion-item>
+      <!--<ion-item *ngIf="data.fourth==true">-->
+        <!--<ion-label class="item-left-color">{{'PARK_FIXED_COUNT_PARKING_LOT'|translate}}</ion-label>-->
+        <!--<ion-toggle name="fixedStatistical " formControlName="fixedStatistical"></ion-toggle>-->
+      <!--</ion-item>-->
+      <ion-item *ngIf="data.fourth==true" class="item-two">
+        <ion-label class="item-left-color">{{'PARK_FIXED_EARLY_WARNING_DAYS'|translate}}</ion-label>
+        <ion-input item-right type="text" formControlName="fixedCarWarningDay" maxLength="1"></ion-input>
+      </ion-item>
+      <!--<ion-item *ngIf="data.fourth==true" class="item-two">-->
+        <!--<ion-label class="item-left-color">{{'PARK_HOLD_DAYS'|translate}}</ion-label>-->
+        <!--<ion-input item-right type="text" formControlName="spaceResDays" maxLength=2></ion-input>-->
+      <!--</ion-item>-->
+    </ion-list>
+  </form>
+</ion-content>

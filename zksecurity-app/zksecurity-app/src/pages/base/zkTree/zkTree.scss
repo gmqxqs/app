@@ -1,0 +1,83 @@
+// Page zkTree sass 
+zk-tree {
+	.zktree-root {
+		
+	}
+	.zktree-box {
+		position: relative;
+		width: 100%;
+		font-size: 1.2rem;
+		.zktree-sep {
+			left: -2rem;
+			right: 0px;
+			position: absolute;
+			border-bottom-style: solid;
+		}
+		.zktree-node {
+			position: relative;
+			width: 100%;
+			/*border-top: 0.1rem solid #ddd;*/
+			.zktree-selected {
+				color: #7ac143;
+			}
+			.zktree-sep-selected {
+				/*border-bottom: 0.2rem solid #7ac143;*/
+			}
+			.zktree-item {
+				position: relative;
+				padding: 0.5rem 0px 0.5rem $zk-top-width;
+				font-size: 2rem;
+				vertical-align: middle;
+				display: inline-block;
+				width: 100%;
+				.zktree-open-icon {
+					position: relative;
+					bottom:0.2rem;
+					width: 1.2rem;
+				}
+				ion-icon {
+					font-size: 3rem;
+					line-height: 3rem;
+				}
+				.zktree-text {
+					white-space: nowrap;
+					display: inline-block;
+					width: 70%;
+					text-overflow: ellipsis;
+					overflow: hidden;
+					line-height: inherit;
+					padding-left: 0.5rem;
+				}
+				.zktree-checked {
+					float: right;
+					color: #7ac143;
+					padding-right: 1rem;
+				}
+				.zktree-unchecked {
+					float: right;
+					padding-right: 1rem;
+					color: #9E9E9E;
+				}
+				
+				.zktree-empty {/*
+					display: inline-block;
+				    border-width: 0.5rem;  
+				    border-color: transparent;
+				    border-right-width: 0;  
+				    border-style: dashed;  
+				    border-left-style: solid;  
+				    border-top-color: transparent;  
+				    border-bottom-color: transparent;  */
+				    color: transparent;
+				    width: 1.2rem;
+				}
+				
+			}
+			.zktree-child {
+				padding-left: 2rem;
+				width: 100%;
+				display: flex;
+			}
+		}
+	}
+}

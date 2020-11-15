@@ -1,0 +1,66 @@
+<!-- 系统 - 用户设置页面 -->
+<ion-header>
+	<zk-nav-bar  hideBackButton="true" titleMsg="PAGE_USERSETTING">
+		<button button-start clear ion-button icon-only (click)="goBack()">
+            <zk-icon name="nav_back"></zk-icon>
+        </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content id="content" has-subheader="false" no-bounce class="no-scroll" (swiperight)="swipGoBack()">
+	<ion-row>
+		<ion-col col-12 align="center" padding class="photo">
+			<div class="user-set-icon" tappable (click)="editUser()" [style.background-image]="'url('+userIconUrl+')'"></div>
+			<div style="padding-bottom: 1rem">{{userName}}</div>
+		</ion-col>
+	</ion-row>
+
+	<ion-row>
+		<ion-col  col-12>
+			<ion-item  class="user-set-item1" tappable (click)="goToStatement()">
+				<ion-label item-content>
+					<zk-icon name="term"></zk-icon>
+					{{'USER_DECLAR'|translate}}
+				</ion-label>
+				<zk-icon item-end name="next"></zk-icon>
+			</ion-item>
+			<ion-item class="user-set-item1" tappable (click)="createLangOption()">
+				<ion-label item-content>
+					<zk-icon name="lang"></zk-icon>
+					{{'USER_LANGSET'|translate}}
+				</ion-label>
+				
+				<zk-icon item-end name="next"></zk-icon>
+			</ion-item>
+
+
+
+			<!--添加隐私协议-->
+			<ion-item class="user-set-item1"  tappable (click)="goToProvicy()">
+				<ion-label item-content>
+					<zk-icon name="privacy"></zk-icon>
+					{{'PAGE_PRIVACY'|translate}}
+				</ion-label>
+				<zk-icon item-end name="next"></zk-icon>
+			</ion-item>
+
+		</ion-col>
+	</ion-row>
+
+	<ion-row>
+		<ion-col  col-12>
+			
+			<ion-item ion-item no-lines detail-none tappable (click)="goToAbout()">
+				<ion-label item-content>
+					<zk-icon name="about"></zk-icon>
+					{{'USER_ABOUT'|translate}}
+				</ion-label>
+				<zk-icon item-end name="next"></zk-icon>
+			</ion-item>
+		</ion-col>
+	</ion-row>
+
+
+	<button class="user-set-exit" ion-button block tappable (click)="logOut()">
+		{{'USER_EXIT'|translate}}
+	</button>
+</ion-content>

@@ -1,0 +1,117 @@
+// Page accAlarm sass --报警页面样式
+page-accAlarm {
+	.acc-device-item{
+		background:#fff;
+		margin-bottom:0.8rem;
+		width:100%;
+	}
+
+	.acc-device-item:first-child{
+		margin-top:$zk-top-width;
+	}
+
+	.acc-device-item p{
+		padding:0;
+		margin:0;
+	}
+	.acc-device-status-icon1 zk-icon, .acc-device-status-icon2 zk-icon {
+	    width:1.6rem;
+	    height:100%;
+	    display: inline-block;
+	    //border: 1px solid #7ac143;
+	    text-align:center;
+	    font-size:1.7rem;
+	    color:#fff;
+	}
+
+	.acc-device-status-icon1{
+		line-height: 5.8rem;
+	}
+
+	.acc-device-status-icon2{
+	    line-height: 7rem;
+	}
+
+	.acc-device-status{
+		padding-left:3.4rem;
+		padding-right:1.4rem;
+	}
+
+	.acc-device-status ion-label {
+		display:inline;
+	}
+
+	.acc-device-detail{
+		line-height:3.4rem;
+		height:3rem;
+		font-size:2rem;
+
+	}
+
+	.acc-device-time{
+		font-size:1.4rem;
+		color:#D4D4D4;
+		line-height:3rem;
+		width:auto;
+		text-align:right;
+	}
+
+	.acc-report-row1{
+		line-height:2.2rem;
+		font-size:1.7rem;
+		//margin-top: -1.7rem;
+	}
+	.acc-report-time{
+		text-align:right;
+		font-size:1.2rem;
+		color:#D3D3D3;
+	}
+
+	.acc-device-div{
+		float:left;
+		width:90%;
+		color: #C5C5C5;
+	}
+
+	.acc-device-area, .acc-device-per{
+		//line-height:2.4rem;
+		//height:2.4rem;
+		font-size:1.6rem;
+		color:#999;
+		//width:80%;	
+	}
+
+	.acc-device-check{
+		float:left;
+		width:10%;
+	}
+
+	.alarm-button.button-block-ios, .alarm-button.button-block-md {
+	    margin-left: 5%;
+	    margin-right: 5%;
+	    width: 90%;
+	}
+
+	.acc-device-div [col-12], .acc-device-div [col-6]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.alarm-left{
+		margin-right:2rem;
+	}
+
+	.acc-device-item .acc-monitor-icon {
+	    border-radius: 50%;	
+	    text-align:center;
+	    font-size:1.7rem;
+	    color:#fff;
+	    position: relative;
+	    left:0.6rem;
+	    top:0.8rem;
+	    padding:0.3rem 0.6rem;
+	}
+}

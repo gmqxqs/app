@@ -1,0 +1,81 @@
+<!-- 人事 - 设置页面 -->
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_PERSSET">
+      <button clear ion-button icon-only (click)="save()">
+        	<zk-icon name="OK" style="color: #000; font-size: 2.4rem"></zk-icon>
+      </button>
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<form [formGroup]="setPersForm">
+		<ion-list class="set-pers-code">
+			<ion-item class="no-line">
+				<button ion-button color="light" item-end icon-right (click)="showHideCode()">
+					<ion-icon item-right [name]="isShowCode? 'arrow-up' : 'arrow-down'"></ion-icon>
+				</button>
+				<ion-label >{{ 'PERS_PIN_SET'|translate }}</ion-label>
+			</ion-item>
+			<ion-item *ngIf="isShowCode" class="item-two" ng-show="false">
+				<ion-label>{{ 'PERS_LEN'|translate }}</ion-label>
+				<ion-input item-right type="text" name="pinLen" formControlName="pinLen"></ion-input>
+			</ion-item>
+			<ion-item *ngIf="isShowCode" class="item-two">
+				<ion-label>{{ 'PERS_LETTER_SUPPORT'|translate }}</ion-label>
+				<ion-toggle name="pinSupportLetter" formControlName="pinSupportLetter" ></ion-toggle>
+			</ion-item>
+			<ion-item *ngIf="isShowCode" class="item-two">
+				<ion-label>{{ 'PERS_PIN_INCREMENT'|translate }}</ion-label>
+				<ion-toggle name="pinSupportIncrement" formControlName="pinSupportIncrement" ></ion-toggle>
+			</ion-item>
+		</ion-list>
+		<ion-list class="set-pers-card">
+			<ion-item class="no-line">
+				<button ion-button color="light" item-end icon-right (click)="showHideCard()">
+					<ion-icon item-right [name]="isShowCard? 'arrow-up' : 'arrow-down'"></ion-icon>
+    			</button>
+				<ion-label>{{ 'PERS_CARD_SET'|translate }}</ion-label>
+			</ion-item>
+			<ion-item *ngIf="isShowCard" class="item-two">
+				<ion-label>{{ 'PERS_LEN'|translate }}</ion-label>
+				<ion-input class="" type="text" name="cardLen" formControlName="cardLen">
+				</ion-input>
+				<span item-right class="maxlength-cardno-label">{{ 'PERS_BIT'|translate }}</span>
+			</ion-item>
+			<ion-item *ngIf="isShowCard" class="item-two card-type" >
+			    <ion-label>{{ 'PERS_CARD_FORMAT'|translate }}</ion-label>
+			    <button ion-button color="dark" clear item-end icon-right (click)="setCardHex()">
+    				{{ cardHexText|translate }}
+					<ion-icon item-right name="arrow-forward"></ion-icon>
+    			</button>
+			    <!--
+			    <ion-select name="cardHex" 
+			    			interface="action-sheet" 
+			    			[selectOptions]="{cssClass:'base-code-sheet'}" 
+			    			cancelText="{{'COMMON_CANCEL'|translate}}" 
+			    			formControlName="cardHex">
+			    	<ion-option [value]="0">{{ 'PERS_CARD_DECIMAL'|translate }}</ion-option>
+			    	<ion-option [value]="1">{{ 'PERS_CARD_HEXDECIMAL'|translate }}</ion-option>
+			    </ion-select>
+				-->
+			</ion-item>
+			<!--
+			<ion-item *ngIf="isShowCard" class="item-two">
+				<ion-label>{{ 'PERS_CARD_SUPPORT'|translate }}</ion-label>
+				<ion-toggle name="cardsSupport" formControlName="cardsSupport" ></ion-toggle>
+			</ion-item>
+			-->
+		</ion-list>
+		<!-- <ion-list class="set-pers-code">
+			<ion-item class="no-line">
+				<button ion-button color="light" item-end icon-right (click)="this.isShowLeave=!this.isShowLeave">
+					<ion-icon item-right [name]="isShowLeave? 'arrow-up' : 'arrow-down'"></ion-icon>
+				</button>
+				<ion-label >{{ 'PERS_LEAVE'|translate }}</ion-label>
+			</ion-item>
+			<ion-item *ngIf="isShowLeave" class="item-two">
+				<ion-label>{{ 'PERS_LEAVE_RETAIN'|translate }}</ion-label>
+				<ion-toggle name="pinRetain" formControlName="pinRetain" ></ion-toggle>
+			</ion-item>
+		</ion-list> -->
+	</form>
+</ion-content>

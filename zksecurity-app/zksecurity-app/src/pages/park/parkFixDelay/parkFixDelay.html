@@ -1,0 +1,68 @@
+<!-- 停车场 - 固定车延期页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PARKFIXDELAY">
+  </zk-nav-bar>
+</ion-header>
+  <ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+    <!-- 下拉刷新器 begin-->
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content
+        pullingIcon="arrow-dropdown"
+        pullingText="{{'COMMON_PULLREF'|translate}}"
+        refreshingSpinner="crescent"
+        refreshingText="{{'COMMON_REFRESHING'|translate}}">
+      </ion-refresher-content>
+    </ion-refresher>
+    <!-- 下拉刷新器 end-->
+    <ion-list class="park-fix-list">
+      <ion-item-sliding *ngFor="let item of items" >
+        <ion-item tappable (click)="delay(item)" *ngIf="item.parkCarTypeId==1">
+          <h6 class="fixed"><div class="circle"></div>{{'PARK_FIXCARA'|translate}}</h6>
+          <div class="span">{{item.parkPersonName}}
+            <div *ngIf="parkingLotModel=='one'" class="circle"></div>
+            {{item.parkCarNumber}}
+          </div>
+          <ion-note item-end><span class="waringdays" *ngIf="'PARK_EXPIRE' !== item.warnTime" >{{'PARK_WARNING_DAYS'|translate}}</span>
+            <span class="day">{{item.warnTime|translate}}</span></ion-note>
+        </ion-item>
+        <ion-item tappable (click)="delay(item)" *ngIf="item.parkCarTypeId==2">
+          <h6 class="fixed"><div class="circle1"></div>{{'PARK_FIXCARB'|translate}}</h6>
+          <div class="span">{{item.parkPersonName}}
+            <div *ngIf="parkingLotModel=='one'" class="circle1"></div>
+            {{item.parkCarNumber}}
+          </div>
+          <ion-note item-end><span class="waringdays" *ngIf="'PARK_EXPIRE' !== item.warnTime" >{{'PARK_WARNING_DAYS'|translate}}</span>
+            <span class="day">{{item.warnTime|translate}}</span></ion-note>
+        </ion-item>
+        <ion-item tappable (click)="delay(item)" *ngIf="item.parkCarTypeId==3">
+          <h6 class="fixed"><div class="circle2"></div>{{'PARK_FIXCARC'|translate}}</h6>
+          <div class="span">{{item.parkPersonName}}
+            <div *ngIf="parkingLotModel=='one'" class="circle2"></div>
+            {{item.parkCarNumber}}
+          </div>
+          <ion-note item-end><span class="waringdays" *ngIf="'PARK_EXPIRE' !== item.warnTime" >{{'PARK_WARNING_DAYS'|translate}}</span>
+            <span class="day">{{item.warnTime|translate}}</span></ion-note>
+        </ion-item>
+        <ion-item tappable (click)="delay(item)" *ngIf="item.parkCarTypeId==4">
+          <h6 class="fixed"><div class="circle3"></div>{{'PARK_FIXCARD'|translate}}</h6>
+          <div class="span">{{item.parkPersonName}}
+            <div *ngIf="parkingLotModel=='one'" class="circle3"></div>
+            {{item.parkCarNumber}}
+          </div>
+          <ion-note item-end><span class="waringdays" *ngIf="'PARK_EXPIRE' !== item.warnTime" >{{'PARK_WARNING_DAYS'|translate}}</span>
+            <span class="day">{{item.warnTime|translate}}</span></ion-note>
+        </ion-item>
+        <ion-item-options>
+          <button class="delete" outline (click)="showAlert(item)">{{'PARK_DELETE'|translate}}</button>
+        </ion-item-options>
+      </ion-item-sliding>
+      <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+      </ion-label>
+    </ion-list>
+    <!-- 上拉加载器 begin -->
+    <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+      <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+    <!-- 上拉加载器 end -->
+  </ion-content>

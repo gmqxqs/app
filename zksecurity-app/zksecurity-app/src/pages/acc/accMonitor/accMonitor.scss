@@ -1,0 +1,119 @@
+// Page accMonitor sass --实时监控页面样式
+page-accMonitor {
+	.acc-monitor-content{
+		.scroll-content {
+			.acc-monitor-box {
+				background-color: #fff;
+				position: absolute;
+				top: $zk-top-width;
+				bottom: 0;
+				width: 100%;
+				overflow: auto;
+			}
+		}
+	}
+
+	.acc-monitor-item{
+		border-left:1px solid #DFE1DD;	
+		margin:0 0 0 3rem;
+	}
+
+	.acc-monitor-div{
+		margin:0 0 0 2rem;
+		border-bottom:1px solid #DFE1DD;
+		//padding-bottom:0.8rem;	
+		padding-right:0.8rem;
+	}
+
+	.acc-monitor-top{
+		//border-left:1px solid #DFE1DD;
+		margin:$zk-padding-width 0 0 0.6rem;
+	}
+
+	.acc-monitor-top span{
+  		color:#fff;
+  		background:#7AC143;
+  		border-radius:1rem;	
+  		width:6rem;
+		//height:1.7rem;
+		//line-height:1.7rem;
+		display: block;
+		text-align:center;
+		font-size:1.4rem;
+	}
+
+	.acc-monitor-item.item-ios{
+
+	}
+
+	.acc-monitor-icon{
+		//font-size:2rem;
+	}
+
+	.acc-monitor-item .acc-monitor-icon {
+	    line-height: 3rem;
+	    //display: inline-block;
+	    border-radius: 50%;	
+	    text-align:center;
+	    font-size:1.7rem;
+	    color:#fff;
+	    position: relative;
+	    left:-3.3rem;
+	    top:1rem;
+	    padding:0.3rem 0.6rem;
+	}
+	.acc-monitor-item h6, .acc-monitor-item .acc-monitor-row1{
+		//margin:-2rem 0 0 0;
+		line-height:2.4rem;
+		font-size:1.7rem;
+		margin-top: -1.7rem;
+	}
+
+	.acc-monitor-row2,.acc-monitor-row3,.acc-monitor-row4{
+		//line-height:1.7rem;
+		//height:1.7rem;
+		font-size:1.2rem;
+		margin:0 0 0 0;
+		color:#C5C5C5;
+	}
+
+	.acc-monitor-item [col-12], .acc-monitor-item [col-5],.acc-monitor-item [col-2],.acc-monitor-item [col-6]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-monitor-item [col-7]{
+	    padding: 0.2rem;
+	    overflow: hidden;
+		width:100%;
+	}
+
+	.acc-minitor-item p{
+		height:2rem;
+		line-height:1.7rem;
+		height:1.7rem;
+		font-size:1.2rem;
+		margin:0 0 0 0;
+		color:#C5C5C5;
+	}
+
+	.acc-monitor-time{
+		//float:right;
+		text-align:right;
+		font-size:1.2rem;
+		color:#D3D3D3;
+	}
+
+	.acc-monitor-pin{
+		margin-right:2rem;
+	}
+
+	.acc-monitor-right-icon {
+    	font-size: 1.8em;
+    	color: #7ac143;
+	}
+}
+	

@@ -1,0 +1,84 @@
+// Page parkInCarDetail sass --设置页面样式
+page-parkInCarDetail {
+  .item-right-color{
+    color:#9F9F9F;
+    text-align:right;
+  }
+  .page-home-slides{
+    width: 100%;
+    margin: 0px;
+    .swiper-pagination-bullet-active {
+      background-color: #fff;
+    }
+  }
+  .transparent-header {
+    // This is just to make the header transparent and button/icon with white color
+    .toolbar-content,
+    .back-button {
+      color: white;
+    }
+    .toolbar-background,
+    ion-navbar,
+    ion-header {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+    .header-md::after,
+    .toolbar-background-ios {
+      background-image: none;
+      border-bottom: 0;
+    }
+    .header-ios .toolbar-background-ios,
+    .footer-ios .toolbar-background-ios {
+      border: 0;
+    }
+    // ---
+  }
+  #profile-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 19rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+    color: white;
+    font-size: large;
+  }
+
+  zk-nav-bar {
+      .custom-toolbar {
+        background-color: transparent;
+          .custom-toolbar-button-end {
+              button {
+                  zk-icon {
+                      color: #fff;
+                  }
+                  color: #fff;
+              }
+          }
+          .custom-toolbar-title {
+              color: #fff;  
+           }
+          .custom-toolbar-button-start {
+              button {
+                  zk-icon {
+                      color: #fff;
+                  }
+                  color: #fff;
+              }
+          }
+      }
+   }  
+
+  .toolbar-title-ios {
+    color: #fff;
+  }  
+  #content {
+    position: relative;
+    margin-top: 19rem;
+    padding-top: 0px;
+    text-align: center;
+  }
+}

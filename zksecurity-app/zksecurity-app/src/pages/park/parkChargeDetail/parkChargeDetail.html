@@ -1,0 +1,48 @@
+<!-- 停车场 - 收费明细页面 -->
+<ion-header>
+    <zk-nav-bar titleMsg="PAGE_PARKCHARGEDETAIL">
+    </zk-nav-bar>
+   <ion-row align-items-baseline>
+    <ion-item style="padding-left:0px;background-color: transparent;" no-lines>
+      <ion-searchbar item-content placeholder="{{ 'PARK_CARDNUM'|translate }}"  (ionInput)="search($event)"></ion-searchbar>
+      <zk-icon name="vis-calendar" tappable (click)="timeSeletions()" style="color: #7ac143;font-size: 2.4rem; padding:0 1rem;" item-right></zk-icon>
+    </ion-item>
+  </ion-row>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+	<ion-list>
+
+		<ion-item *ngFor="let item of items" tappable (click)="showDetail(item)">
+        <div class="page-item-box">
+          <zk-icon name="park-car">
+          </zk-icon>
+        </div>
+        <div class="page-item-text">
+          <h2><span>{{item.carNumber}}</span></h2>
+          <h6 class="fixed">{{'PARK_OPERATOR'|translate}}:{{item.dutyName}}</h6>
+          <h6 ><span style="font-size: 1.2rem;">{{item.checkInTime}}</span>-<span style="font-size: 1.2rem;display: inline-block;">{{item.checkOutTime}}</span></h6>
+        </div>
+      <ion-note item-right>
+        <span class="charge">{{'PARK_CHANGE_ICON'|translate}}{{item.receiveAmount}}</span>
+      </ion-note>
+		</ion-item>
+    <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>----{{'COMMON_LIST_BOTTOM'|translate}}----
+    </ion-label>
+	</ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

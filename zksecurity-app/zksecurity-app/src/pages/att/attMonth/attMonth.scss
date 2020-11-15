@@ -1,0 +1,89 @@
+// Page attMonth sass --考勤月历页面样式
+page-attMonth {
+
+	.item{
+		ion-avatar {
+			img {
+				width: 4rem;
+				height:4rem;
+			}
+		}
+	} 
+
+	.att-month-header {
+		.row {
+			.col {
+				color: #949694;
+			}
+		}
+	}
+
+	.att-month-body {
+		background-color: #fff;
+
+		.col:nth-child(6), .col:nth-child(7)  {
+			color: #d2d2d2;
+		}
+
+		.att-month-today {
+			background-color: #e4f3d9;
+		}
+		.att-month-day {
+			border-radius: 50%;
+			text-align: center;
+			width: 2rem;
+			height: 2rem;
+			line-height: 2rem;
+			display: inline-block;
+		}
+		.att-month-active {
+			background-color: #7ac143;
+			color: #fff;
+		}
+		.att-month-pox {
+			line-height: 1;
+			.att-month-point {
+				border-radius: 50%;
+				width: 0.5rem;
+				height: 0.5rem;
+				background-color: #7ac143;
+				display: inline-block;
+			}
+		}
+		
+	}
+
+	.att-month-data-title {
+		position: relative;
+		top: 0.45rem;
+		left: 0.05rem;
+		zk-icon {
+			color:#7ac143;
+			font-size: 2.8rem;
+		}
+
+		.att-month-text {
+		    position: relative;
+		    bottom: 0.4rem;
+		    left: 0.4rem;
+		}
+	}
+
+	.att-month-item {
+		margin-left: 1.2rem;
+		border-left: 1px solid #ddd;
+		padding-top: 2rem;
+		.att-month-icon {
+			border-radius: 50%;
+		    background: #7ac143;
+		    width: 2.2rem;
+		    height: 2.2rem;
+		    line-height: 2.2rem;
+		    color: #fff;
+		    display: inline-block;
+		    left: -1.1rem;
+		    position: relative;
+		    text-align: center;
+		}
+	}
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>百傲瑞达</title>
+  <meta name="viewport"  content="viewport-fit=cover,width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#7ac143">
+ 
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
+
+  <!-- un-comment this code to enable service worker
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('service worker installed'))
+        .catch(err => console.error('Error', err));
+    }
+  </script>-->
+
+  <link href="build/main.css" rel="stylesheet">
+   <script type="text/javascript">
+        var cssEl = document.createElement('style');
+        document.documentElement.firstElementChild.appendChild(cssEl);
+
+        function getSizeRate() {
+          let rate = document.documentElement.clientWidth/document.documentElement.clientHeight;
+          let sizes = [
+              2048/273,
+              1536/2048,
+              1440/2560,
+              1242/2208,
+              1080/1920,
+              800/1280,
+              768/1024,
+              750/1334,
+              720/1280,
+              640/1136,
+              640/960,
+              540/960,
+              480/800,
+              360/640,
+              240/320,
+              1024/600,
+              2048/1536,
+              1366/768,
+              1080/2040,
+              1242/2688,
+              828/1792,
+              1125/2436,
+              1080/2340,
+          ];
+          let scale = [45, 45, 38, 45, 45, 42, 45, 40, 45, 42, 45, 45, 40, 45, 45, 90, 70, 105, 36];
+          let sub = 10000;
+          let ind = 0;
+          sizes.forEach((item, index) => {
+            if(Math.abs(item - rate) < sub) {
+              sub = Math.abs(item - rate);
+              ind = index;
+            }
+          });
+          console.log(ind)
+          return scale[ind]
+        }
+    
+        function setPxPerRem(){
+            var dpr = getSizeRate();
+            var pxth = document.documentElement.clientHeight / 1280 * 96;
+            var pxPerRem = document.documentElement.clientWidth / dpr;
+            cssEl.innerHTML = 'html{font-size:' + pxPerRem + 'px!important;} ion-app .toolbar,ion-app zk-nav-bar, ion-app .custom-toolbar { min-height:'+pxth + 'px!important;}';
+        }
+        setPxPerRem();
+    </script>
+
+</head>
+<body>
+
+  <!-- Ionic's root component and where the app will load -->
+  <ion-app></ion-app>
+
+  <!-- The polyfills js is generated during the build process -->
+  <script src="build/polyfills.js"></script>
+
+  <!-- The bundle js is generated during the build process -->
+  <script src="build/main.js"></script>
+
+</body>
+</html>

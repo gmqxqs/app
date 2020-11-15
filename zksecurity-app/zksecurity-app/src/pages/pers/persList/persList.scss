@@ -1,0 +1,87 @@
+// Page persList sass --人事页面样式
+page-persList {
+
+	.item{
+		ion-avatar {
+			min-width: 3.6rem;
+			min-height: 3.6rem;
+			img {
+				width: 5rem;
+				height:5rem;
+			}
+		}
+
+		ion-avatar[item-left], ion-avatar[item-start] {
+			margin: 0 1rem 0 0;
+		}
+	} 
+
+	.page-person-box {
+		height:100%;
+		width: 100%;
+		background-color: #eeeeee;
+	}
+
+	.has-refresher > .scroll-content {
+		border-top:none;
+	}
+	.page-person-label{
+		color:#9E9E9E;
+		font-size: 1.4rem;
+	}
+
+	h4{
+		overflow: hidden;
+    	text-overflow: ellipsis;
+    	white-space: nowrap;
+	}
+	.page-person-icon {
+		font-size: 2.6rem;
+		color:#7ac143;
+		display: inline-block;
+		padding-left: 0.3rem
+	}
+
+	ion-infinite-scroll {
+		background:#eeeeee;
+	}
+
+	.page-person-box [col-3],.page-person-box [col-9]{
+		padding:0.4rem 0 0.4rem 1rem;
+	}
+
+	.person-add-item {
+		font-size:2.4rem;
+	}
+
+
+	ion-list{
+		width:100%;
+		.item {
+			padding:0.5em 0;
+		}
+
+		ion-item-sliding {
+			background-color: #fff!important;
+		}
+	}
+
+	.person-item-list{
+		//margin-top:0.6rem;
+		.list {
+			.item {
+				padding: 0.5rem;
+				padding-left:$zk-padding-width;
+			}
+		}
+	}
+
+	.item-ios .ion-ios-arrow-forward.item-icon{
+		color:#CECECE;
+	}
+
+	.pers-add-item.item-input-disabled .item-inner {
+        border-bottom-color: #eeeeee;
+    }
+
+}

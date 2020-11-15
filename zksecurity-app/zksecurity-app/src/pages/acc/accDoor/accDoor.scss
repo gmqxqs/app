@@ -1,0 +1,154 @@
+// Page accDoor sass -- 门操作页面
+page-accDoor {
+	.acc-door-content{
+		background:#404650;
+	}
+	.acc-door-card{
+		width:70%;
+		height:40%;
+		background:transparent;
+		margin:auto auto;
+		border-bottom:0.1rem solid #4a5059;
+		background: url("../assets/img/img_door.png") no-repeat center 1rem;
+		-moz-background-size:6rem 6rem; /* 老版本的 Firefox */
+		background-size:18.9rem 15rem;
+	}
+
+
+	.acc-door-img-status img{
+		margin:auto;
+		margin-top:5.4rem;
+		width:auto;
+		height:7rem;
+	}
+	.card-ios, .card-md {
+    	-webkit-box-shadow: none;
+   		box-shadow: none;
+    }
+
+	.acc-door-card h3{
+		text-align:center;
+		color:#848c99;
+		font-size:1.6rem;
+		margin-top:2.2rem;
+	}
+
+	.acc-door-card h6{
+		text-align:center;
+		color:#fff;
+		font-size:1.8rem;
+		
+	}
+
+	.acc-door-card-area{
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+		width:100%;
+	}
+
+	.acc-open-door, .acc-close-door, .acc-cancle-alarm, .acc-search-report{
+		width:70%;
+		height:15%;
+		margin:auto auto;
+		background:#404650;
+		text-align:center;
+		border:0px;
+		border-bottom:0.1rem solid #4a5059;
+		color:#fff;
+	}
+
+	.acc-open-door zk-icon, .acc-close-door zk-icon, .acc-cancle-alarm zk-icon, .acc-search-report zk-icon{
+		border-radius: 50%;
+	    color: #fff;
+	    line-height: 1.8em;
+	    height:1.8em;
+	    width:1.8em;
+	    font-size: 2em;
+	    display:inline-block;
+	}
+
+	.opera-door{
+		margin-top:0.6rem;
+	}
+
+	.acc-open-door.card-md h6, .acc-close-door.card-md h6, .acc-cancle-alarm.card-md h6, .acc-search-report.card-md h6,
+	.acc-open-door.card-ios h6, .acc-close-door.card-ios h6, .acc-cancle-alarm.card-ios h6, .acc-search-report.card-ios h6{
+		color:#fff;
+		line-height:0.6rem;
+		margin-top:1rem;
+		font-size:1.8rem;
+	}
+
+	.acc-open-door zk-icon{
+		background:#7AC143;
+		border-color:#fff;
+	}
+	.acc-close-door zk-icon{
+		background:#369DDE;
+		border-color:#fff;
+	}
+	.acc-cancle-alarm zk-icon{
+		background:#ed220F;
+		border-color:#fff;
+	}
+	.acc-search-report zk-icon{
+		background:#7AC143;
+		border-color:#fff;
+	}
+
+	.toolbar {
+		background-color: #404650;
+		.back-button {
+			color: #fff;
+		}
+
+		.toolbar-background {
+			background-color: #404650;
+		}
+
+		button {
+			.button-inner {
+				color: #fff;
+			}
+		}
+		ion-title {
+			background-color: #404650;
+			.toolbar-title {
+				color: #fff;
+			}
+		}
+	} 
+	zk-nav-bar {
+	    .custom-toolbar {
+	        background-color: #404650;
+	        .custom-toolbar-button-end {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+	                color: #fff;
+	            }
+	        }
+	        .custom-toolbar-title {
+	            color: #fff; 	
+	         }
+	        .custom-toolbar-button-start {
+	            button {
+	                zk-icon {
+	                    color: #fff;
+	                }
+	                color: #fff;
+	            }
+	        }
+	    }
+	 }	
+}
+
+ion-app{
+	.base-code-sheet {
+		.as-cutom-selected {
+			color: #d1d2d1;
+		}
+	}
+} 

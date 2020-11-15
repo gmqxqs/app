@@ -1,0 +1,55 @@
+<!-- 停车场 - 车牌授权列表页面 -->
+<ion-header>
+  <zk-nav-bar titleMsg="PAGE_PARKCARDNUM">
+      <button clear ion-button icon-only (click)="presentPopover($event)">
+          <zk-icon name="common-more" style="font-size: 2.4rem"></zk-icon>
+      </button>
+  </zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+  <!-- 下拉刷新器 begin-->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="{{'COMMON_PULLREF'|translate}}"
+      refreshingSpinner="crescent"
+      refreshingText="{{'COMMON_REFRESHING'|translate}}">
+    </ion-refresher-content>
+  </ion-refresher>
+  <!-- 下拉刷新器 end-->
+  <ion-list inset no-lines>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item tappable (click)="showDetail(item)" class="item"
+                *ngIf="item.parkCarTypeId==1 || item.parkCarTypeId==2 || item.parkCarTypeId==3 || item.parkCarTypeId==4">
+        <h3>{{item.parkPersonName}}</h3>
+        <div *ngIf="parkingLotModel=='one'" class="circle1"></div>
+        <h3 *ngIf="parkingLotModel=='one'">{{item.parkCarNumber}}</h3>
+        <div class="signs-green">
+          <div class="signs-son">{{item.parkCarTypeName}}</div>
+        </div>
+        <h6 class="importExport-area1">{{'PARK_IMPORTEXPORT_AREA'|translate}}:{{item.entranceAreaName}}</h6>
+        <h6><span class="enterTime">{{'PARK_EXIT_TIME'|translate}}:{{item.endTime}}</span><span class="charge">{{item.debt}} {{customCurrency}}</span>
+        </h6>
+      </ion-item>
+      <ion-item tappable (click)="showTemporaryDetail(item)" class="item1"
+                *ngIf="item.parkCarTypeId==5 || item.parkCarTypeId==6 || item.parkCarTypeId==7 || item.parkCarTypeId==8">
+        <div class="signs-yellow">
+          <div class="signs-son">{{item.parkCarTypeName}}</div>
+        </div>
+        <h6 class="importExport-area1">{{'PARK_IMPORTEXPORT_AREA'|translate}}:{{item.entranceAreaName}}</h6>
+      </ion-item>
+      <ion-item-options>
+        <button class="delete" outline (click)="showAlert(item)">{{'PARK_DELETE'|translate}}</button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-label *ngIf="isLast" style="color: #7ac143;font-size: 1.6rem;" text-center>
+      ----{{'COMMON_LIST_BOTTOM'|translate}}----
+    </ion-label>
+  </ion-list>
+  <!-- 上拉加载器 begin -->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite())">
+    <ion-infinite-scroll-content loadingText="{{'COMMON_LOADING1'|translate}}">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+  <!-- 上拉加载器 end -->
+</ion-content>

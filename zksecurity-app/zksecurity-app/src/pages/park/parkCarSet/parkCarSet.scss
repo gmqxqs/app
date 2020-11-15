@@ -1,0 +1,103 @@
+// Page parkCarSet sass --车场参数设置页面样式
+page-parkCarSet {
+  .item-right-color{
+    color:#9F9F9F;
+  }
+  .item-left-color{
+    padding-left: 30px;
+    color: #000!important;
+  }
+  .item-left-Mode ion-label{
+    padding-left: 30px;
+    color: #000!important;
+  }
+  .item-input ion-label {
+    -webkit-box-flex: initial;
+    -webkit-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+    max-width: 400px!important;
+    pointer-events: none;
+  }
+
+  .list {
+    margin-top:$zk-top-width;
+    .item {
+      border-bottom: $zk-border-style;
+      .item-inner {
+        border-bottom-width: 0;
+      }
+    }
+  }
+  .item-overflow{
+    color:#9F9F9F;
+    text-align: right;
+    width: 90px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  select {
+    /*很关键：将默认的select选择框样式清除*/
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  .pers-gender .button-inner,.pers-acclevel .button-inner, .item-card-mode .button-inner
+  {
+    font-size:1.7rem;
+    color:#999;
+
+  }
+  .pers-gender .button-ios-light,.pers-acclevel .button-ios-light,
+  .pers-gender .button-ios-light .button-inner,.pers-acclevel .button-ios-light .button-inner{
+    background-color: #fff;
+  }
+  .item-two{
+    width:100%;
+    background:#fff;
+  }
+  .item-two .text-input{
+    text-align: right;
+    color:#999;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    display: inline-block;
+  }
+  ion-label {
+    margin: 0;
+    display: block;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: inherit;
+    text-overflow: clip ;
+    white-space: normal;
+  }
+  .ng-pristine ion-icon{
+    font-size:1.4em;
+  }
+  .zk-icon-next{
+    //font-size:1.4em;
+  }
+  .item-left-company ion-label{
+    padding-left:30px;
+  }
+
+  .item-card-mode2 .button-inner {
+    font-size: 1.7rem;
+    color: #999;
+    font-weight: normal;
+  }
+
+  .item-treement{
+    max-width:10rem;
+    word-wrap:break-word;
+  }
+
+  .select-hide span{
+    display:none;
+  }
+}

@@ -1,0 +1,28 @@
+<ion-header>
+	<zk-nav-bar titleMsg="PAGE_ALARMSET">
+  	</zk-nav-bar>
+</ion-header>
+<ion-content has-subheader="false" no-bounce class="no-scroll" (swiperight)="goBack()">
+	<ion-list>
+		<ion-item>
+			<ion-label>{{ 'ACC_DOOR_OPENOUT'|translate }}</ion-label>
+			<ion-toggle  [formControl]="eventNo1" checked="eventNo1" (onChange)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'ACC_DOOR_DUEVENT'|translate }}</ion-label>
+			<ion-toggle [formControl]="eventNo2" checked="eventNo2" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'ACC_DOOR_ERROPEN'|translate }}</ion-label>
+			<ion-toggle [formControl]="eventNo3" checked="eventNo3" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'COMMON_UNCONNECT'|translate }}</ion-label>
+			<ion-toggle [formControl]="eventNo4" checked="eventNo4" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>{{ 'COMMON_DISCONNECT'|translate }}</ion-label>
+			<ion-toggle [formControl]="eventNo5" checked="eventNo5" (onChecked)="selectEventNo($event)"></ion-toggle>
+		</ion-item>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,63 @@
+// Page userSetting sass --用户设置页面样式
+page-userSetting {
+	
+	.scroll-content {
+		background: #fff;
+		/*filter: brightness(200%);*/
+	}
+	.row {
+		border-bottom: $zk-top-width solid #eeeeee;
+		.user-set-icon {
+			border-radius: 50%;
+			width: 8rem;
+			height: 8rem;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			display: inline-block;
+		}
+		.label {
+			margin: 0 0.8rem 0 0;
+		}
+		.item-ios [item-left], .item-ios [item-start] {
+			margin: 0 1.6rem 0 0;
+		}
+		zk-icon {
+			display: inline-block;
+			width: 2.2rem;
+			font-size: 2rem;
+			color: #dedede;
+		}
+	}
+
+	
+
+	.user-set-item1 {
+		
+		.item-inner {
+			border-bottom-width:0!important;
+		}
+		
+	}
+
+	.user-set-border {
+		border-bottom:$zk-border-style;
+		.item-inner {
+			border-bottom-width: 0!important;
+		}
+	}
+
+	.user-set-select {
+		width: 100%;
+		overflow-y: auto;
+		.user-set-option {
+
+		}
+	}
+	.user-set-exit {
+		position: absolute;
+		bottom: 0;
+		border-radius: 0;
+		margin: 0;
+		height: 4.5rem;
+	}
+}

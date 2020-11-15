@@ -1,0 +1,82 @@
+// Page attCount sass --考勤统计页面样式
+page-attCount {
+	.personal-img{
+		width:120px;
+		height:120px;
+		border-radius:120px;
+		border:#E6F2DD 3px solid;
+		margin-top:20px;
+	}
+	.personal-top{
+		width:100%;
+		background-color: #ffffff;
+		color:#2F2F2F;
+	}
+	.img-title{
+		margin-top:0.8rem;
+		margin-bottom:0.8rem;
+	}
+	
+	.button-clear-ios-light{
+		color:#999;
+	}
+	
+	.button-clear-ios,.button-clear-md {
+		border-color: transparent;
+		color: #bdbdbd;
+		background-color: transparent;
+	}
+	
+	.button-clear-ios-new{
+		border-color: transparent;
+		color:#BABABA;
+		background-color: transparent;
+		font-size: 1.3rem;
+	}
+	
+	.div-list{
+
+	}
+
+	.item-month{
+		font-size: 1rem;
+		min-height: 2.8rem;
+		background-color: transparent;
+		color:#BABABA;
+		border-top:0px;
+	}
+
+	.month-count{
+		font-size: 1rem;
+	}
+
+	.div-list .item-month .item-inner{
+		border-bottom:0px;
+	}
+
+	.detail-time{
+
+	}
+
+	.detail-detail{
+		margin-left:0.8rem;
+	}
+	.item-ios .item-button, .item-md .item-button{
+		font-size:1.7rem;
+	}
+
+	.item-month.item-ios .item-button, .item-month.item-md .item-button{
+		font-size:1.3rem;
+	}
+
+	.detail-count{
+		font-size:1.4rem;
+		text-align:right;
+		color:#999;
+	}
+
+	.item-average{
+		text-align:center;
+		color:#BABABA;
+	}
+}
